@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Relations Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+
+        .content-area {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            min-height: 600px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chapter {
+            margin-bottom: 2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chapter:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #2d3748;
+            transition: background 0.3s ease;
+        }
+
+        .chapter-header:hover {
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+        }
+
+        .chapter-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 1rem;
+            font-weight: 700;
+        }
+
+        .expand-icon {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            color: #667eea;
+        }
+
+        .chapter.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .chapter-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+        }
+
+        .chapter.expanded .chapter-content {
+            padding: 2rem;
+            max-height: 5000px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .point-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .point-card h4 {
+            color: #667eea;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .concept-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .concept-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #667eea30;
+            margin: 1.5rem 0;
+        }
+
+        .quote-box {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        .quote-box .author {
+            font-style: normal;
+            font-weight: 600;
+            color: #667eea;
+            margin-top: 0.5rem;
+        }
+
+        .responsive-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1.5rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        th {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        .theory-highlight {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .discussion-questions {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            border: 2px solid #e2e8f0;
+        }
+
+        .discussion-questions h3 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .question {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border-left: 4px solid #48bb78;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .question:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .question strong {
+            color: #48bb78;
+            font-size: 1.1rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #667eea;
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .content-area {
+                padding: 1rem;
+            }
+
+            .key-points {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline::before {
+                left: 0.5rem;
+            }
+
+            .timeline-item::before {
+                left: -1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>International Relations Study Guide</h1>
+            <p>Reus-Smit: A Very Short Introduction - Comprehensive Teaching Resource</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="chapters">Detailed Chapters</button>
+            <button class="tab-btn" data-tab="concepts">Key Concepts</button>
+            <button class="tab-btn" data-tab="theories">Theories</button>
+            <button class="tab-btn" data-tab="timeline">Historical Timeline</button>
+            <button class="tab-btn" data-tab="questions">Discussion Questions</button>
+        </div>
+
+        <div class="content-area">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="section-title">Course Overview & Central Arguments</div>
+                
+                <div class="quote-box">
+                    "International Relations have no frontiers traced out in reality, they are not and cannot be materially separable from other social phenomena."
+                    <div class="author">— Raymond Aron</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Reus-Smit's Revolutionary Approach</h4>
+                    <p>Traditional IR scholarship focused too narrowly on external relations between sovereign states. This book argues IR should study <strong>the global organization of political authority</strong> and its human and environmental consequences - a much broader and more historically informed approach.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">~50</div>
+                        <div class="stat-label">Years since global sovereignty</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">76</div>
+                        <div class="stat-label">New states 1946-1975</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Historical authority forms</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Major IR theories</div>
+                    </div>
+                </div>
+                
+                <div class="key-points">
+                    <div class="point-card">
+                        <h4>Central Thesis: Political Authority as Organizing Principle</h4>
+                        <p>Political authority = <strong>legitimate political power</strong> (power considered rightful). How authority is organized globally affects individual rights, economic functioning, health/education provision, cultural diversity, environmental protection, and international pathologies like war and refugee crises.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Historical Novelty: Why Current System is Fascinating</h4>
+                        <p>Pre-1970s, most humans lived in non-sovereign polities (mostly empires). The global sovereign state system is utterly new - only about 50 years old - raising fundamental questions about its origins, dynamics, consequences, and potential transformation.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Three Historical Configurations</h4>
+                        <p><strong>Heteronomy</strong> (medieval): Multiple overlapping authorities without clear boundaries. <strong>Empire</strong> (1500-1945): Single imperial centers ruling diverse peoples. <strong>Sovereignty</strong> (1945-present): Territorial states with exclusive authority.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Current Crisis Indicators</h4>
+                        <p>US hegemony waning and contested, multilateral cooperation flagging amid collective challenges (climate, pandemics), re-embrace of narrow sovereignty, populist nationalism reinforcing insularity. Are we witnessing the next great transformation?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapters Tab -->
+            <div id="chapters" class="tab-content">
+                <input type="text" class="search-box" placeholder="Search chapters..." id="chapterSearch">
+                
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 1</span>
+                            <span>What is International Relations?</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Traditional Problem</h4>
+                                <p>Focused only on external state relations - too limiting. Not all important relations are between states (war on terror involves non-state actors), domestic phenomena can have global impact (Brexit, Trump), the global system only emerged fully post-1945.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>New Definition</h4>
+                                <p>Global organization of political authority and its human/environmental consequences. Political authority = legitimate political power (power considered rightful).</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Impact Examples</h4>
+                                <p>How authority is organized affects: individual rights, economic functioning, health/education provision, cultural diversity, environmental protection, international pathologies (interstate war, refugee crises).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 2</span>
+                            <span>Global Organization of Political Authority</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Three Types of Institutions</h4>
+                                <p><strong>Constitutional:</strong> Define authority distribution (sovereignty today)<br>
+                                <strong>Fundamental:</strong> Basic practices (law, diplomacy)<br>
+                                <strong>Issue-specific:</strong> Address functional challenges (NPT, UNFCCC)</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Three Historical Maps Analysis</h4>
+                                <p><strong>Medieval:</strong> No territorial boundaries, heteronomous organization<br>
+                                <strong>1900 Empires:</strong> 16 empires divided world, imperial expansion politics<br>
+                                <strong>Modern Europe:</strong> Sovereign states with equal boundaries</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Empire to Sovereignty Transformation</h4>
+                                <p>1900: Small sovereign system nested in empires. 1945-1975: Near simultaneous empire collapse and delegitimation. Result: 76 new states, sovereignty as global principle.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 3</span>
+                            <span>Theory is Your Friend</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Why Theory Matters</h4>
+                                <p>Theory = organized assumptions that help make sense of complexity. For any question, myriad facts available - how decide relevance? Theory is inescapable!</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Six Major Theories</h4>
+                                <p><strong>Realism:</strong> Power struggle<br><strong>Liberalism:</strong> Democratic peace<br><strong>Constructivism:</strong> Ideas matter<br><strong>English School:</strong> Anarchical society<br><strong>Feminism:</strong> Gender power<br><strong>Post-colonialism:</strong> Imperial legacies</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Theoretical Eclecticism</h4>
+                                <p>No single theory answers all questions. Avoid "Cinderella syndrome" - forcing world into theoretical slipper. Start with questions, then select/combine theories.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 4</span>
+                            <span>War</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Four Types of War</h4>
+                                <p><strong>Constitution:</strong> Remake authority (Wars of Religion)<br>
+                                <strong>Position:</strong> Established units fight (World Wars)<br>
+                                <strong>State-Making:</strong> Assert control (genocides, revolutions)<br>
+                                <strong>Terrorism:</strong> Clandestine groups force change</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>War Makes States (Tilly)</h4>
+                                <p>European rulers needed external + internal wars → required resources → bargains with social groups → taxation for security/rights → constitutional constraints → legitimacy</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Three Means of Control</h4>
+                                <p><strong>Jus ad Bellum:</strong> When war legitimate (UN Charter Article 51)<br>
+                                <strong>Jus in Bello:</strong> How war fought (Geneva Conventions)<br>
+                                <strong>Third Party:</strong> Arbitration, authorization, prosecution</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 5</span>
+                            <span>Economy</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Mutual Dependence</h4>
+                                <p><strong>Economics needs politics:</strong> Exchange needs norms, money needs state backing, markets need intervention<br>
+                                <strong>Politics needs economics:</strong> Legitimacy depends on distribution, crises collapse systems</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Two Globalizations</h4>
+                                <p><strong>First (mid-19th-WWI):</strong> 13.9% GDP, agricultural dominated<br>
+                                <strong>Second (1945-present):</strong> Peak 27% (2008), manufacturing 65%, digital component</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>US Hegemony & Bretton Woods</h4>
+                                <p><strong>Hegemony:</strong> Social status with recognized leadership. <strong>System:</strong> Fixed exchange rates, dollar-gold standard. <strong>Collapse 1971:</strong> Competition, Vietnam costs, OPEC surge</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 6</span>
+                            <span>Rights</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Rights as Power-Mediators</h4>
+                                <p>Rights alter power relations - normative "trump cards." Therefore breed antagonistic politics and often meet repression. Special rights from positions vs. general rights from being human.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Five Waves of State System Expansion</h4>
+                                <p><strong>1648:</strong> Westphalia (religious conscience)<br><strong>1808-25:</strong> Latin America ("rational adults")<br><strong>1919:</strong> Versailles (ethnic self-determination)<br><strong>1945-70:</strong> Decolonization (human rights)<br><strong>1991-92:</strong> Soviet/Yugoslav breakup</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Boomerang Pattern</h4>
+                                <p>Domestic groups blocked → reach outside → build networks → mobilize norms → external pressure returns. Example: South African apartheid campaign leading to sanctions and 1991 abolition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 7</span>
+                            <span>Culture</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Culturalist vs. Institutionalist Debate</h4>
+                                <p><strong>Culturalist:</strong> Cultural unity needed for stable system (Wight, Trump)<br>
+                                <strong>Institutionalist:</strong> Institutions hold diverse systems together (Obama)<br>
+                                <strong>Both flawed:</strong> Culture never unified; institutions organize rather than neutralize culture</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Diversity Regimes</h4>
+                                <p>Norms/practices defining legitimate power centers and relating them to cultural identity. Examples: Ottoman millet system, Qing Eight Banners, modern multiculturalism vs. assimilation.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Rethinking Westphalian "Miracle"</h4>
+                                <p>Wasn't pluralist moment - established diversity regime approving only select Christian confessions. Excluded Judaism, Islam, heretical sects. Created hierarchies and exclusions, ignored imperial context.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 8</span>
+                            <span>An Essential Political Science</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Core Argument Restated</h4>
+                                <p>IR should focus on global organization of political authority and its consequences, not just external state relations. This brings historical variety into view and shows current system's uniqueness.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Bold Claim: THE Essential Political Science</h4>
+                                <p>Global authority organization conditions all local politics. IR addresses macro-conditions that shape everything else. Makes IR as vital as it is fascinating.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Current Crisis Elements</h4>
+                                <p>US hegemony waning, multilateral cooperation flagging, narrow sovereignty re-embraced, populist nationalism reinforcing insularity. Next great transformation?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Concepts Tab -->
+            <div id="concepts" class="tab-content">
+                <input type="text" class="search-box" placeholder="Search concepts..." id="conceptSearch">
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>Political Authority</h3>
+                        <p>Legitimate political power; power considered rightful. The central organizing principle of all political arrangements.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Sovereignty</h3>
+                        <p>Supreme authority within territory, no higher authority above. Today's constitutional institution.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Heteronomy</h3>
+                        <p>Multiple overlapping authorities without clear territorial boundaries (medieval Europe).</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Hegemony</h3>
+                        <p>Recognized leadership with special rights and responsibilities, not just material primacy.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Anarchy</h3>
+                        <p>Absence of central authority (not chaos). Realists argue this forces self-help behavior.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Security Dilemma</h3>
+                        <p>When states' security efforts inadvertently threaten others, leading to arms races.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Democratic Peace</h3>
+                        <p>Liberal theory that democracies don't fight each other because citizens bear war costs.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Diversity Regimes</h3>
+                        <p>Norms defining legitimate power centers and relating them to cultural identity.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Boomerang Pattern</h3>
+                        <p>How domestic groups use international networks to pressure violator states.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theories Tab -->
+            <div id="theories" class="tab-content">
+                <div class="section-title">Six Major Theoretical Perspectives</div>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Theory</th>
+                                <th>Core Claim</th>
+                                <th>Key Concepts</th>
+                                <th>View of Authority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="theory-highlight">Realism</span></td>
+                                <td>IR is struggle for power in anarchic system</td>
+                                <td>Balance of power, security dilemma, hegemonic stability</td>
+                                <td>Order requires hegemonic leadership and grand bargain</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Liberalism</span></td>
+                                <td>Individuals primary, democratic/commercial peace</td>
+                                <td>Social contract, rule of law, interdependence</td>
+                                <td>Legitimate states need popular sovereignty</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Constructivism</span></td>
+                                <td>Ideas and social meanings equal to material power</td>
+                                <td>Social construction, norms, identities shape interests</td>
+                                <td>Authority shaped by shared ideas and values</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">English School</span></td>
+                                <td>States form "anarchical society"</td>
+                                <td>International society, recognition, institutions</td>
+                                <td>International society ordains sovereign rights</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Feminism</span></td>
+                                <td>Gender power differentials central to IR</td>
+                                <td>Male dominance, gendered knowledge systems</td>
+                                <td>All authority configurations privilege male control</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Post-colonialism</span></td>
+                                <td>Imperial legacies and racial hierarchies persist</td>
+                                <td>Decentering West, "color line," hierarchies</td>
+                                <td>Formal equality masks persistent racial hierarchies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Timeline Tab -->
+            <div id="timeline" class="tab-content">
+                <div class="section-title">Historical Transformation of Political Authority</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>1648 - Peace of Westphalia</h3>
+                        <p><strong>Context:</strong> Protestant Reformation challenged Catholic authority. Wars killed 8 million people.</p>
+                        <p><strong>Settlement:</strong> Invested princes with sovereign-like rights, upheld individual religious conscience. Only approved select Christian confessions.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>1808-1825 - Latin American Independence</h3>
+                        <p><strong>Spark:</strong> Napoleon's invasion of Spain. Debate over who counted as "rational adults" - Spanish blood only vs. including Indians and freed slaves.</p>
+                        <p><strong>Result:</strong> 1812 Constitution denied Americans representation, leading to 15 new states by 1825.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>1919 - Versailles Settlement</h3>
+                        <p><strong>Principle:</strong> Europe reorganized on ethnic self-determination, but imperial face maintained for colonies.</p>
+                        <p><strong>Legacy:</strong> "Standard of civilization" continued civilized/barbarian distinctions.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>1945-1970 - Decolonization</h3>
+                        <p><strong>Scale:</strong> 76 new sovereign states. Empire transformed from "sacred trust" to "crime."</p>
+                        <p><strong>Rights Role:</strong> Post-colonial states led human rights codification. Decolonization rate tripled after 1960.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>1991-1992 - Soviet/Yugoslav Breakup</h3>
+                        <p><strong>Completion:</strong> Sovereignty becomes global organizing principle with ~200 states and no competing empires.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2008-Present - Current Crisis?</h3>
+                        <p><strong>Challenges:</strong> US hegemony waning, multilateral cooperation flagging, populist nationalism rising.</p>
+                        <p><strong>Question:</strong> Next great transformation of global political authority?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discussion Questions Tab -->
+            <div id="questions" class="tab-content">
+                <div class="section-title">Discussion Questions by Theme</div>
+                
+                <div class="discussion-questions">
+                    <h3>Foundational Questions</h3>
+                    <div class="question">
+                        <strong>1.</strong> How does Reus-Smit's definition of IR as "the global organization of political authority" differ from traditional approaches? What are the advantages and limitations?
+                    </div>
+                    <div class="question">
+                        <strong>2.</strong> Why does the author argue that today's sovereign state system is "fascinating" precisely because of its novelty rather than its naturalness?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Historical Analysis</h3>
+                    <div class="question">
+                        <strong>3.</strong> Compare the three historical maps (medieval heteronomy, 1900 empires, modern Europe). What can this evolution tell us about possible future transformations?
+                    </div>
+                    <div class="question">
+                        <strong>4.</strong> Why did all European empires collapse nearly simultaneously after WWII? Evaluate the role of rights discourse versus material factors.
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Theoretical Applications</h3>
+                    <div class="question">
+                        <strong>5.</strong> If theory is "inescapable," how should we evaluate competing theoretical perspectives? Can they be combined?
+                    </div>
+                    <div class="question">
+                        <strong>6.</strong> How do feminist and post-colonial theories challenge realist and liberal assumptions about political authority?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Contemporary Issues</h3>
+                    <div class="question">
+                        <strong>7.</strong> How does the concept of "diversity regimes" explain current tensions around immigration and nationalism?
+                    </div>
+                    <div class="question">
+                        <strong>8.</strong> Given declining interstate wars but persistent civil conflicts, what does this suggest about sovereignty and violence?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Critical Analysis</h3>
+                    <div class="question">
+                        <strong>9.</strong> Is the author's claim that IR is "the essential political science" justified? What are the implications?
+                    </div>
+                    <div class="question">
+                        <strong>10.</strong> How might China's rise challenge not just Western power but the institutional framework of political authority?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Tab switching functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+            
+            // Chapter expansion functionality
+            const chapters = document.querySelectorAll('.chapter');
+            chapters.forEach(chapter => {
+                const header = chapter.querySelector('.chapter-header');
+                header.addEventListener('click', function() {
+                    chapter.classList.toggle('expanded');
+                });
+            });
+            
+            // Search functionality for chapters
+            const chapterSearch = document.getElementById('chapterSearch');
+            if (chapterSearch) {
+                chapterSearch.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    chapters.forEach(chapter => {
+                        const text = chapter.textContent.toLowerCase();
+                        if (text.includes(searchTerm) || searchTerm === '') {
+                            chapter.style.display = 'block';
+                        } else {
+                            chapter.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Search functionality for concepts
+            const conceptSearch = document.getElementById('conceptSearch');
+            if (conceptSearch) {
+                conceptSearch.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const concepts = document.querySelectorAll('.concept-card');
+                    
+                    concepts.forEach(concept => {
+                        const text = concept.textContent.toLowerCase();
+                        if (text.includes(searchTerm) || searchTerm === '') {
+                            concept.style.display = 'block';
+                        } else {
+                            concept.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
