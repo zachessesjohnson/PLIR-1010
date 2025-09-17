@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India in International Relations Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #e6751f 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: #ff6b35;
+            border-color: white;
+        }
+
+        .content-area {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            min-height: 600px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chapter {
+            margin-bottom: 2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chapter:hover {
+            border-color: #ff6b35;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.1);
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #2d3748;
+            transition: background 0.3s ease;
+        }
+
+        .chapter-header:hover {
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+        }
+
+        .chapter-number {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 1rem;
+            font-weight: 700;
+        }
+
+        .expand-icon {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            color: #ff6b35;
+        }
+
+        .chapter.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .chapter-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+        }
+
+        .chapter.expanded .chapter-content {
+            padding: 2rem;
+            max-height: 5000px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ff6b35;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .point-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .point-card h4 {
+            color: #ff6b35;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .concept-card {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+        }
+
+        .concept-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid #ff6b35;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .quote-box {
+            background: #fff8f5;
+            padding: 1.5rem;
+            border-left: 4px solid #ff6b35;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        .quote-box .author {
+            font-style: normal;
+            font-weight: 600;
+            color: #ff6b35;
+            margin-top: 0.5rem;
+        }
+
+        .discussion-questions {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            border: 2px solid #e2e8f0;
+        }
+
+        .discussion-questions h3 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .question {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .question:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .question strong {
+            color: #ff6b35;
+            font-size: 1.1rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #ff6b35, #f7931e);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: #ff6b35;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #ff6b35;
+        }
+
+        .timeline-item h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .content-area {
+                padding: 1rem;
+            }
+
+            .key-points {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline::before {
+                left: 0.5rem;
+            }
+
+            .timeline-item::before {
+                left: -1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>India in International Relations</h1>
+            <p>Understanding Democracy, Hindu Nationalism, and Global Partnerships</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+            <button class="tab-btn" onclick="showTab('readings')">Key Issues</button>
+            <button class="tab-btn" onclick="showTab('concepts')">Core Concepts</button>
+            <button class="tab-btn" onclick="showTab('timeline')">Timeline</button>
+            <button class="tab-btn" onclick="showTab('questions')">Discussion Questions</button>
+        </div>
+
+        <div class="content-area">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="section-title">Overview: India's Complex International Position</div>
+                
+                <div class="quote-box">
+                    "It is important to the West not only economically but also politically. Any big conversation in international affairs, climate change, global finance requires India to be in the room. There can be no solution without India."
+                    <div class="author">Dr. Chris Ogden, University of St Andrews</div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1.4B</div>
+                        <div class="stat-label">Population (world's largest)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">80%</div>
+                        <div class="stat-label">Hindu majority population</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">44</div>
+                        <div class="stat-label">People killed in cow-related violence (2015-2018)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4000</div>
+                        <div class="stat-label">People detained in Kashmir (first month after Article 370 revocation)</div>
+                    </div>
+                </div>
+                
+                <div class="key-points">
+                    <div class="point-card">
+                        <h4>The Modi Paradox</h4>
+                        <p>India under Narendra Modi presents a complex challenge: the world's largest democracy led by a figure associated with Hindu nationalism and concerning treatment of minorities, yet an essential partner for global challenges like climate change and economic growth.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Democratic Backsliding Concerns</h4>
+                        <p>Freedom House downgraded India from "Free" to "Partly Free" during Modi's tenure. Reports document increasing restrictions on civil society, press freedom, and minority rights while maintaining electoral democracy.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Strategic Indispensability</h4>
+                        <p>Despite human rights concerns, India remains crucial for Western strategy in Asia-Pacific, economic cooperation, and addressing global challenges. This creates tension between values and interests in international relations.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Coalition Government Impact</h4>
+                        <p>Modi's reduced majority in 2024 elections may constrain his Hindu nationalist agenda and force more coalition politics, potentially affecting both domestic policies and international engagement approaches.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Readings Tab -->
+            <div id="readings" class="tab-content">
+                <input type="text" class="search-box" placeholder="Search issues..." onkeyup="searchIssues(this.value)">
+                
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <div>
+                            <span class="chapter-number">Issue 1</span>
+                            <span>Hindu Nationalism and Minority Rights</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Cow Protection Violence</h4>
+                                <p><strong>2015-2018 Data:</strong> Human Rights Watch documented 44 deaths and 280 injuries in cow-related vigilante violence. Most victims were Muslim. Modi's "Pink Revolution" speech preceded criminalization of beef possession in BJP states.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Citizenship Amendment Act (CAA)</h4>
+                                <p><strong>Selective Inclusion:</strong> 2019 law offers citizenship to non-Muslim refugees from Afghanistan, Bangladesh, and Pakistan. Critics argue it violates secular constitutional principles and creates pathway to disenfranchise Muslims.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Kashmir Integration</h4>
+                                <p><strong>Article 370 Revocation (2019):</strong> Ended Kashmir's special autonomous status. Involved troop deployment, communication blackout, mass detentions, and allegations of torture. UN Human Rights Commissioner expressed deep concern.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Hate Speech and Violence</h4>
+                                <p><strong>Rising Extremism:</strong> Documented increase in calls for genocide against Muslims, religious parliament advocating eradication, and viral hate speech videos. State response often inadequate or biased.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <div>
+                            <span class="chapter-number">Issue 2</span>
+                            <span>Democratic Institutions Under Pressure</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Press Freedom Decline</h4>
+                                <p><strong>Media Control:</strong> Journalists face violence, intimidation, and arrest. Independent media viewed as hostile. Politics of "full-spectrum dominance" includes media control as essential to political project.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Civil Society Restrictions</h4>
+                                <p><strong>NGO Shutdown:</strong> Thousands of NGOs closed after 2015. Amnesty International India forced to suspend operations. Foreign donation rules used to shut down civil society organizations.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Anti-Terrorism Law Misuse</h4>
+                                <p><strong>UAPA Amendment:</strong> Allows government to declare individuals (not just organizations) as terrorists. Student protesters charged under anti-terror laws. Long detention without bail becomes possible.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Centralized Authority</h4>
+                                <p><strong>Decision-Making Control:</strong> "Most centralized government ever run in India." Almost no pushback to orders from Modi. All decision-making directly controlled from top.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <div>
+                            <span class="chapter-number">Issue 3</span>
+                            <span>Official Narrative: India as Rising Civilizational Power</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Authentic India Narrative</h4>
+                                <p><strong>Cultural Renaissance:</strong> Dr. Ram Madhav argues India now presents "authentic India" rather than "imitating power." Cultural and civilizational identity no longer subdued. Strategic autonomy in diplomacy.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Dharmacracy Concept</h4>
+                                <p><strong>Values-Based Democracy:</strong> Indian democracy described as "dharmacracy" - democracy with dharmic value system. Culture and civilization integral to statecraft, unlike Western secular separation.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Economic Success Story</h4>
+                                <p><strong>Grassroots Growth:</strong> Emphasis on inclusive economic practices, digital inclusion, sustainable growth based on bottom-up development rather than oligarch-led growth. Movement from 10th to 5th largest economy.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Global South Leadership</h4>
+                                <p><strong>Net Peace Provider:</strong> India positioned as leader of Global South, providing alternative to US-China competition. Strategic autonomy gives confidence to 50+ countries to avoid taking sides in conflicts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <div>
+                            <span class="chapter-number">Issue 4</span>
+                            <span>International Strategic Importance</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Western Strategic Dependence</h4>
+                                <p><strong>Indispensable Partner:</strong> Any major global conversation requires India. Essential for climate change, global finance, balancing China. No solution possible without India participation.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>ASEAN-GCC-China Summit</h4>
+                                <p><strong>Regional Integration:</strong> India participates in major regional economic integration initiatives. ASEAN's strategic plan aims to become world's fourth-largest economy through harmonized trade standards.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Investment Confidence</h4>
+                                <p><strong>Economic Diplomacy:</strong> Record FDI inflows over $85 billion annually. Western capital and tech leaders express unprecedented confidence in Modi's leadership and India's economic trajectory.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Coalition Government Impact</h4>
+                                <p><strong>2024 Election Results:</strong> Modi's reduced majority requires coalition partners. May constrain Hindu nationalist agenda, force broader consultation, potentially moderate international approach.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <div>
+                            <span class="chapter-number">Issue 5</span>
+                            <span>Case Studies in Violence and Discrimination</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Alimuddin Murder Case</h4>
+                                <p><strong>Lynching Aftermath:</strong> Muslim driver killed by Hindu mob over alleged beef trading. BJP official convicted but party helped with legal fees. Released on bail despite life sentence.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Delhi Riots (February 2020)</h4>
+                                <p><strong>Police Participation:</strong> 53 killed, 2/3 Muslim. Police filmed beating Muslim protesters, forcing them to sing national anthem. Amnesty documented systematic human rights violations.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>National Register of Citizens</h4>
+                                <p><strong>Detention Centers:</strong> 700,000 Muslims declared illegal immigrants. Families like Nur Hussain's detained for 18 months. "Manufacturing refugees out of own population."</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Faizan's Death</h4>
+                                <p><strong>Police Brutality:</strong> 23-year-old tailor beaten to death by police. Viral video showed police assault. No officers charged despite clear evidence of torture and murder.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Concepts Tab -->
+            <div id="concepts" class="tab-content">
+                <input type="text" class="search-box" placeholder="Search concepts..." onkeyup="searchConcepts(this.value)">
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>Hindu Nationalism (Hindutva)</h3>
+                        <p>Political ideology that defines India as fundamentally a Hindu nation. Seeks to privilege Hindu culture and identity in politics, often at expense of minority rights.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Dharmacracy</h3>
+                        <p>Term used by Hindu nationalist thinkers to describe democracy infused with dharmic (righteous) values and Indian civilizational principles, as opposed to Western secular democracy.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Strategic Autonomy</h3>
+                        <p>India's foreign policy principle of maintaining independence from great power blocs while engaging with all powers based on national interest rather than ideology.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Article 370</h3>
+                        <p>Constitutional provision that granted special autonomy to Kashmir. Revoked by Modi government in 2019, leading to direct central control and significant human rights concerns.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Citizenship Amendment Act (CAA)</h3>
+                        <p>2019 law offering citizenship to non-Muslim refugees from neighboring countries. Critics argue it violates secular constitutional principles and targets Muslims.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Global South Leadership</h3>
+                        <p>India's positioning as leader of developing nations, offering alternative to US-China rivalry. Claims to represent "authentic" voice of formerly colonized countries.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Authentic India</h3>
+                        <p>Nationalist concept that contemporary India has finally embraced its "true" civilizational identity rather than imitating Western models. Cultural pride over colonial mentality.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Democratic Backsliding</h3>
+                        <p>Weakening of democratic norms and institutions while maintaining electoral competition. Freedom House downgraded India from "Free" to "Partly Free" during Modi era.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>UAPA (Unlawful Activities Prevention Act)</h3>
+                        <p>Anti-terrorism law amended to allow designation of individuals as terrorists. Used against student protesters and civil society activists, enabling long detention without bail.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Tab -->
+            <div id="timeline" class="tab-content">
+                <div class="section-title">Key Events in Modi's India (2014-2024)</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>2014 - Modi Becomes Prime Minister</h3>
+                        <p><strong>Electoral Victory:</strong> BJP wins largest majority, Modi becomes PM promising development and good governance. Campaign emphasizes economic growth and anti-corruption stance.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2015-2018 - Cow Protection Violence</h3>
+                        <p><strong>Rising Vigilantism:</strong> 44 people killed in cow-related violence. Modi's "Pink Revolution" speech precedes criminalization of beef. Most victims Muslim, few attackers prosecuted.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2017 - Alimuddin Lynching Case</h3>
+                        <p><strong>Jharkhand Violence:</strong> Muslim driver killed by Hindu mob. BJP official convicted but party provides legal support. Highlights state complicity in vigilante violence.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2019 - Article 370 Revocation</h3>
+                        <p><strong>Kashmir Lockdown:</strong> Special status ended, 25,000 troops deployed, communication blackout imposed. 4,000 detained in first month, torture allegations emerge.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2019 - Citizenship Amendment Act</h3>
+                        <p><strong>Nationwide Protests:</strong> CAA passed offering citizenship to non-Muslims. Massive protests across India, police violence against students, Delhi riots follow.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2020 - Delhi Riots</h3>
+                        <p><strong>Communal Violence:</strong> 53 killed during Trump visit, 2/3 Muslim victims. Police participate in violence, beat Muslim protesters, film themselves doing so.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2020-2021 - COVID Lockdown</h3>
+                        <p><strong>Protest Suppression:</strong> Pandemic used to prevent further protests. Civil society activists arrested under anti-terror laws. Press freedom further restricted.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2024 - Coalition Government</h3>
+                        <p><strong>Reduced Majority:</strong> BJP loses 60 seats, Modi needs coalition partners. May constrain Hindu nationalist agenda, force broader political consultation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discussion Questions Tab -->
+            <div id="questions" class="tab-content">
+                <div class="section-title">Discussion Questions</div>
+                
+                <div class="discussion-questions">
+                    <h3>Democracy and Authoritarianism</h3>
+                    <div class="question">
+                        <strong>1.</strong> How do we reconcile India's continued electoral democracy with evidence of democratic backsliding? Can a country be democratic and authoritarian simultaneously?
+                    </div>
+                    <div class="question">
+                        <strong>2.</strong> Compare the BBC documentary's portrayal of Modi's India with Dr. Ram Madhav's "dharmacracy" concept. How do different narratives shape international perceptions?
+                    </div>
+                    <div class="question">
+                        <strong>3.</strong> What role should press freedom and civil society play in a democracy? How concerning are the restrictions documented in India?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>International Relations Theory</h3>
+                    <div class="question">
+                        <strong>4.</strong> How does India's "strategic autonomy" challenge traditional alliance-based approaches to international relations? Is non-alignment still viable in a multipolar world?
+                    </div>
+                    <div class="question">
+                        <strong>5.</strong> Analyze India's Global South leadership claims. What legitimacy does India have to represent developing countries given its own internal challenges?
+                    </div>
+                    <div class="question">
+                        <strong>6.</strong> How do civilizational narratives in international relations both empower and constrain state behavior? What are the implications of India's "authentic India" discourse?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Values vs. Interests in Foreign Policy</h3>
+                    <div class="question">
+                        <strong>7.</strong> Should Western countries prioritize human rights concerns or strategic partnership with India? How do you balance values and interests in foreign policy?
+                    </div>
+                    <div class="question">
+                        <strong>8.</strong> How might India's treatment of minorities affect its soft power and international leadership aspirations? Does domestic legitimacy matter for international influence?
+                    </div>
+                    <div class="question">
+                        <strong>9.</strong> Evaluate the argument that balancing China requires cooperation with India despite human rights concerns. Is this moral compromise justified?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Minority Rights and National Identity</h3>
+                    <div class="question">
+                        <strong>10.</strong> How do Hindu nationalist policies affect India's secular constitutional principles? Can a democracy privilege one religious community over others?
+                    </div>
+                    <div class="question">
+                        <strong>11.</strong> Analyze the CAA and NRC policies through the lens of citizenship theory. What makes someone a legitimate member of a political community?
+                    </div>
+                    <div class="question">
+                        <strong>12.</strong> How should the international community respond to documented violence against minorities in democratic countries? What tools exist beyond diplomatic pressure?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Economic Development and Political Rights</h3>
+                    <div class="question">
+                        <strong>13.</strong> Does economic growth justify restrictions on civil liberties? Evaluate the trade-offs between development and democracy in India's case.
+                    </div>
+                    <div class="question">
+                        <strong>14.</strong> How sustainable is India's economic rise if it's accompanied by social tensions and institutional weakening? What are the long-term implications?
+                    </div>
+                    <div class="question">
+                        <strong>15.</strong> Assess foreign investment decisions in countries with concerning human rights records. Should economic opportunities trump ethical considerations?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Regional and Global Implications</h3>
+                    <div class="question">
+                        <strong>16.</strong> How might India's domestic policies affect regional stability in South Asia? What are the implications for neighboring countries with significant Hindu minorities?
+                    </div>
+                    <div class="question">
+                        <strong>17.</strong> Evaluate India's potential role in a multipolar world order. Can a country lead internationally while facing internal challenges to pluralism?
+                    </div>
+                    <div class="question">
+                        <strong>18.</strong> How should international organizations like the UN respond to early warning signs of mass atrocities? What preventive measures are available?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function toggleChapter(headerElement) {
+            const chapter = headerElement.parentElement;
+            chapter.classList.toggle('expanded');
+        }
+
+        function searchIssues(searchTerm) {
+            const chapters = document.querySelectorAll('.chapter');
+            chapters.forEach(chapter => {
+                const text = chapter.textContent.toLowerCase();
+                if (text.includes(searchTerm.toLowerCase()) || searchTerm === '') {
+                    chapter.style.display = 'block';
+                } else {
+                    chapter.style.display = 'none';
+                }
+            });
+        }
+
+        function searchConcepts(searchTerm) {
+            const concepts = document.querySelectorAll('.concept-card');
+            concepts.forEach(concept => {
+                const text = concept.textContent.toLowerCase();
+                if (text.includes(searchTerm.toLowerCase()) || searchTerm === '') {
+                    concept.style.display = 'block';
+                } else {
+                    concept.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

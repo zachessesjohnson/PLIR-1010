@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China in International Relations Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: #dc2626;
+            border-color: white;
+        }
+
+        .content-area {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            min-height: 600px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chapter {
+            margin-bottom: 2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chapter:hover {
+            border-color: #dc2626;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #2d3748;
+            transition: background 0.3s ease;
+        }
+
+        .chapter-header:hover {
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+        }
+
+        .chapter-number {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 1rem;
+            font-weight: 700;
+        }
+
+        .expand-icon {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            color: #dc2626;
+        }
+
+        .chapter.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .chapter-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+        }
+
+        .chapter.expanded .chapter-content {
+            padding: 2rem;
+            max-height: 5000px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #dc2626;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .point-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #dc2626;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .point-card h4 {
+            color: #dc2626;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .concept-card {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
+        }
+
+        .concept-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid #dc2626;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #dc262610, #b91c1c10);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #dc262630;
+            margin: 1.5rem 0;
+        }
+
+        .quote-box {
+            background: #fef2f2;
+            padding: 1.5rem;
+            border-left: 4px solid #dc2626;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        .quote-box .author {
+            font-style: normal;
+            font-weight: 600;
+            color: #dc2626;
+            margin-top: 0.5rem;
+        }
+
+        .discussion-questions {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            border: 2px solid #e2e8f0;
+        }
+
+        .discussion-questions h3 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .question {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border-left: 4px solid #dc2626;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .question:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .question strong {
+            color: #dc2626;
+            font-size: 1.1rem;
+        }
+
+        .responsive-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1.5rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        th {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        .theory-highlight {
+            font-weight: 600;
+            color: #dc2626;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .content-area {
+                padding: 1rem;
+            }
+
+            .key-points {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>China in International Relations</h1>
+            <p>Understanding China's Rise, Surveillance State, and Global Impact</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="readings">Key Readings</button>
+            <button class="tab-btn" data-tab="concepts">Core Concepts</button>
+            <button class="tab-btn" data-tab="debates">Key Debates</button>
+            <button class="tab-btn" data-tab="questions">Discussion Questions</button>
+        </div>
+
+        <div class="content-area">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="section-title">Overview: China's Place in International Relations</div>
+                <div class="quote-box">
+                    "China's reemergence as a great power should not have come as a surprise. From the years 1 to 1820, the two largest economies were always those of China and India."
+                    <div class="author">Kishore Mahbubani</div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Case Study: The Surveillance State Paradox</strong><br>
+                    China's technological advancement creates a dual narrative in international relations. While families like the Wu family in Hangzhou embrace smart cities and digital convenience, this same technology enables unprecedented government surveillance of Uyghurs in Xinjiang. This paradox shapes global perceptions of China's development model and raises questions about technology exports, human rights, and the future of digital authoritarianism.
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">290K</div>
+                        <div class="stat-label">Cameras in one Shanghai district alone</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24K</div>
+                        <div class="stat-label">Chinese migrants crossing US border (2023)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1M</div>
+                        <div class="stat-label">Uyghurs in detention camps (estimated)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">40</div>
+                        <div class="stat-label">Years since China fought a war</div>
+                    </div>
+                </div>
+
+                <div class="key-points">
+                    <div class="point-card">
+                        <h4>The Surveillance State Model</h4>
+                        <p>China has built the world's most comprehensive surveillance system with hundreds of millions of cameras using AI for facial recognition, behavior analysis, and social control. This "digital authoritarianism" is now being exported globally through companies like Hikvision and Dahua.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Technology and Social Control</h4>
+                        <p>From social credit systems in Hangzhou to health apps during COVID-19, China demonstrates how technology can enable unprecedented state control over citizens while maintaining public acceptance through convenience and perceived security benefits.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Global Technology Competition</h4>
+                        <p>Chinese tech companies like TikTok, Xiaomi, and Huawei collect vast amounts of global user data, raising concerns about privacy, censorship, and potential state access. This creates new dimensions of international competition beyond traditional military and economic measures.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Domestic Legitimacy Challenges</h4>
+                        <p>Rising emigration from China, including dangerous border crossings, signals domestic discontent with authoritarian governance. The "Run" movement among educated Chinese citizens may weaken China's long-term power capabilities and international legitimacy.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Xinjiang as a Testing Ground</h4>
+                        <p>The systematic surveillance and detention of Uyghurs in Xinjiang represents the extreme end of China's surveillance capabilities, labeled as genocide by several nations and creating significant international diplomatic challenges for Beijing.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>The Expansionist Question</h4>
+                        <p>Historical evidence suggests China's approach to power differs from Western patterns. Unlike European powers, China has not pursued overseas territorial conquest despite having naval capabilities centuries before Columbus, yet domestic repression raises questions about future international behavior.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Readings Tab -->
+            <div id="readings" class="tab-content">
+                <input type="text" class="search-box" placeholder="Search readings..." id="readingSearch">
+                
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Reading 1</span>
+                            <span>Is China Expansionist? (Mahbubani)</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Central Argument</h4>
+                                <p><strong>Assertive vs. Aggressive:</strong> China has become more assertive as a great power but not necessarily aggressive. The distinction matters - assertiveness involves using non-military means to project power, while aggression involves military action.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Historical Evidence</h4>
+                                <p><strong>Chinese Restraint:</strong> Despite having the world's strongest navy in the 15th century under Admiral Zheng He, China did not colonize overseas territories. This contrasts sharply with European expansion patterns.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Military Comparison</h4>
+                                <p><strong>US vs. China:</strong> Since 1989, the US has used armed forces 152 times (6.1 times per year), while China has not fought a war in 40 years. The last Chinese military action was a naval skirmish with Vietnam in 1989.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Cultural Foundations</h4>
+                                <p><strong>Confucian Influence:</strong> "Good iron is not made into a nail; a good man is not made into a soldier." Chinese culture traditionally values scholars over soldiers, influencing strategic preferences for non-military solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Reading 2</span>
+                            <span>US-China Global Perceptions (Pew Research)</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Shifting Favorability</h4>
+                                <p><strong>Global Trends:</strong> Across 24 countries surveyed, median 49% have favorable view of US vs. 37% for China. However, views of US have worsened while opinions of China have improved in many countries.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Regional Variations</h4>
+                                <p><strong>Country Differences:</strong> Israel shows highest US favorability (83%) vs. China (33%). Some countries like Kenya and Indonesia show more balanced views between the two powers.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Economic Perceptions</h4>
+                                <p><strong>Leading Economy:</strong> Half of surveyed countries now see China as the world's top economy. Greece, Italy, Germany, and Spain all shifted toward naming China over the US since 2023.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Leadership Confidence</h4>
+                                <p><strong>Trump vs. Xi:</strong> Global confidence in Trump (22%) and Xi (24%) shows minimal difference, with both considerably lower than confidence in other world leaders in previous surveys.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Reading 3</span>
+                            <span>Chinese Migration Crisis (NYT Daily Podcast)</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Migration Surge</h4>
+                                <p><strong>Unprecedented Numbers:</strong> 24,000 Chinese crossed the US southern border in 2023 - more than the previous 10 years combined. This represents the most dangerous migration route, suggesting desperation among middle-class Chinese citizens.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Economic Success Turned Sour</h4>
+                                <p><strong>Gao's Story:</strong> A successful small developer who built apartments for migrant workers saw his business destroyed by local government land seizure without compensation, illustrating how arbitrary state power undermines economic achievement.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Shrinking Social Space</h4>
+                                <p><strong>Authoritarian Expansion:</strong> Under Xi Jinping, the space for civil society has contracted dramatically. Citizens face harassment for petitioning, social media comments, or possessing banned books, creating constant fear of arbitrary detention.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Freedom vs. Economic Security</h4>
+                                <p><strong>Value Prioritization:</strong> Gao's emphasis on being able to protest freely in San Francisco, despite economic hardship, highlights how political freedoms may increasingly outweigh material considerations for educated Chinese citizens.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Reading 5</span>
+                            <span>China's Surveillance State (DW Documentary)</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Total Surveillance Infrastructure</h4>
+                                <p><strong>Shanghai's "Brain":</strong> District control centers monitor 290,000 cameras with AI algorithms detecting everything from mask violations to improper trash disposal. Authorities can track every resident's movement in real-time.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Social Credit System</h4>
+                                <p><strong>Behavioral Modification:</strong> Hangzhou residents earn points for good behavior (volunteering, exercise) and lose points for violations (unpaid taxes, false COVID statements). High scores provide benefits like skipping security checks.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Technology Export and Global Implications</h4>
+                                <p><strong>Digital Authoritarianism Abroad:</strong> Chinese surveillance companies like Dahua and Hikvision sell facial recognition systems globally, including technology specifically designed to identify ethnic minorities and send "Uyghur alarms" to police.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Xinjiang as Extreme Case</h4>
+                                <p><strong>Genocide Through Technology:</strong> The systematic surveillance, detention, and forced sterilization of Uyghurs demonstrates how China's surveillance capabilities can enable ethnic persecution, creating international condemnation and diplomatic challenges.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Public Acceptance vs. Privacy</h4>
+                                <p><strong>Convenience Trade-offs:</strong> Chinese families like the Wu family embrace smart city technology for convenience, while criticism or resistance to surveillance is virtually non-existent among the general population.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>COVID-19 as Surveillance Accelerator</h4>
+                                <p><strong>Health Apps as Control:</strong> Pandemic health tracking apps monitor movement and contacts, with door sensors detecting quarantine violations. The crisis provided justification for expanded data collection and movement restrictions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Concepts Tab -->
+            <div id="concepts" class="tab-content">
+                <input type="text" class="search-box" placeholder="Search concepts..." id="conceptSearch">
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>Digital Authoritarianism</h3>
+                        <p>Use of digital technologies to surveil, repress, and manipulate domestic and foreign populations. China's model combines AI, big data, and surveillance cameras for comprehensive social control.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Social Credit System</h3>
+                        <p>Government program that rates citizens based on behavior, providing rewards for compliance and punishment for violations. Aims to create "trustworthy" society through technological monitoring and social pressure.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Surveillance Capitalism</h3>
+                        <p>Economic system where personal data is extracted and used for commercial and political purposes. Chinese tech companies collect vast amounts of user data for both profit and state surveillance.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>"Uyghur Alarms"</h3>
+                        <p>AI facial recognition systems specifically designed to identify and alert authorities to Uyghur individuals, representing the weaponization of technology for ethnic targeting and genocide.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Assertive vs. Aggressive</h3>
+                        <p>Assertive behavior involves using diplomatic, economic, and other non-military means to project power. Aggressive behavior involves military force and threats of violence.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>"Run" (润) Movement</h3>
+                        <p>Slang term for emigrating from China, derived from "润" meaning to moisten/leave. Became popular on Chinese social media as code for discussing emigration plans and strategies.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Exit vs. Voice</h3>
+                        <p>Hirschman's concept: citizens can respond to deteriorating conditions through "voice" (protest/reform) or "exit" (emigration). Chinese migrants represent "exit" when "voice" is suppressed.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Techno-Nationalism</h3>
+                        <p>Belief that technological advancement enhances national power and prestige. China's tech development is viewed as competition with the West for global technological leadership.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Data Sovereignty</h3>
+                        <p>Concept that nations should control data generated within their borders. China requires data localization while its companies collect data globally, creating asymmetric data flows.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Smart Cities</h3>
+                        <p>Urban areas using technology and data analytics to improve services and quality of life. China's smart city initiatives often prioritize surveillance and control alongside convenience.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Cultural Genocide</h3>
+                        <p>Systematic destruction of a group's cultural identity through forced assimilation, sterilization, and separation of children from families. Applied to China's treatment of Uyghurs in Xinjiang.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Shadow Banning</h3>
+                        <p>Practice of limiting content visibility without notifying users. TikTok allegedly suppresses content critical of China while promoting entertainment, shaping global information flows.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Debates Tab -->
+            <div id="debates" class="tab-content">
+                <div class="section-title">Key Debates in China-IR Literature</div>
+                
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Debate</th>
+                                <th>Position A</th>
+                                <th>Position B</th>
+                                <th>Evidence/Considerations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="theory-highlight">China's Expansionist Nature</span></td>
+                                <td>China will follow historical great power pattern of military expansion</td>
+                                <td>China's culture and history suggest non-militaristic approach to power</td>
+                                <td>40 years without war vs. systematic repression of minorities like Uyghurs</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Technology as Soft Power</span></td>
+                                <td>Chinese tech success enhances global influence and attracts adoption of Chinese standards</td>
+                                <td>Surveillance technology and human rights abuses undermine China's international appeal</td>
+                                <td>TikTok's global popularity vs. Xinjiang surveillance creating international condemnation</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Digital Authoritarianism Export</span></td>
+                                <td>China actively exports surveillance technology to create authoritarian allies and normalize repression</td>
+                                <td>Technology transfers are primarily commercial, not strategic tools for influence</td>
+                                <td>Dahua/Hikvision global sales vs. local adaptation of Chinese surveillance models</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Domestic Legitimacy Crisis</span></td>
+                                <td>Rising emigration and surveillance indicate fundamental crisis in CCP legitimacy</td>
+                                <td>Technology enhances state capacity and public accepts trade-offs for security/convenience</td>
+                                <td>24,000 US border crossings vs. public acceptance of surveillance in cities like Hangzhou</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Global Internet Governance</span></td>
+                                <td>China seeks to reshape global internet governance to enable state control and data sovereignty</td>
+                                <td>China wants access to global markets while protecting domestic tech companies</td>
+                                <td>Digital Silk Road initiatives vs. continued participation in global internet infrastructure</td>
+                            </tr>
+                            <tr>
+                                <td><span class="theory-highlight">Human Rights vs. Development</span></td>
+                                <td>Economic development justifies temporary restrictions on political freedoms and privacy</td>
+                                <td>Human rights violations undermine China's development model and international legitimacy</td>
+                                <td>Xinjiang's economic growth vs. international genocide accusations and sanctions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>Analytical Framework: Technology and Power in International Relations</h3>
+                    <p>The intersection of China's technological advancement and authoritarian governance creates new dynamics in international relations:</p>
+                    <br>
+                    <strong>Surveillance as Soft Power Liability:</strong> While Chinese technology offers convenience and efficiency, systematic human rights abuses in Xinjiang and domestic surveillance create reputational costs that limit China's international appeal.
+                    <br><br>
+                    <strong>Data as Strategic Resource:</strong> Chinese tech companies' global data collection creates asymmetric information advantages while raising security concerns in democratic countries, leading to tech decoupling and export controls.
+                    <br><br>
+                    <strong>Digital Authoritarianism Export:</strong> China's surveillance technology enables authoritarian allies to strengthen control while providing Beijing with influence tools, but also generates backlash from human rights advocates.
+                    <br><br>
+                    <strong>Domestic-International Feedback Loops:</strong> Internal surveillance and control systems designed to prevent domestic challenges may create international legitimacy problems that require more assertive foreign policy responses.
+                </div>
+            </div>
+
+            <!-- Questions Tab -->
+            <div id="questions" class="tab-content">
+                <div class="section-title">Discussion Questions</div>
+                
+                <div class="discussion-questions">
+                    <h3>Historical Analysis</h3>
+                    <div class="question">
+                        <strong>1.</strong> How convincing is Mahbubani's historical argument that China's non-expansion in previous centuries indicates it won't be militaristically expansionist today? What counterarguments might you raise?
+                    </div>
+                    <div class="question">
+                        <strong>2.</strong> Compare Chinese naval expeditions under Admiral Zheng He with European exploration. What factors might explain the different outcomes despite similar capabilities?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Technology and Surveillance</h3>
+                    <div class="question">
+                        <strong>3.</strong> Analyze the Wu family's acceptance of surveillance technology in Hangzhou. How does public consent for surveillance in China differ from resistance in Germany, and what does this tell us about cultural values and state-society relations?
+                    </div>
+                    <div class="question">
+                        <strong>4.</strong> Evaluate the argument that China's social credit system represents a new form of governance that could be exported globally. What are the implications for international relations if other authoritarian states adopt similar systems?
+                    </div>
+                    <div class="question">
+                        <strong>5.</strong> How should democratic countries respond to Chinese technology companies like TikTok, Xiaomi, and Huawei that may enable surveillance and censorship? What are the trade-offs between security concerns and economic benefits?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Human Rights and International Law</h3>
+                    <div class="question">
+                        <strong>6.</strong> Assess the international community's response to the situation in Xinjiang. Why have some countries labeled it genocide while others remain silent? What factors influence these different responses?
+                    </div>
+                    <div class="question">
+                        <strong>7.</strong> How does the development of "Uyghur alarms" and ethnicity-detecting AI represent a new form of technological racism? What are the implications for international norms around AI development and export?
+                    </div>
+                    <div class="question">
+                        <strong>8.</strong> Analyze the tension between China's COVID-19 health tracking apps and privacy rights. How do emergency powers during pandemics affect international human rights norms?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Domestic-International Linkages</h3>
+                    <div class="question">
+                        <strong>9.</strong> How does the Chinese migration crisis revealed in the NYT podcast relate to China's international behavior? Does domestic discontent make China more or less likely to act assertively abroad?
+                    </div>
+                    <div class="question">
+                        <strong>10.</strong> Compare Gao's story of arbitrary property seizure with artist Dang Yifang's censorship. How do these domestic governance problems affect China's international legitimacy and soft power?
+                    </div>
+                    <div class="question">
+                        <strong>11.</strong> Evaluate the "Run" movement as an indicator of China's domestic stability. How might significant emigration by educated, entrepreneurial Chinese citizens affect China's long-term power capabilities?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Theoretical Implications</h3>
+                    <div class="question">
+                        <strong>12.</strong> Which IR theories best explain China's approach to technology and surveillance? How do realist, liberal, and constructivist approaches differ in analyzing digital authoritarianism?
+                    </div>
+                    <div class="question">
+                        <strong>13.</strong> How does China's surveillance state challenge traditional concepts of sovereignty and intervention? If technology enables transnational surveillance, what are the implications for international law?
+                    </div>
+                    <div class="question">
+                        <strong>14.</strong> Analyze the concept of "techno-nationalism" in China's development strategy. How does technological advancement relate to national power and international competition?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Policy and Future Scenarios</h3>
+                    <div class="question">
+                        <strong>15.</strong> Design a policy framework for democratic countries to address Chinese surveillance technology exports while maintaining economic relationships. What tools are available and what are their limitations?
+                    </div>
+                    <div class="question">
+                        <strong>16.</strong> Predict how China's surveillance capabilities might evolve over the next decade. What new technologies could enhance state control, and how might this affect international relations?
+                    </div>
+                    <div class="question">
+                        <strong>17.</strong> If China's domestic surveillance model proves economically and socially successful, how might this influence global governance norms? Could "digital authoritarianism" become an attractive alternative to liberal democracy?
+                    </div>
+                </div>
+
+                <div class="discussion-questions">
+                    <h3>Critical Analysis</h3>
+                    <div class="question">
+                        <strong>18.</strong> How might Chinese scholars critique Western analyses of China's surveillance state? What assumptions or biases might Western researchers bring to studies of Chinese technology and governance?
+                    </div>
+                    <div class="question">
+                        <strong>19.</strong> Evaluate the ethics of researching and reporting on Chinese surveillance technology. What are the trade-offs between exposing human rights abuses and potentially helping improve surveillance capabilities?
+                    </div>
+                    <div class="question">
+                        <strong>20.</strong> Given the evidence from multiple sources, construct an argument for whether China's rise represents a fundamental challenge to the liberal international order or an adaptation within existing frameworks. What would each scenario mean for global governance?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Tab switching functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+            
+            // Chapter expansion functionality
+            const chapters = document.querySelectorAll('.chapter');
+            chapters.forEach(chapter => {
+                const header = chapter.querySelector('.chapter-header');
+                header.addEventListener('click', function() {
+                    chapter.classList.toggle('expanded');
+                });
+            });
+            
+            // Search functionality for readings
+            const readingSearch = document.getElementById('readingSearch');
+            if (readingSearch) {
+                readingSearch.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    chapters.forEach(chapter => {
+                        const text = chapter.textContent.toLowerCase();
+                        if (text.includes(searchTerm) || searchTerm === '') {
+                            chapter.style.display = 'block';
+                        } else {
+                            chapter.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Search functionality for concepts
+            const conceptSearch = document.getElementById('conceptSearch');
+            if (conceptSearch) {
+                conceptSearch.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const concepts = document.querySelectorAll('.concept-card');
+                    
+                    concepts.forEach(concept => {
+                        const text = concept.textContent.toLowerCase();
+                        if (text.includes(searchTerm) || searchTerm === '') {
+                            concept.style.display = 'block';
+                        } else {
+                            concept.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>cting domestic tech
