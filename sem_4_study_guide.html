@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Is How They Tell Me the World Ends - Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+
+        .content-area {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            min-height: 600px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chapter {
+            margin-bottom: 2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chapter:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #2d3748;
+            transition: background 0.3s ease;
+        }
+
+        .chapter-header:hover {
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+        }
+
+        .chapter-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 1rem;
+            font-weight: 700;
+        }
+
+        .expand-icon {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            color: #667eea;
+        }
+
+        .chapter.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .chapter-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+        }
+
+        .chapter.expanded .chapter-content {
+            padding: 2rem;
+            max-height: 5000px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .point-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .point-card h4 {
+            color: #667eea;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .concept-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .concept-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #667eea;
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .danger-zone {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .danger-zone h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ffd93d, #ff9800);
+            color: #2d3748;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: #d84315;
+        }
+
+        .actor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .actor-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .actor-card:hover {
+            border-color: #667eea;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .actor-card h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .content-area {
+                padding: 1rem;
+            }
+
+            .key-points {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline::before {
+                left: 0.5rem;
+            }
+
+            .timeline-item::before {
+                left: -1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>This Is How They Tell Me the World Ends</h1>
+            <p>The Zero-Day Market, Modern Warfare & the New Nuclear Age - Study Guide</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="russia">Russia/Eastern Europe</button>
+            <button class="tab-btn" data-tab="ukraine">Ukraine: Modern Warfare</button>
+            <button class="tab-btn" data-tab="nuclear">Nuclear Risks</button>
+            <button class="tab-btn" data-tab="chapters">Key Chapters</button>
+            <button class="tab-btn" data-tab="concepts">Concepts</button>
+            <button class="tab-btn" data-tab="timeline">Timeline</button>
+        </div>
+
+        <div class="content-area">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="section-title">Book Overview and Central Arguments</div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">$2M</div>
+                        <div class="stat-label">Price for iPhone zero-day</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Zero-days in Stuxnet</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">200K</div>
+                        <div class="stat-label">Orgs hit by WannaCry</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$10B</div>
+                        <div class="stat-label">Damage from NotPetya</div>
+                    </div>
+                </div>
+
+                <div class="key-points">
+                    <div class="point-card">
+                        <h4>Central Thesis</h4>
+                        <p>The United States pioneered a global market for zero-day vulnerabilities, creating cyberweapons that have now proliferated beyond government control, endangering the very digital infrastructure we depend on.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>The Zero-Day Dilemma</h4>
+                        <p>Zero-days are software vulnerabilities unknown to vendors - providing "digital superpowers" to hack into systems. They represent a fundamental tension between offense and defense in cybersecurity.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Market Origins</h4>
+                        <p>What began as a small vulnerability disclosure program at iDefense evolved into a massive underground market where governments pay millions for exploits, fundamentally changing the nature of warfare and espionage.</p>
+                    </div>
+                    <div class="point-card">
+                        <h4>Boomerang Effect</h4>
+                        <p>American cyberweapons have been stolen and turned against the US and its allies, with tools like EternalBlue powering devastating attacks like WannaCry and NotPetya that crippled critical infrastructure worldwide.</p>
+                    </div>
+                </div>
+
+                <div class="danger-zone">
+                    <h4>Current State: A Digital Powder Keg</h4>
+                    <p>Russian hackers are embedded in US nuclear facilities, Iranian cyber units target critical infrastructure, Chinese groups steal military secrets, and American cities regularly fall victim to ransomware attacks using weaponized NSA tools. The emergence of drone swarms and nuclear warfare risks has created a multi-domain threat environment unlike anything in human history.</p>
+                </div>
+            </div>
+
+            <!-- Russia/Eastern Europe Tab -->
+            <div id="russia" class="tab-content">
+                <div class="section-title">Russia's Cyber Evolution & Eastern European Theater</div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">2010</div>
+                        <div class="stat-label">Year Russian cyber retaliation began</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">198</div>
+                        <div class="stat-label">Russian attacks on US infrastructure (2012)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">230K</div>
+                        <div class="stat-label">Ukrainians who lost power (2015)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1M</div>
+                        <div class="stat-label">Russian casualties in Ukraine war</div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Phase 1</span>
+                            <span>Post-Stuxnet Awakening (2010-2014)</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Russia's Cyber Strategy Emerges</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Stuxnet as Catalyst</h4>
+                                <p>Russian cyber operations against US infrastructure began in 2010, the same year Stuxnet was discovered. Moscow initially pushed for international cyberweapons ban but was dismissed by Washington, leading to reciprocal infiltration strategy.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Energetic Bear Campaign</h4>
+                                <p>Sophisticated Russian hacking group infiltrated US oil, gas, and electrical utilities 2012-2014. 198 attacks on critical infrastructure in 2012 alone - 52% increase from previous year. Clear strategic message.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Eastern European Talent Pool</h4>
+                                <p>Post-Soviet collapse created pool of skilled hackers without legitimate employment. Russian intelligence services recruited heavily from this community, offering better pay and purpose than criminal enterprises.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Hybrid Warfare Doctrine</h4>
+                                <p>Russia developed comprehensive strategy combining conventional military, cyber operations, disinformation, and economic pressure. Cyber became key pillar enabling "war below threshold of armed conflict."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Phase 2</span>
+                            <span>Ukraine Testing Ground (2014-2016)</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Proving Ground for Cyber Warfare</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>BlackEnergy Evolution</h4>
+                                <p>Sandworm (GRU Unit 74455) used sophisticated malware to penetrate Ukrainian media companies first, testing capabilities before escalating to critical infrastructure targets. Methodical approach to capability development.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>First Grid Attack (December 2015)</h4>
+                                <p>230,000 Ukrainians lost power as Russian hackers remotely controlled circuit breakers, then cut emergency communications and backup power. Demonstrated feasibility of cyber-physical attacks on civilian infrastructure.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Escalation Ladder</h4>
+                                <p>Russians tested increasingly sophisticated attacks: media companies → power grid → financial systems → election infrastructure. Each success built confidence for larger operations against Western targets.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Attribution Mastery</h4>
+                                <p>Russia perfected plausible deniability tactics - using criminal groups as proxies, false flag operations, and technical misdirection to complicate Western response and maintain strategic ambiguity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Phase 3</span>
+                            <span>Global Projection (2016-2022)</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Export of Cyber Capabilities</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>2016 US Election Operations</h4>
+                                <p>Coordinated campaign combining Cozy Bear (SVR) and Fancy Bear (GRU) hacking with Internet Research Agency propaganda. Demonstrated Russia's ability to influence Western democracies at scale using cyber tools.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>NotPetya Global Attack</h4>
+                                <p>June 2017 "ransomware" was actually destructive cyberweapon. Used stolen NSA tools (EternalBlue, EternalRomance) plus MimiKatz to spread globally from Ukrainian tax software. $10+ billion in damages worldwide.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Collateral Damage Strategy</h4>
+                                <p>Russia deliberately designed NotPetya to spread beyond Ukraine, hitting Merck, Maersk, FedEx, even Chernobyl radiation monitoring. Strategic message: "Attack our interests, face global consequences."</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Shadow Brokers Connection</h4>
+                                <p>Mysterious group leaked NSA tools 2016-2017, likely with Russian intelligence backing. Timing coincided with election interference operations, providing plausible deniability for subsequent attacks using American exploits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actor-grid">
+                    <div class="actor-card">
+                        <h4>Sandworm (GRU Unit 74455)</h4>
+                        <p><strong>Operations:</strong> Ukraine power grid, NotPetya, Olympic Destroyer<br>
+                        <strong>Specialty:</strong> Industrial control systems, destructive attacks<br>
+                        <strong>Signature:</strong> Crosses lines other groups won't - targets civilian infrastructure directly</p>
+                    </div>
+                    <div class="actor-card">
+                        <h4>Cozy Bear (SVR)</h4>
+                        <p><strong>Mission:</strong> Traditional espionage, foreign intelligence<br>
+                        <strong>Targets:</strong> Government networks, diplomatic communications<br>
+                        <strong>Style:</strong> Stealthy, long-term presence, minimal disruption</p>
+                    </div>
+                    <div class="actor-card">
+                        <h4>Fancy Bear (GRU Unit 26165)</h4>
+                        <p><strong>Operations:</strong> DNC hack, Olympic doping investigations<br>
+                        <strong>Mission:</strong> Political warfare, active measures<br>
+                        <strong>Tactics:</strong> Phishing campaigns, strategic leaks, public attribution</p>
+                    </div>
+                    <div class="actor-card">
+                        <h4>Internet Research Agency</h4>
+                        <p><strong>Leader:</strong> Yevgeny Prigozhin ("Putin's Chef")<br>
+                        <strong>Mission:</strong> Social media manipulation, election interference<br>
+                        <strong>Scale:</strong> $1,400/week salaries (4x normal Russian pay) for professional trolls</p>
+                    </div>
+                </div>
+
+                <div class="danger-zone">
+                    <h4>Current State: Embedded and Escalating (2022-Present)</h4>
+                    <p>Russian hackers are now embedded in US nuclear facilities, water treatment plants, and electrical grids. The 2022 invasion of Ukraine has been accompanied by unprecedented cyber warfare, with lessons being applied globally. Russia has proven cyber capabilities can achieve strategic military objectives traditionally requiring conventional forces.</p>
+                </div>
+            </div>
+
+            <!-- Ukraine: Modern Warfare Tab -->
+            <div id="ukraine" class="tab-content">
+                <div class="section-title">Ukraine War: Laboratory for Future Conflict</div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">80%</div>
+                        <div class="stat-label">Of casualties now from drone strikes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">89K</div>
+                        <div class="stat-label">Russian targets hit by Ukrainian drones (May 2024)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$400</div>
+                        <div class="stat-label">Drone cost that can destroy $2M tank</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">27</div>
+                        <div class="stat-label">US Abrams tanks destroyed (of 31 sent)</div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Drone</span>
+                            <span>The UAV Revolution</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">How Drones Upended Modern Warfare</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>From Weddings to Warfare</h4>
+                                <p>"We call them celebration drones. They were used to film weddings and parties before the war." Commercial quadcopters costing hundreds of dollars now determine battlefield outcomes worth billions. "Systemic rupture" in warfare.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Casualty Revolution</h4>
+                                <p>Up to 80% of all Russian and Ukrainian casualties now caused by drone strikes, versus artillery which previously dominated. 400,000 Ukrainian and nearly 1 million Russian casualties since 2022, with roughly half of Russian losses in 2023-2024 due to drone proliferation.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Tank Killer Economics</h4>
+                                <p>$400 drone can quickly destroy $2 million tank. Of 31 M1A1 Abrams tanks the US sent to Ukraine in 2023, all but four have been destroyed. Mechanized assaults now almost impossible in drone age.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Gamification of War</h4>
+                                <p>Ukrainian program awards points for confirmed drone strikes: eliminating a tank gets 8 points, Russian drone pilot gets 25. Points traded for better weapons, directing equipment to most effective units.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Defense</span>
+                            <span>Counter-Drone Measures</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">The Arms Race Against UAVs</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Physical Defenses</h4>
+                                <p>Fishing nets over supply routes, "cope cages" (steel grids) on tanks. Limited effectiveness against determined attacks. Soldiers carry shotguns but require quick reactions at dangerously close range.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Electronic Warfare Success</h4>
+                                <p>By end of 2023, both sides knocking out roughly 75% of radio-controlled drones with signal jamming. Most successful defense so far but drove innovation in countermeasures.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Fiber-Optic Evolution</h4>
+                                <p>Russia started using drones controlled by fiber-optic filament - cable spools out as drone flies, stretching up to 15 miles. Physical tether prevents jamming and makes operator location harder to detect.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Interceptor Economics</h4>
+                                <p>Anti-drone interceptors can cost upwards of $1 million per shot. Unsustainable economics when facing swarms of $400 drones. "Everyone is trying to find countermeasures to fiber-optic drones. We don't have them, and neither do the Russians."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Spiderweb</span>
+                            <span>Operation Spiderweb - June 1, 2024</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Most Audacious Drone Attack in History</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>18-Month Preparation</h4>
+                                <p>117 FPV quadcopters smuggled into Russia and hidden inside shipping containers with remote-controlled roofs. Containers loaded onto semitrucks, positioned near five air bases across Russia.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Simultaneous Strike</h4>
+                                <p>With all trucks in position, container roof panels simultaneously retracted and drones took flight. Coordinated attack across thousands of miles of Russian territory.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Strategic Impact</h4>
+                                <p>Hit up to 20 parked aircraft, including long-range bombers that had fired cruise missiles at Ukrainian cities. Destroyed about 10 aircraft. $1 million drone fleet inflicted several billion dollars in damage.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Global Warning</h4>
+                                <p>Delivered warning to US/allies about vulnerabilities. Chinese interests buying American farmland near military bases - "could be growing soybeans, but could also be staging grounds for drone swarms that would make Ukrainian attacks look minuscule."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Future of Warfare</h4>
+                    <p>"I hope no one in the world has to fight like this in the future. There is no place to rest, to think. It is hell." - Ukrainian commander on omnipresent drone terror. Both countries testing swarm technology with AI-guided drones working to surround and kill targets.</p>
+                </div>
+            </div>
+
+            <!-- Nuclear Risks Tab -->
+            <div id="nuclear" class="tab-content">
+                <div class="section-title">Nuclear Winter: The Ultimate Cyber-Physical Threat</div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">5.1B</div>
+                        <div class="stat-label">People who could die from nuclear winter famine</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">Of planet starving within 2 years (US-Russia war)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2B</div>
+                        <div class="stat-label">Deaths from India-Pakistan nuclear exchange</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">Nuclear-armed states in 2024</div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Study</span>
+                            <span>Nuclear Famine Research (Nature Food, August 2022)</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Global Agricultural Collapse Scenarios</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Nuclear Winter Mechanism</h4>
+                                <p>Soot blasted into atmosphere following nuclear exchange would obliterate crop production by blocking sunlight and lowering temperatures. Climate models show even small nuclear war has far-reaching consequences.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>US-Russia Full Exchange</h4>
+                                <p>Most extreme scenario: more than 75% of planet starving within two years. Almost all countries affected except Australia and few nations in Africa and South America. Complete civilizational collapse.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Regional Nuclear War</h4>
+                                <p>Even smaller India-Pakistan exchange could kill over 2 billion people through famine within two years. Mid-high latitude nations (US, Russia) hit hardest, causing export restrictions.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Limited Mitigation</h4>
+                                <p>Using livestock feed for humans, eliminating food waste could provide limited help after small war but minimal use after major conflicts. Alternative foods (mushrooms, seaweed, insects) not sufficient at scale.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Context</span>
+                            <span>Cyber-Nuclear Nexus</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">How Cyberweapons Increase Nuclear Risks</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Command & Control Vulnerabilities</h4>
+                                <p>Nuclear command systems increasingly digital and networked, creating new attack vectors. False positives from cyber attacks could trigger nuclear response. Russian hackers already in US nuclear facilities.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Attribution Confusion</h4>
+                                <p>Difficulty determining cyberattack origin could lead to nuclear escalation against wrong target. Shadow Brokers showed how stolen tools create false flag opportunities for third parties.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Critical Infrastructure Targeting</h4>
+                                <p>Cyber attacks on power grids, financial systems, or military networks could be interpreted as prelude to nuclear attack, triggering preemptive response. Ukraine grid attacks demonstrated feasibility.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Escalation Ladder</h4>
+                                <p>Cyber operations lower barrier to conflict initiation but create unpredictable escalation dynamics. Digital attacks can rapidly spiral beyond original intent, as seen with NotPetya global spread.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actor-grid">
+                    <div class="actor-card">
+                        <h4>Nuclear-Armed Cyber Powers</h4>
+                        <p><strong>US:</strong> Most extensive cyber arsenal, created zero-day market<br>
+                        <strong>Russia:</strong> Proven willingness to use destructive cyber attacks<br>
+                        <strong>China:</strong> Rapidly advancing capabilities, AI integration<br>
+                        <strong>North Korea:</strong> Reckless use of stolen NSA tools (WannaCry)</p>
+                    </div>
+                    <div class="actor-card">
+                        <h4>Vulnerable Systems</h4>
+                        <p><strong>Early Warning:</strong> Radar and satellite systems<br>
+                        <strong>Communications:</strong> Military command networks<br>
+                        <strong>Power:</strong> Nuclear facility operations<br>
+                        <strong>Launch:</strong> Missile control systems potentially hackable</p>
+                    </div>
+                </div>
+
+                <div class="danger-zone">
+                    <h4>Perfect Storm Scenario</h4>
+                    <p>Combination of cyber warfare capabilities, nuclear arsenals, and attribution challenges creates unprecedented risk. Research shows even "limited" nuclear exchange between regional powers could trigger global famine killing billions. Meanwhile, cyber operations against nuclear-armed states are increasing in frequency and sophistication.</p>
+                </div>
+            </div>
+
+            <!-- Key Chapters Tab -->
+            <div id="chapters" class="tab-content">
+                <input type="text" class="search-box" placeholder="Search chapters..." id="chapterSearch">
+                
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 1</span>
+                            <span>The Discovery</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Origins of the Zero-Day Market</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>The Snowden Closet (2013)</h4>
+                                <p>Perlroth discovers the zero-day world while working on NSA encryption stories in Arthur Sulzberger's windowless storage closet. Documents reveal the NSA's vast zero-day arsenal but lack details on sourcing.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Zero-Days Defined</h4>
+                                <p>Software/hardware flaws with no existing patch. Named because companies have "zero days" to fix them once discovered. Like having a spare key to any locked building - ultimate hacking tools.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Digital Superpowers</h4>
+                                <p>A first-rate iPhone zero-day allows remote, undetected access to all data. Seven zero-days in Windows/Siemens software enabled Stuxnet's sabotage of Iran's nuclear program.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>The Market Reality</h4>
+                                <p>What started as legitimate vulnerability research became a shadow economy where governments, criminals, and mercenaries trade digital weapons worth millions of dollars.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 4</span>
+                            <span>The Brokers</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Underground Market Development</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Jimmy Sabien - First Broker</h4>
+                                <p>Former military network defender becomes first zero-day broker in late 1990s. Offered iDefense $150,000 for exploits they paid hackers $400 for. "Access is king" - the jewelry thief analogy.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Early Government Demand</h4>
+                                <p>CIA, NSA, and other agencies realized they needed zero-days for digital espionage. Contractors charged ~$1M for sets of 10 exploits, budgeting $500k to buy bugs and develop them.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Eastern European Suppliers</h4>
+                                <p>Post-Soviet collapse created pool of skilled hackers without jobs. Israeli Unit 8200 veterans also major suppliers. Payments made in cash via Israeli middlemen with duffel bags.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Market Explosion</h4>
+                                <p>By 2010s, hundreds of contractors trafficking in exploits. Duplication problem: same exploits sold to multiple agencies. Market prices doubling annually as demand soared.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h4>The Grugq's Cautionary Tale</h4>
+                            <p>South African exploit broker who made fatal mistake of talking to Forbes reporter in 2012. Business plummeted by half after going public. Lesson: absolute secrecy essential in this market.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 9</span>
+                            <span>Natanz Nuclear Facility, Iran</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Stuxnet: The First Cyberweapon of Mass Destruction</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Bush's "Third Option" (2007)</h4>
+                                <p>Faced with Iran's nuclear program, Bush needed alternative to diplomacy (failed) or military strike (risked WWIII). NSA's Keith Alexander proposed cyberattack using weaponized code.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Olympic Games Operation</h4>
+                                <p>US-Israeli cooperation targeting Iran's P-1 centrifuges at Natanz. Used 7 zero-day exploits (4 Microsoft, 3 Siemens) to remotely control and destroy uranium enrichment equipment.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Technical Sophistication</h4>
+                                <p>500KB worm (50x bigger than anything before, 100x the code to send Apollo 11 to moon). Specifically targeted PLCs controlling exactly 164 centrifuges - Natanz's configuration.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Stuxnet's Escape (2010)</h4>
+                                <p>Worm leaked beyond Natanz, spreading globally. Researchers reverse-engineered it, revealing US-Israeli operation. Crossed Rubicon from espionage to offensive cyberweapons.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-zone">
+                            <h4>Pandora's Box Opened</h4>
+                            <p>"This has a whiff of August 1945... Somebody just used a new weapon, and this weapon will not be put back in the box." - Former NSA Director Michael Hayden</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 17</span>
+                            <span>Buenos Aires, Argentina</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Global Zero-Day Labor Market</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>"Atado con Alambre" Culture</h4>
+                                <p>Argentine hackers excel due to "held together with wire" mentality - working around limitations breeds innovation. High-quality education but restricted access to technology forces reverse engineering skills.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Shifting US Advantage</h4>
+                                <p>American engineers now "skim the surface" while Argentines must understand systems "down to the metal." International programming contests increasingly dominated by non-US teams.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Foreign Government Buyers</h4>
+                                <p>At Ekoparty hacking conference, Middle Eastern buyers recruit Argentine talent. "Throw a stone, you'll hit someone selling exploits." Zero-day market has gone global.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Moral Neutrality</h4>
+                                <p>"A guy from the NSA and a guy from Iran show up with big bags of cash. Do you perform ethical analysis? Or do you weigh the bags of cash?" No inherent loyalty to US vs adversaries.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h4>Surveillance Incident</h4>
+                            <p>Perlroth's hotel room searched, laptop repositioned in safe. Warning shot from unknown actors monitoring her investigation of the global exploit trade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 19</span>
+                            <span>Washington, D.C. - Grid Under Attack</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Russian Assault on American Infrastructure</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Energetic Bear Campaign (2012-2014)</h4>
+                                <p>Sophisticated Russian hacking group infiltrates US oil, gas, and electrical utilities. 198 attacks on critical infrastructure in 2012 alone - 52% increase from previous year.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Post-Stuxnet Retaliation</h4>
+                                <p>Russian attacks began in 2010, same year Stuxnet discovered. Moscow pushed for international cyberweapons ban but was dismissed by Washington, leading to reciprocal infiltration.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Sandworm Evolution</h4>
+                                <p>Advanced Russian GRU unit using BlackEnergy malware and zero-days to penetrate industrial control systems. Tested on Ukrainian media companies before major grid attacks.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Ukraine Blackouts (2015)</h4>
+                                <p>First successful cyberattack on power grid. 230,000 Ukrainians lost power as Russian hackers remotely controlled circuit breakers, then cut emergency communications and backup power.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 20</span>
+                            <span>Russian Election Interference</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">The 2016 Election Attack</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Internet Research Agency</h4>
+                                <p>Putin's propaganda machine led by ex-convict Yevgeny Prigozhin. $1400/week salaries for trolls (4x normal pay) to operate fake social media accounts and sow division.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>DNC Hack</h4>
+                                <p>Two Russian groups: Cozy Bear (SVR) inside for over a year, Fancy Bear (GRU) via John Podesta phishing ("This is a legitimate email" - meant "illegitimate").</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Weaponized Leaks</h4>
+                                <p>Guccifer 2.0 persona releases stolen emails via WikiLeaks and DCLeaks, timed for maximum damage. "Kompromat" - Russian art of spreading damaging information to discredit enemies.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Voter System Penetration</h4>
+                                <p>Russians probed all 50 state voter systems, breached Arizona and Illinois databases. Even small manipulations could cause chaos and undermine election legitimacy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 21</span>
+                            <span>The Shadow Brokers</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">NSA Arsenal Exposed</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>Initial Leak (August 2016)</h4>
+                                <p>Mysterious group releases NSA's TAO hacking tools with auction - "How much you pay for enemies cyber weapons?" Timing suspiciously coincides with DNC hacks.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Cisco/Fortinet Zero-Days</h4>
+                                <p>Leaked exploits compromised 11 different security products. Companies raced to patch holes that NSA had withheld for years, despite supposed "NOBUS" (Nobody But Us) policy.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>EternalBlue Released (April 2017)</h4>
+                                <p>Crown jewel of NSA arsenal - "hard to detect and easy to use" exploit for Windows systems. Microsoft had patched underlying bugs just weeks before after NSA tip-off.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Jake Williams Exposed</h4>
+                                <p>Former TAO operator outed by Shadow Brokers after criticizing them. Demonstrated insider knowledge with agency code words like "OddJob" and "Q Group."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 22</span>
+                            <span>WannaCry & NotPetya Attacks</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">American Cyberweapons Turned Against the World</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>WannaCry (May 2017)</h4>
+                                <p>North Korean ransomware using NSA's EternalBlue hit 200,000 organizations in 150 countries. British hospitals turned away patients, Chinese universities frozen. 22-year-old hero found kill switch.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>NotPetya (June 2017)</h4>
+                                <p>Russia's most destructive cyberattack ever, disguised as ransomware. Used EternalBlue + EternalRomance + MimiKatz to spread globally from Ukrainian tax software. $10+ billion in damages.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Global Collateral Damage</h4>
+                                <p>Merck, Maersk, FedEx, hospitals, even Cadbury chocolate factory in Tasmania affected. Chernobyl radiation monitoring went offline. Russia hit own oil company Rosneft.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Microsoft's Response</h4>
+                                <p>Brad Smith demands "Digital Geneva Convention" - governments shouldn't stockpile vulnerabilities or attack civilians. "This attack provides yet another example of why stockpiling vulnerabilities by governments is such a problem."</p>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-zone">
+                            <h4>The New Normal</h4>
+                            <p>Insurance companies invoke "war exemption" clauses for NotPetya damages. Russian cyberattack qualified as act of war despite no direct loss of life - demonstrating how stolen NSA weapons could do as much damage as hostile military force.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header">
+                        <div>
+                            <span class="chapter-number">Ch 23</span>
+                            <span>The Backyard - Baltimore</span>
+                        </div>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="section-title">Cyberweapons Come Home</div>
+                        <div class="key-points">
+                            <div class="point-card">
+                                <h4>EternalBlue's Long Tail</h4>
+                                <p>By 2019, Microsoft encountered NSA's stolen exploits daily in new attacks. "Eternal is the perfect name for a weapon so useful, it will not go away." Target: American towns and cities.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Baltimore Ransomed (May 2019)</h4>
+                                <p>Just miles from NSA headquarters, city government locked out of systems. Residents couldn't pay water bills or property taxes. Homes went into foreclosure. $18M cleanup costs vs. $100K+ ransom.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>NSA Denial</h4>
+                                <p>"The characterization that there's an indefensible nation-state tool propagating ransomware is simply untrue" - Rob Joyce. Agency dodges responsibility despite Microsoft finding EternalBlue in attacks.</p>
+                            </div>
+                            <div class="point-card">
+                                <h4>Rogers' Toyota Analogy</h4>
+                                <p>Former NSA Director: "If Toyota makes pickup trucks and someone welds explosive device onto front... is that Toyota's responsibility?" Microsoft's response: "Exploits are inherently dangerous... they're already bombs."</p>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h4>Systemic Failure</h4>
+                            <p>Chinese hackers stole NSA tools years before Shadow Brokers leak. Legion Amber used American exploits to steal nuclear propulsion technologies. The NOBUS (Nobody But Us) assumption proved catastrophically wrong.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Concepts Tab -->
+            <div id="concepts" class="tab-content">
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>Zero-Day Vulnerability</h3>
+                        <p>Software/hardware flaw unknown to vendor with no patch available. Named because companies have "zero days" to fix once discovered. Digital skeleton key to any system.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Drone Swarm</h3>
+                        <p>Multiple AI-guided UAVs working together to surround and eliminate targets. Represents next evolution in autonomous warfare technology being tested in Ukraine.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Nuclear Winter</h3>
+                        <p>Climate phenomenon where soot from nuclear explosions blocks sunlight, causing global temperature drop and agricultural collapse. Could kill billions through famine.</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>Hybrid Warfare</h3>
+                        <p>Russian doctrine combining conventional military, cyber operations, disinformation, and economic pressure. Blurs lines between war and peace, military and civilian targets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Tab -->
+            <div id="timeline" class="tab-content">
+                <div class="section-title">Evolution to Modern Multi-Domain Warfare</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>2010 - Stuxnet Discovery</h3>
+                        <p>First cyberweapon of mass destruction revealed. Signals beginning of cyber-physical warfare era and Russian retaliation campaigns.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>2015 - Ukraine Grid Attack</h3>
+                        <p>First successful cyberattack on electrical grid. 230,000 lose power. Proves feasibility of cyber-physical attacks on civilian infrastructure.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>2017 - NotPetya Global Damage</h3>
+                        <p>Russian cyberweapon causes $10+ billion worldwide using stolen NSA tools. Demonstrates how cyberweapons can match destructive power of conventional military forces.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>2022 - Ukraine War Begins</h3>
+                        <p>Largest military conflict in Europe since WWII becomes laboratory for future warfare. Drones revolutionize battlefield, causing 80% of casualties by 2024.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>2024 - Operation Spiderweb</h3>
+                        <p>Ukraine's most audacious drone attack hits Russian airfields 3,000 miles away. $1M drone fleet causes billions in damage, warning of vulnerabilities worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+            
+            const chapters = document.querySelectorAll('.chapter');
+            chapters.forEach(chapter => {
+                const header = chapter.querySelector('.chapter-header');
+                header.addEventListener('click', function() {
+                    chapter.classList.toggle('expanded');
+                });
+            });
+            
+            const chapterSearch = document.getElementById('chapterSearch');
+            if (chapterSearch) {
+                chapterSearch.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    chapters.forEach(chapter => {
+                        const text = chapter.textContent.toLowerCase();
+                        chapter.style.display = text.includes(searchTerm) || searchTerm === '' ? 'block' : 'none';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
