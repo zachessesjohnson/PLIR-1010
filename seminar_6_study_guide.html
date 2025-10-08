@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside the Jihad: International Relations Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #e74c3c;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .course-info {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .nav-tabs button {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #1a1a2e;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs button:hover {
+            background: #e74c3c;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+        }
+
+        .nav-tabs button.active {
+            background: #1a1a2e;
+            color: white;
+            border-color: #1a1a2e;
+        }
+
+        .content-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #1a1a2e;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            border-bottom: 4px solid #e74c3c;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            color: #e74c3c;
+            font-size: 1.6em;
+            margin: 30px 0 15px;
+        }
+
+        h4 {
+            color: #1a1a2e;
+            font-size: 1.3em;
+            margin: 20px 0 12px;
+        }
+
+        .theory-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .theory-card h3, .theory-card h4 {
+            color: white;
+        }
+
+        .case-study {
+            background: #ecf0f1;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+            border-radius: 8px;
+        }
+
+        .case-study h4 {
+            color: #e74c3c;
+            margin-top: 0;
+        }
+
+        .evidence-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .evidence-box h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .policy-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .policy-box h3, .policy-box h4 {
+            color: white;
+        }
+
+        .actor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .actor-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .actor-card h4 {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .framework-box {
+            background: #e8f5e9;
+            border: 3px solid #4caf50;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .framework-box h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        .critical-question {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .critical-question h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .quote-box {
+            background: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 8px;
+            color: #0d47a1;
+            font-size: 1.05em;
+        }
+
+        .debate-section {
+            background: #fff9e6;
+            border: 3px dashed #ff9800;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .debate-section h4 {
+            color: #e65100;
+            margin-bottom: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            padding: 20px;
+            margin: 20px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs button {
+                width: 100%;
+            }
+
+            .actor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Inside the Jihad</h1>
+            <p class="subtitle">International Relations Analysis</p>
+            <p class="course-info">A Case Study in Transnational Terrorism, Intelligence Operations, and Global Security</p>
+            <p style="margin-top: 10px; color: #666;">by Omar Nasiri (pseudonym) • Published 2006</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button onclick="showSection('overview')" class="active">IR Overview</button>
+            <button onclick="showSection('theories')">Theoretical Frameworks</button>
+            <button onclick="showSection('actors')">State & Non-State Actors</button>
+            <button onclick="showSection('cases')">Case Studies</button>
+            <button onclick="showSection('security')">Security Studies</button>
+            <button onclick="showSection('policy')">Foreign Policy Analysis</button>
+            <button onclick="showSection('globalization')">Globalization & Terrorism</button>
+            <button onclick="showSection('debates')">Analytical Debates</button>
+        </div>
+
+        <!-- IR Overview Section -->
+        <div id="overview" class="content-section active">
+            <h2>International Relations Overview</h2>
+            
+            <div class="framework-box">
+                <h4>Why This Book Matters for IR Studies</h4>
+                <p><strong>Inside the Jihad</strong> provides primary source evidence for understanding:</p>
+                <ul>
+                    <li><strong>Transnational terrorism:</strong> How non-state actors operate across borders</li>
+                    <li><strong>Intelligence cooperation:</strong> Inter-agency dynamics and coordination failures</li>
+                    <li><strong>Failed states:</strong> Afghanistan as ungoverned space enabling global threats</li>
+                    <li><strong>Radicalization processes:</strong> Individual-level mechanisms driving political violence</li>
+                    <li><strong>Blowback effects:</strong> Unintended consequences of Western interventionism</li>
+                    <li><strong>Asymmetric warfare:</strong> How weak actors challenge powerful states</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Historical Context: The 1990s Transition</h4>
+                <p><strong>Post-Cold War Security Environment:</strong></p>
+                <ul>
+                    <li><strong>1989-1991:</strong> Soviet withdrawal from Afghanistan; collapse of USSR</li>
+                    <li><strong>1991:</strong> Gulf War; U.S. bases in Saudi Arabia</li>
+                    <li><strong>1992:</strong> Algerian elections canceled; civil war begins</li>
+                    <li><strong>1992-1995:</strong> Bosnian War; Western delayed intervention</li>
+                    <li><strong>1994-1996:</strong> First Chechen War; Russian atrocities</li>
+                    <li><strong>1996:</strong> Taliban capture Kabul; bin Laden returns to Afghanistan</li>
+                    <li><strong>1998:</strong> East Africa embassy bombings; U.S. retaliatory strikes</li>
+                </ul>
+                <p><strong>Key Transformation:</strong> From nationalist jihadist movements fighting local regimes to Al Qaeda's globalized jihad targeting the "far enemy" (United States).</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Central IR Questions Addressed</h3>
+                <ol>
+                    <li><strong>Power & Security:</strong> How do non-state actors challenge state hegemony through asymmetric violence?</li>
+                    <li><strong>Anarchy & Cooperation:</strong> Why did European intelligence services fail to coordinate effectively against common threat?</li>
+                    <li><strong>Identity & Norms:</strong> How does transnational Islamic identity transcend Westphalian state system?</li>
+                    <li><strong>Globalization:</strong> How does interconnectedness enable terrorism while creating vulnerabilities?</li>
+                    <li><strong>Intervention & Sovereignty:</strong> What are consequences of Western military involvement in Muslim-majority regions?</li>
+                    <li><strong>Intelligence & Statecraft:</strong> How do covert operations shape international relations?</li>
+                </ol>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Unique Evidentiary Value</h4>
+                <p>Nasiri's account provides rare insider perspective on:</p>
+                <ul>
+                    <li><strong>Training camp operations:</strong> Organizational structure, financing, recruitment (1995-1996)</li>
+                    <li><strong>European networks:</strong> GIA cells in Brussels, London's "Londonistan" phenomenon</li>
+                    <li><strong>Intelligence tradecraft:</strong> Asset recruitment, handling, exploitation, betrayal</li>
+                    <li><strong>Ideological indoctrination:</strong> How theological arguments justify political violence</li>
+                    <li><strong>Operational planning:</strong> 1995 Paris bombings, alleged 1998 World Cup plot</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Theoretical Frameworks Section -->
+        <div id="theories" class="content-section">
+            <h2>Theoretical Frameworks</h2>
+
+            <div class="theory-card">
+                <h3>Realism: Power Politics and Security Dilemma</h3>
+                <h4>Core Realist Concepts:</h4>
+                <ul>
+                    <li><strong>Anarchy:</strong> Afghan failed state (1992-1996) created ungoverned space for terrorist camps</li>
+                    <li><strong>Balance of power:</strong> Jihadist networks as asymmetric balancing against U.S. hegemony</li>
+                    <li><strong>Security dilemma:</strong> Western interventions provoke defensive reactions that escalate into offensive terrorism</li>
+                    <li><strong>Self-help:</strong> Without international protection, Muslim communities turn to jihadist groups</li>
+                    <li><strong>Proxy warfare:</strong> Pakistan's ISI uses Taliban and training camps to advance regional interests</li>
+                </ul>
+                
+                <h4>Evidence from Text:</h4>
+                <ul>
+                    <li>ISI facilitated bin Laden's return to Afghanistan (May 1996) to support Taliban</li>
+                    <li>Hekmatyar's Hezb-i-Islami received Pakistani backing as proxy force</li>
+                    <li>Training camps prepared fighters for conflicts serving state sponsors' interests (Kashmir, Chechnya)</li>
+                    <li>Western support for authoritarian regimes (Algeria, Egypt, Saudi Arabia) created demand for alternative security providers</li>
+                </ul>
+
+                <h4>Realist Predictions:</h4>
+                <p>Jihadist violence will continue as long as power imbalances exist and Muslim-majority regions remain weak relative to Western military might. Addressing ideology is irrelevant; only changes in material power distribution matter.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Liberalism: Institutions, Cooperation, and Interdependence</h3>
+                <h4>Core Liberal Concepts:</h4>
+                <ul>
+                    <li><strong>Democratic peace:</strong> Liberal democracies' civil liberties (free speech, asylum) exploited by terrorists</li>
+                    <li><strong>International institutions:</strong> Lack of coordination mechanisms enabled "Londonistan"</li>
+                    <li><strong>Interdependence:</strong> Globalization weaponized—open borders, communications, finance</li>
+                    <li><strong>Collective action problems:</strong> Britain's tolerance imposed negative externalities on France</li>
+                    <li><strong>Legal frameworks:</strong> Different national laws on terrorism hindered cooperation</li>
+                </ul>
+
+                <h4>Evidence from Text:</h4>
+                <ul>
+                    <li><strong>Anglo-French tensions:</strong> Rachid Ramda fought extradition 10 years; France furious at UK tolerance</li>
+                    <li><strong>Schengen Agreement:</strong> Free movement within Europe enabled GIA operations but UK border created bottleneck</li>
+                    <li><strong>Asylum abuse:</strong> Abu Qatada, Abu Hamza granted refugee status despite extremist activities</li>
+                    <li><strong>Intelligence stovepiping:</strong> MI5/MI6/police rivalries prevented information sharing</li>
+                    <li><strong>"Covenant of Security":</strong> UK's implicit deal with extremists undermined European security</li>
+                </ul>
+
+                <h4>Liberal Solutions:</h4>
+                <p>Strengthen international institutions for intelligence sharing; harmonize legal frameworks on terrorism prosecution; address root causes through economic development and democratic reform.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Constructivism: Identity, Norms, and Ideational Factors</h3>
+                <h4>Core Constructivist Concepts:</h4>
+                <ul>
+                    <li><strong>Identity formation:</strong> Transnational Islamic identity (ummah) transcends nation-states</li>
+                    <li><strong>Socialization:</strong> Training camps created shared jihadist identity through common experience</li>
+                    <li><strong>Norms and ideas:</strong> Theological interpretations (Qutb, Azzam) shaped strategic behavior</li>
+                    <li><strong>Intersubjective meaning:</strong> "Jihad" contested even within Islamic communities</li>
+                    <li><strong>Social construction of threat:</strong> Humiliation more important than material deprivation</li>
+                </ul>
+
+                <h4>Evidence from Text:</h4>
+                <ul>
+                    <li><strong>Nasiri's identity crisis:</strong> "Men who had no home. Men reviled in West because not white/Christian, reviled at home because no longer dressed/spoke like Muslims"</li>
+                    <li><strong>Camp brotherhood:</strong> Chechens, Algerians, Arabs, Kashmiris bonded through shared training</li>
+                    <li><strong>Ideological instruction:</strong> Nearly equal time on religious education as weapons training</li>
+                    <li><strong>Humiliation narrative:</strong> "Muslim world totally dependent on West—for dishwashers, clothes, cars, education, everything. It is humiliating, and every Muslim feels it"</li>
+                    <li><strong>Theological debates:</strong> Abu Qatada vs. Abu Hamza on GIA's takfir practices</li>
+                </ul>
+
+                <h4>Constructivist Analysis:</h4>
+                <p>Defeating terrorism requires changing ideas and identities, not just material capabilities. Western counterterrorism must engage theological arguments and address narrative of humiliation.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Critical Theory & Post-Colonialism</h3>
+                <h4>Core Critical Concepts:</h4>
+                <ul>
+                    <li><strong>Colonial legacy:</strong> French occupation of Algeria (1830-1962) created historical grievances</li>
+                    <li><strong>Structural violence:</strong> Western support for authoritarian regimes perpetuates oppression</li>
+                    <li><strong>Hegemonic discourse:</strong> "War on Terror" framing obscures Western complicity</li>
+                    <li><strong>Subaltern agency:</strong> Jihadist networks as marginalized actors challenging global order</li>
+                    <li><strong>Orientalism:</strong> Intelligence services' cultural incompetence reflects broader misrecognition</li>
+                </ul>
+
+                <h4>Evidence from Text:</h4>
+                <ul>
+                    <li><strong>Algeria:</strong> France supported military coup (1992) that canceled democratic elections</li>
+                    <li><strong>Palestine:</strong> "Jerusalem is the heart of Islam" but U.S. consistently backs Israeli occupation</li>
+                    <li><strong>Nasiri's critique:</strong> "You won't be free of terrorism until you get off our land and out of our politics"</li>
+                    <li><strong>Handler ignorance:</strong> Daniel, Mark had shallow understanding of Islam; couldn't distinguish ideological threats</li>
+                    <li><strong>Selective intervention:</strong> Delayed Bosnia response, ignored Chechnya, no action in Algeria</li>
+                </ul>
+
+                <h4>Critical Perspective:</h4>
+                <p>Terrorism is symptom of unjust international order. Western military dominance and economic exploitation create conditions for violent resistance. Emancipation requires structural transformation, not just counterterrorism.</p>
+            </div>
+
+            <div class="debate-section">
+                <h4>Theoretical Integration Exercise</h4>
+                <p><strong>Question:</strong> Which IR theory best explains the emergence of Al Qaeda in the 1990s?</p>
+                <ul>
+                    <li><strong>Realist answer:</strong> Power vacuum after Soviet withdrawal; weak states enabling non-state challengers</li>
+                    <li><strong>Liberal answer:</strong> Failure of international institutions; lack of cooperation mechanisms</li>
+                    <li><strong>Constructivist answer:</strong> Globalized Islamic identity; narrative of humiliation; ideological radicalization</li>
+                    <li><strong>Critical answer:</strong> Blowback from Western interventionism; post-colonial grievances; structural violence</li>
+                </ul>
+                <p><strong>Discussion:</strong> Which theory has greatest explanatory power? Can theories be synthesized? What policy prescriptions follow from each?</p>
+            </div>
+        </div>
+
+        <!-- Actors Section -->
+        <div id="actors" class="content-section">
+            <h2>State & Non-State Actors</h2>
+
+            <div class="framework-box">
+                <h4>Comparing State and Non-State Power</h4>
+                <table>
+                    <tr>
+                        <th>Dimension</th>
+                        <th>State Actors</th>
+                        <th>Non-State Actors (Al Qaeda, GIA)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Military Capability</strong></td>
+                        <td>Overwhelming conventional superiority</td>
+                        <td>Asymmetric tactics; terrorism as equalizer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Legitimacy</strong></td>
+                        <td>Westphalian sovereignty</td>
+                        <td>Religious authority; claim to represent ummah</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Territory</strong></td>
+                        <td>Defined borders; fixed targets</td>
+                        <td>Networked; no territory to defend; mobile</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Constraints</strong></td>
+                        <td>International law; domestic politics; norms</td>
+                        <td>Few constraints; willing to violate norms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vulnerabilities</strong></td>
+                        <td>Civilian populations; infrastructure; reputation</td>
+                        <td>Funding; leadership; safe havens</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="actor-grid">
+                <div class="actor-card">
+                    <h4>France (DGSE)</h4>
+                    <p><strong>Interests:</strong> Counterterrorism after 1995 bombings; maintaining influence in former colonies</p>
+                    <p><strong>Strategy:</strong> Human intelligence (HUMINT); recruit assets like Nasiri; coordinate with Belgium</p>
+                    <p><strong>Failures:</strong> Exploited Nasiri then abandoned him; lost Ali Touchent; strained relations with UK over "Londonistan"</p>
+                </div>
+
+                <div class="actor-card">
+                    <h4>United Kingdom (MI5/MI6)</h4>
+                    <p><strong>Interests:</strong> Protecting homeland from terrorism; maintaining civil liberties; avoiding alienating Muslim population</p>
+                    <p><strong>Strategy:</strong> "Covenant of Security"—tolerance of extremist organization if no domestic attacks; surveillance over prosecution</p>
+                    <p><strong>Failures:</strong> Finsbury Park became recruitment hub; poor intelligence sharing with France; cultural incompetence</p>
+                </div>
+
+                <div class="actor-card">
+                    <h4>Pakistan (ISI)</h4>
+                    <p><strong>Interests:</strong> Strategic depth in Afghanistan; proxy warfare against India in Kashmir; countering Iranian influence</p>
+                    <p><strong>Strategy:</strong> Support Taliban and training camps; facilitate bin Laden's return; train Kashmiri militants</p>
+                    <p><strong>Consequences:</strong> Blowback—proxies turn against sponsor; harboring terrorists damages international reputation</p>
+                </div>
+
+                <div class="actor-card">
+                    <h4>Taliban</h4>
+                    <p><strong>Interests:</strong> Consolidate control over Afghanistan; implement strict sharia; eliminate warlord competition</p>
+                    <p><strong>Strategy:</strong> Alliance with bin Laden (funding, fighters) in exchange for allowing training camps</p>
+                    <p><strong>Evolution:</strong> Initial tension with Arab fighters → pragmatic alliance → safe haven provider</p>
+                </div>
+
+                <div class="actor-card">
+                    <h4>Algeria (Military Regime)</h4>
+                    <p><strong>Interests:</strong> Maintain power after canceling 1992 elections; defeat Islamist insurgency</p>
+                    <p><strong>Strategy:</strong> Brutal counterinsurgency; possible infiltration of GIA with agent provocateurs</p>
+                    <p><strong>Controversy:</strong> Allegations security services committed massacres to discredit GIA (Ali Touchent mystery)</p>
+                </div>
+
+                <div class="actor-card">
+                    <h4>United States</h4>
+                    <p><strong>Interests:</strong> Protecting embassies/citizens abroad; maintaining Saudi alliance; counter-proliferation</p>
+                    <p><strong>Actions:</strong> 1998 cruise missile strikes (Sudan, Afghanistan) after embassy bombings</p>
+                    <p><strong>Limitations:</strong> Pre-9/11 focus on state actors; poor HUMINT in Afghanistan; no ground operations</p>
+                </div>
+            </div>
+
+            <div class="critical-question">
+                <h4>Principal-Agent Problems in State Sponsorship</h4>
+                <p><strong>Question:</strong> When states sponsor non-state actors as proxies, how do they maintain control?</p>
+                <p><strong>Evidence:</strong></p>
+                <ul>
+                    <li>Pakistan created Taliban but couldn't control them</li>
+                    <li>U.S. armed mujahidin in 1980s; many became anti-American jihadists</li>
+                    <li>Saudi donors funded camps but didn't control operations</li>
+                    <li>Algerian security possibly infiltrated GIA but lost control</li>
+                </ul>
+                <p><strong>IR Implication:</strong> Proxy warfare creates moral hazard and agency slack—principals cannot ensure agents serve their interests.</p>
+            </div>
+        </div>
+
+        <!-- Cases Section -->
+        <div id="cases" class="content-section">
+            <h2>Case Studies</h2>
+            
+            <div class="case-study">
+                <h4>Case Study: The Algerian Crisis and European Security</h4>
+                <p><strong>Background:</strong> 1992 military coup cancels elections; civil war kills 100,000+; France supports regime</p>
+                <p><strong>Consequences:</strong> GIA terrorism spills into Europe; 1994 Air France hijacking; 1995 Paris bombings</p>
+                <p><strong>IR Analysis:</strong> Shows how domestic political crises become transnational security threats through diaspora networks</p>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: "Londonistan" and Intelligence Cooperation</h4>
+                <p><strong>British Policy:</strong> Tolerance of extremist activities in exchange for no domestic attacks</p>
+                <p><strong>Outcomes:</strong> London becomes European jihad hub; strains Anglo-French relations; eventual 7/7 blowback</p>
+                <p><strong>IR Analysis:</strong> Demonstrates negative externalities of unilateral counterterrorism policies</p>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: Afghanistan as Failed State (1992-2001)</h4>
+                <p><strong>Context:</strong> Soviet withdrawal creates power vacuum; Taliban emerge but don't control entire territory</p>
+                <p><strong>Exploitation:</strong> Training camps train 10,000-100,000 militants from 40+ countries</p>
+                <p><strong>IR Analysis:</strong> Shows how state failure creates global security challenges requiring international response</p>
+            </div>
+        </div>
+
+        <!-- Security Section -->
+        <div id="security" class="content-section">
+            <h2>Security Studies</h2>
+
+            <div class="theory-card">
+                <h3>Asymmetric Warfare and the Logic of Terrorism</h3>
+                <p><strong>Strategic Rationale:</strong></p>
+                <ul>
+                    <li><strong>Cost imposition:</strong> Small terrorist investments generate massive defensive expenditures</li>
+                    <li><strong>Psychological warfare:</strong> Create fear disproportionate to actual damage</li>
+                    <li><strong>Provocation:</strong> Goad target into overreaction that creates new grievances</li>
+                    <li><strong>Publicity:</strong> Media coverage amplifies impact beyond immediate casualties</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Intelligence Failures: Lessons from the 1990s</h4>
+                <p><strong>Collection Failures:</strong> Difficulty recruiting sources; language barriers; cultural distance</p>
+                <p><strong>Analysis Failures:</strong> Mirror imaging; threat misperception; underestimating camps</p>
+                <p><strong>Dissemination Failures:</strong> Inter-agency rivalries; international barriers; stovepiping</p>
+                <p><strong>Asset Management:</strong> Short-term thinking; broken promises; poor handling protocols</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Radicalization Pathways</h4>
+                <p>Nasiri's journey illustrates multi-stage process:</p>
+                <ol>
+                    <li><strong>Alienation:</strong> Identity crisis between cultures</li>
+                    <li><strong>Initial Exposure:</strong> Family/social network influence</li>
+                    <li><strong>Social Network Entry:</strong> Living with extremists</li>
+                    <li><strong>Critical Event:</strong> Air France hijacking realization</li>
+                    <li><strong>Deep Immersion:</strong> Afghanistan training experience</li>
+                    <li><strong>Partial De-radicalization:</strong> Rejecting civilian targeting</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Policy Section -->
+        <div id="policy" class="content-section">
+            <h2>Foreign Policy Analysis</h2>
+
+            <div class="debate-section">
+                <h4>Root Causes vs. Security Response Debate</h4>
+                <p><strong>Position 1: Address Root Causes</strong></p>
+                <ul>
+                    <li>Resolve Palestinian conflict; end support for dictators</li>
+                    <li>Withdraw military forces from Muslim regions</li>
+                    <li>Economic development to reduce dependency</li>
+                </ul>
+                
+                <p><strong>Position 2: Pure Security Response</strong></p>
+                <ul>
+                    <li>Eliminate safe havens through military action</li>
+                    <li>Aggressive counterterrorism operations</li>
+                    <li>Strengthen border security and surveillance</li>
+                </ul>
+                
+                <p><strong>Synthesized Approach:</strong> Multi-dimensional strategy combining short-term disruption, medium-term counter-ideology, and long-term grievance reduction.</p>
+            </div>
+
+            <div class="policy-box">
+                <h3>Counterterrorism Lessons</h3>
+                <ol>
+                    <li><strong>Human Intelligence Critical:</strong> Assets like Nasiri invaluable but require better management</li>
+                    <li><strong>Understand Ideology:</strong> Can't defeat what you don't understand</li>
+                    <li><strong>International Cooperation:</strong> Transnational threats require coordinated response</li>
+                    <li><strong>Avoid Blowback:</strong> Consider long-term consequences of tactical gains</li>
+                    <li><strong>No Easy Solutions:</strong> Complex problems require sustained, multi-dimensional responses</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Globalization Section -->
+        <div id="globalization" class="content-section">
+            <h2>Globalization & Terrorism</h2>
+
+            <div class="theory-card">
+                <h3>How Globalization Enabled Jihadist Networks</h3>
+                <p><strong>Transportation:</strong> Cheap air travel enabled global recruitment and training</p>
+                <p><strong>Communications:</strong> Coordination across borders via phone, fax, early internet</p>
+                <p><strong>Finance:</strong> Money transferred globally via informal networks</p>
+                <p><strong>Migration:</strong> Diaspora communities provided recruitment base</p>
+                <p><strong>Media:</strong> Propaganda distributed through VHS tapes, newsletters, lectures</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Three Waves of Jihadist Mobilization</h4>
+                <p><strong>Wave 1 (1950s-1970s):</strong> Anti-colonial nationalism (FLN, PLO)</p>
+                <p><strong>Wave 2 (1980s-1990s):</strong> Anti-regime Islamism (GIA, Egyptian groups)</p>
+                <p><strong>Wave 3 (Mid-1990s+):</strong> Global jihad targeting "far enemy" (Al Qaeda)</p>
+            </div>
+
+            <div class="evidence-box">
+                <h4>The Schengen Paradox</h4>
+                <p>European integration facilitated terrorist operations:</p>
+                <ul>
+                    <li>Free movement enabled weapons/operatives across borders</li>
+                    <li>Difficult to track movements within Schengen zone</li>
+                    <li>UK exemption created security bottleneck but also safe haven</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Debates Section -->
+        <div id="debates" class="content-section">
+            <h2>Analytical Debates</h2>
+
+            <div class="debate-section">
+                <h4>Clash of Civilizations vs. Political Conflict</h4>
+                <p><strong>Cultural/Religious Conflict View:</strong> Incompatible values drive inevitable conflict</p>
+                <p><strong>Political Grievances View:</strong> Specific policies (Palestine, Algeria, military presence) drive terrorism</p>
+                <p><strong>Evidence:</strong> Nasiri explicitly states "You won't be free of terrorism until you get off our land and out of our politics"</p>
+            </div>
+
+            <div class="debate-section">
+                <h4>Rational Actors vs. Fanatics</h4>
+                <p><strong>Rationality Evidence:</strong> Strategic sophistication; professional training; calculated targeting</p>
+                <p><strong>Fanaticism Evidence:</strong> Suicide operations; absolutist ideology; GIA massacres</p>
+                <p><strong>Synthesis:</strong> Organizations rational at strategic level; individuals may have mixed motivations</p>
+            </div>
+
+            <div class="critical-question">
+                <h4>Democracy vs. Stability Dilemma</h4>
+                <p><strong>Algeria 1992:</strong> Should international community have pressured for democratic transition?</p>
+                <p><strong>Arguments FOR democracy:</strong> Legitimacy; avoiding radicalization; consistency</p>
+                <p><strong>Arguments FOR stability:</strong> Preventing theocracy; protecting rights; regional stability</p>
+                <p><strong>Result:</strong> Supporting military coup led to civil war and terrorism spillover</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Contemporary Relevance</h4>
+                <p><strong>What Changed:</strong> Decentralization (ISIS → lone wolves); online radicalization; simplified attacks</p>
+                <p><strong>What Remains:</strong> Grievance narratives; diaspora alienation; safe haven problem; intelligence challenges</p>
+                <p><strong>Policy Lessons:</strong> Invest in HUMINT; understand ideology; international cooperation; address root causes; avoid blowback</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Inside the Jihad: My Life with Al Qaeda</strong> by Omar Nasiri (pseudonym)</p>
+        <p style="margin-top: 10px;">Published by Basic Books, 2006</p>
+        <p style="margin-top: 15px; font-size: 0.95em; font-style: italic;">
+            This educational guide provides International Relations analysis of primary source material.<br>
+            For academic use in understanding transnational terrorism, intelligence operations, and global security.
+        </p>
+        <p style="margin-top: 15px; font-size: 0.9em;">
+            <strong>Recommended Complementary Readings:</strong><br>
+            • Marc Sageman, "Understanding Terror Networks" (2004)<br>
+            • Peter Bergen, "The Osama bin Laden I Know" (2006)<br>
+            • Lawrence Wright, "The Looming Tower" (2006)<br>
+            • Robert Pape, "Dying to Win: The Strategic Logic of Suicide Terrorism" (2005)<br>
+            • Steve Coll, "Ghost Wars" (2004)
+        </p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-tabs button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                const buttons = Array.from(document.querySelectorAll('.nav-tabs button'));
+                const activeButton = document.querySelector('.nav-tabs button.active');
+                const currentIndex = buttons.indexOf(activeButton);
+                
+                let newIndex;
+                if (e.key === 'ArrowRight') {
+                    newIndex = (currentIndex + 1) % buttons.length;
+                } else {
+                    newIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+                }
+                
+                buttons[newIndex].click();
+            }
+        });
+
+        // Add print-friendly styling
+        window.addEventListener('beforeprint', function() {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'block';
+                section.style.pageBreakBefore = 'always';
+            });
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.querySelectorAll('.content-section').forEach((section, index) => {
+                if (index !== 0) section.style.display = 'none';
+            });
+            showSection('overview');
+        });
+
+        // Initialize - ensure overview is visible on load
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('overview');
+        });
+    </script>
+</body>
+</html>
