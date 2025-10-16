@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Science Career Paths</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .salary-high { background: #ff6b6b; }
+        .salary-med { background: #4ecdc4; }
+        .salary-var { background: #45b7d1; }
+        .hidden-gem { background: #96ceb4; }
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .career-category {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid #dee2e6;
+        }
+
+        .career-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .job-list {
+            list-style: none;
+        }
+
+        .job-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .job-item:hover {
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 8px;
+            padding-left: 10px;
+        }
+
+        .job-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-name {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .job-salary {
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .high-salary {
+            background: rgba(255, 107, 107, 0.2);
+            color: #c92a2a;
+        }
+
+        .med-salary {
+            background: rgba(78, 205, 196, 0.2);
+            color: #0c8477;
+        }
+
+        .var-salary {
+            background: rgba(69, 183, 209, 0.2);
+            color: #1971c2;
+        }
+
+        .gem-tag {
+            background: rgba(150, 206, 180, 0.3);
+            color: #2f9e44;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 5px;
+        }
+
+        .highlight-section {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .highlight-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 15px;
+        }
+
+        .highlight-jobs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .highlight-job {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #2d3436;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .highlight-job:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .career-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .legend {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .highlight-jobs {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">Political Science Career Universe</h1>
+            <p class="subtitle">From traditional government roles to high-paying hidden opportunities</p>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-dot salary-high"></div>
+                    <span>$100K+ Average</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot salary-med"></div>
+                    <span>$60-100K Average</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot salary-var"></div>
+                    <span>Variable/Performance Based</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot hidden-gem"></div>
+                    <span>💎 Hidden Gem</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-section">
+            <h2 class="highlight-title">🚀 High-Paying Hidden Gems Most People Don't Know About</h2>
+            <div class="highlight-jobs">
+                <div class="highlight-job">Sovereign Risk Analyst ($120K+)</div>
+                <div class="highlight-job">ESG Research Director ($130K+)</div>
+                <div class="highlight-job">Geopolitical Intelligence Consultant ($140K+)</div>
+                <div class="highlight-job">Regulatory Technology Specialist ($110K+)</div>
+                <div class="highlight-job">Government Relations VP ($150K+)</div>
+                <div class="highlight-job">Political Risk Insurance Underwriter ($115K+)</div>
+            </div>
+        </div>
+
+        <div class="career-grid">
+            <div class="career-category">
+                <h3 class="category-title">
+                    <div class="category-icon">🏛️</div>
+                    Government & Public Service
+                </h3>
+                <ul class="job-list">
+                    <li class="job-item">
+                        <span class="job-name">Policy Analyst</span>
+                        <span class="job-salary med-salary">$65-85K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Foreign Service Officer</span>
+                        <span class="job-salary high-salary">$80-120K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Intelligence Analyst <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$90-130K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Legislative Director</span>
+                        <span class="job-salary high-salary">$100-150K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">City Manager</span>
+                        <span class="job-salary high-salary">$95-140K</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="career-category">
+                <h3 class="category-title">
+                    <div class="category-icon">💼</div>
+                    Finance & Investment
+                </h3>
+                <ul class="job-list">
+                    <li class="job-item">
+                        <span class="job-name">Investment Banking Analyst</span>
+                        <span class="job-salary high-salary">$100-200K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Sovereign Risk Analyst <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$120-160K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">ESG Research Director <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$130-180K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Political Risk Insurance <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$115-145K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Private Equity Associate</span>
+                        <span class="job-salary high-salary">$150-300K</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="career-category">
+                <h3 class="category-title">
+                    <div class="category-icon">🌍</div>
+                    International Affairs
+                </h3>
+                <ul class="job-list">
+                    <li class="job-item">
+                        <span class="job-name">Diplomatic Security Agent <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$110-140K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">International Trade Specialist</span>
+                        <span class="job-salary med-salary">$75-95K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Geopolitical Consultant <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$140-200K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">International Development Director</span>
+                        <span class="job-salary high-salary">$100-130K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Embassy Commercial Attaché</span>
+                        <span class="job-salary high-salary">$90-120K</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="career-category">
+                <h3 class="category-title">
+                    <div class="category-icon">⚖️</div>
+                    Legal & Compliance
+                </h3>
+                <ul class="job-list">
+                    <li class="job-item">
+                        <span class="job-name">Corporate Lawyer</span>
+                        <span class="job-salary high-salary">$160-300K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Regulatory Affairs Director</span>
+                        <span class="job-salary high-salary">$120-170K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Compliance Officer</span>
+                        <span class="job-salary med-salary">$75-110K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Legal Technology Consultant <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$110-150K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Government Contracts Attorney</span>
+                        <span class="job-salary high-salary">$130-180K</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="career-category">
+                <h3 class="category-title">
+                    <div class="category-icon">📊</div>
+                    Consulting & Strategy
+                </h3>
+                <ul class="job-list">
+                    <li class="job-item">
+                        <span class="job-name">Management Consultant</span>
+                        <span class="job-salary high-salary">$120-200K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Government Relations VP <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$150-250K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Public Affairs Strategist</span>
+                        <span class="job-salary med-salary">$85-120K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Crisis Communications Director</span>
+                        <span class="job-salary high-salary">$110-160K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Political Campaign Manager</span>
+                        <span class="job-salary var-salary">$60-200K</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="career-category">
+                <h3 class="category-title">
+                    <div class="category-icon">🏢</div>
+                    Corporate & Business
+                </h3>
+                <ul class="job-list">
+                    <li class="job-item">
+                        <span class="job-name">Corporate Development Manager</span>
+                        <span class="job-salary high-salary">$110-150K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Business Intelligence Analyst</span>
+                        <span class="job-salary med-salary">$70-95K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Regulatory Technology Lead <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$110-140K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Market Research Director</span>
+                        <span class="job-salary high-salary">$95-130K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Corporate Social Responsibility VP</span>
+                        <span class="job-salary high-salary">$120-170K</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="career-category">
+                <h3 class="category-title">
+                    <div class="category-icon">📺</div>
+                    Media & Communications
+                </h3>
+                <ul class="job-list">
+                    <li class="job-item">
+                        <span class="job-name">Political Correspondent</span>
+                        <span class="job-salary med-salary">$60-120K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Communications Director</span>
+                        <span class="job-salary high-salary">$90-140K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Digital Strategy Director <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$105-145K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Media Relations Manager</span>
+                        <span class="job-salary med-salary">$65-90K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Speechwriter</span>
+                        <span class="job-salary med-salary">$70-110K</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="career-category">
+                <h3 class="category-title">
+                    <div class="category-icon">🎓</div>
+                    Research & Academia
+                </h3>
+                <ul class="job-list">
+                    <li class="job-item">
+                        <span class="job-name">Think Tank Senior Fellow <span class="gem-tag">💎</span></span>
+                        <span class="job-salary high-salary">$120-180K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">University Professor</span>
+                        <span class="job-salary med-salary">$65-120K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Research Director</span>
+                        <span class="job-salary med-salary">$85-115K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Policy Institute Director</span>
+                        <span class="job-salary high-salary">$110-160K</span>
+                    </li>
+                    <li class="job-item">
+                        <span class="job-name">Grant Writer</span>
+                        <span class="job-salary med-salary">$45-75K</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

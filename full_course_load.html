@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Successfully Juggle 5 Classes at Once</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .decision-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .decision-node {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #dee2e6;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .decision-node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .option-yes {
+            background: rgba(40, 167, 69, 0.1);
+            color: #155724;
+            border-color: rgba(40, 167, 69, 0.3);
+        }
+
+        .option-yes:hover {
+            background: rgba(40, 167, 69, 0.2);
+            transform: scale(1.02);
+        }
+
+        .option-no {
+            background: rgba(220, 53, 69, 0.1);
+            color: #721c24;
+            border-color: rgba(220, 53, 69, 0.3);
+        }
+
+        .option-no:hover {
+            background: rgba(220, 53, 69, 0.2);
+            transform: scale(1.02);
+        }
+
+        .result {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 2rem;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .strategies-section {
+            background: linear-gradient(135deg, #a8e6cf 0%, #56ccf2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .strategies-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .strategy-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .strategy-title {
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .strategy-text {
+            color: #636e72;
+            line-height: 1.5;
+        }
+
+        .pitfalls-section {
+            background: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .pitfalls-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .pitfalls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .pitfall-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .pitfall-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .pitfall-text {
+            color: #2d3436;
+            font-weight: 500;
+        }
+
+        .final-node {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-node .question {
+            color: white;
+        }
+
+        .final-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .final-option {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .final-option:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .options {
+                flex-direction: column;
+            }
+            
+            .strategies-grid,
+            .pitfalls-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .final-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">How to Successfully Juggle 5 Classes at Once</h1>
+            <p class="subtitle">A strategic approach to managing a full course load</p>
+        </div>
+
+        <div class="decision-tree">
+            <!-- First Decision Node -->
+            <div class="decision-node">
+                <div class="question">Have you reviewed all syllabi and mapped out major deadlines for the entire semester?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        I have a master calendar with all deadlines
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        I'm taking it week by week
+                    </div>
+                </div>
+                <div class="result">YES → You're set up for success! Continue with strategic planning.</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Second Decision Node -->
+            <div class="decision-node">
+                <div class="question">Can you identify which 2-3 classes will require the most intensive work this semester?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        I know my heaviest classes
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        They all seem equally demanding
+                    </div>
+                </div>
+                <div class="result">YES → Allocate extra study blocks for these courses early on</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Third Decision Node -->
+            <div class="decision-node">
+                <div class="question">Do you have a consistent weekly schedule with dedicated study blocks for each class?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        I've time-blocked my entire week
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        I study whenever I have free time
+                    </div>
+                </div>
+                <div class="result">NO → Create a fixed schedule immediately to prevent last-minute cramming</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Fourth Decision Node -->
+            <div class="decision-node">
+                <div class="question">Are you willing to sacrifice some social activities and use weekends strategically for coursework?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        I'm committed to prioritizing academics
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        I want to maintain full social life
+                    </div>
+                </div>
+                <div class="result">YES → Balance is key, but temporary sacrifices lead to long-term success</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Final Decision Node -->
+            <div class="decision-node final-node">
+                <div class="question">Final Reality Check: Can you commit 2-3 hours of work outside class for every credit hour you're taking?</div>
+                <div class="final-options">
+                    <div class="final-option">YES → You're ready to excel with disciplined time management</div>
+                    <div class="final-option">NO → Consider reducing course load or adjusting commitments</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategies Section -->
+        <div class="strategies-section">
+            <h2 class="strategies-title">Essential Strategies for Managing 5 Classes</h2>
+            <div class="strategies-grid">
+                <div class="strategy-item">
+                    <div class="strategy-title">Master Calendar System</div>
+                    <div class="strategy-text">Create one unified calendar with all assignments, exams, and deadlines from day one. Color-code by class. Review weekly and adjust priorities as deadlines approach.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">Time Blocking Method</div>
+                    <div class="strategy-text">Schedule specific times for each class throughout the week. Treat these blocks as non-negotiable appointments. Include buffer time between blocks for transitions and breaks.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">Strategic Frontloading</div>
+                    <div class="strategy-text">Complete assignments early in the semester when workload is lighter. Bank extra time for inevitable heavy weeks. Start major projects immediately, not just before deadlines.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">Active Reading Efficiency</div>
+                    <div class="strategy-text">Develop fast reading strategies: skim first, identify key concepts, take targeted notes. Not all readings require equal depth. Focus on what will be tested or discussed.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">Batch Similar Tasks</div>
+                    <div class="strategy-text">Group similar work together: all readings on one day, problem sets on another. This reduces context switching and increases efficiency through focused concentration.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">Weekly Review Ritual</div>
+                    <div class="strategy-text">Dedicate Sunday evenings to reviewing the upcoming week. Identify potential conflicts, adjust schedule, and prepare materials. Prevention beats crisis management every time.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">Office Hours Optimization</div>
+                    <div class="strategy-text">Attend office hours strategically for clarification on difficult concepts. Build relationships with professors and TAs. They can provide guidance that saves hours of independent struggle.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">Study Group Leverage</div>
+                    <div class="strategy-text">Form focused study groups for challenging classes. Share notes, quiz each other, divide and conquer complex material. Collaborative learning multiplies individual effort.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pitfalls Section -->
+        <div class="pitfalls-section">
+            <h2 class="pitfalls-title">Common Pitfalls to Avoid</h2>
+            <div class="pitfalls-grid">
+                <div class="pitfall-item">
+                    <div class="pitfall-text">Procrastinating on readings until right before exams</div>
+                </div>
+                <div class="pitfall-item">
+                    <div class="pitfall-text">Neglecting sleep to cram—exhaustion kills retention and performance</div>
+                </div>
+                <div class="pitfall-item">
+                    <div class="pitfall-text">Treating all assignments as equal priority instead of triaging strategically</div>
+                </div>
+                <div class="pitfall-item">
+                    <div class="pitfall-text">Skipping classes to catch up on work—you'll fall further behind</div>
+                </div>
+                <div class="pitfall-item">
+                    <div class="pitfall-text">Failing to ask for help or extensions when genuinely overwhelmed</div>
+                </div>
+                <div class="pitfall-item">
+                    <div class="pitfall-text">Over-committing to extracurriculars without accounting for academic demands</div>
+                </div>
+                <div class="pitfall-item">
+                    <div class="pitfall-text">Working on assignments without understanding the rubric or expectations</div>
+                </div>
+                <div class="pitfall-item">
+                    <div class="pitfall-text">Ignoring your physical and mental health until you burn out mid-semester</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

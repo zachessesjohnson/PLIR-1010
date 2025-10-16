@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Should I Go to Political Science Graduate School?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .decision-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .decision-node {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #dee2e6;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .decision-node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .option-yes {
+            background: rgba(40, 167, 69, 0.1);
+            color: #155724;
+            border-color: rgba(40, 167, 69, 0.3);
+        }
+
+        .option-yes:hover {
+            background: rgba(40, 167, 69, 0.2);
+            transform: scale(1.02);
+        }
+
+        .option-no {
+            background: rgba(220, 53, 69, 0.1);
+            color: #721c24;
+            border-color: rgba(220, 53, 69, 0.3);
+        }
+
+        .option-no:hover {
+            background: rgba(220, 53, 69, 0.2);
+            transform: scale(1.02);
+        }
+
+        .result {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 2rem;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .considerations-section {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .considerations-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .considerations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .consideration-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #e17055;
+        }
+
+        .consideration-title {
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .consideration-text {
+            color: #636e72;
+            line-height: 1.5;
+        }
+
+        .red-flags-section {
+            background: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .red-flags-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .red-flags-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .red-flag-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .red-flag-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .red-flag-text {
+            color: #2d3436;
+            font-weight: 500;
+        }
+
+        .final-node {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-node .question {
+            color: white;
+        }
+
+        .final-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .final-option {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .final-option:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .options {
+                flex-direction: column;
+            }
+            
+            .considerations-grid,
+            .red-flags-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .final-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">Should I Go to Political Science Graduate School?</h1>
+            <p class="subtitle">A comprehensive decision tree to help guide your choice</p>
+        </div>
+
+        <div class="decision-tree">
+            <!-- First Decision Node -->
+            <div class="decision-node">
+                <div class="question">Are you absolutely certain you want to be an academic researcher or professor in political science?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        I'm 100% committed to academic research career
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        I'm not completely sure about academia
+                    </div>
+                </div>
+                <div class="result">YES → Pursue PhD programs (with proper planning)</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Second Decision Node -->
+            <div class="decision-node">
+                <div class="question">Do you want to enhance your credentials for policy work, government, or think tanks?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        Policy-oriented career interests me
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        I'm really unsure about my career path
+                    </div>
+                </div>
+                <div class="result">YES → Consider MA programs or PhD with policy focus</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Third Decision Node -->
+            <div class="decision-node">
+                <div class="question">Are you primarily interested in graduate school because you're unsure what else to do or want to delay career decisions?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        Mostly as a default option or to buy time
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        I have genuine intellectual curiosity and research interests
+                    </div>
+                </div>
+                <div class="result">YES → Strongly reconsider. Work in the field first.</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Fourth Decision Node -->
+            <div class="decision-node">
+                <div class="question">Do you enjoy conducting research, statistical analysis, and writing academic papers?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        I thrive on research and analytical work
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        Not particularly or I'm unsure
+                    </div>
+                </div>
+                <div class="result">NO → Graduate school may not be the right fit</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Final Decision Node -->
+            <div class="decision-node final-node">
+                <div class="question">Final Check: Can you handle 5-7 years of intensive study with modest stipends and a competitive academic job market?</div>
+                <div class="final-options">
+                    <div class="final-option">YES → Proceed with careful program selection</div>
+                    <div class="final-option">NO → Consider professional alternatives first</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Considerations Section -->
+        <div class="considerations-section">
+            <h2 class="considerations-title">Critical Considerations Before Applying</h2>
+            <div class="considerations-grid">
+                <div class="consideration-item">
+                    <div class="consideration-title">Financial Reality</div>
+                    <div class="consideration-text">PhD programs typically offer funding, but stipends are modest ($20,000-35,000). MA programs often require significant investment. Calculate opportunity costs carefully over 5-7 years.</div>
+                </div>
+                <div class="consideration-item">
+                    <div class="consideration-title">Program Rankings Matter</div>
+                    <div class="consideration-text">For academic careers, aim for top-30 programs. Employment outcomes for professors vary dramatically by program prestige. Research faculty placement rates carefully.</div>
+                </div>
+                <div class="consideration-item">
+                    <div class="consideration-title">Research Fit</div>
+                    <div class="consideration-text">Identify faculty whose research aligns with your interests. Graduate school success depends heavily on advisor relationships and research opportunities.</div>
+                </div>
+                <div class="consideration-item">
+                    <div class="consideration-title">Academic Job Market</div>
+                    <div class="consideration-text">Tenure-track positions are extremely competitive. Research alternative career paths including think tanks, government, consulting, and private sector roles.</div>
+                </div>
+                <div class="consideration-item">
+                    <div class="consideration-title">Time Commitment</div>
+                    <div class="consideration-text">PhD programs typically require 5-7 years. Consider the opportunity cost and whether you're prepared for extended student status and delayed career entry.</div>
+                </div>
+                <div class="consideration-item">
+                    <div class="consideration-title">Skills Development</div>
+                    <div class="consideration-text">Focus on programs that develop transferable skills: statistical analysis, data science, writing, project management, and presentation abilities for diverse career options.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Red Flags Section -->
+        <div class="red-flags-section">
+            <h2 class="red-flags-title">Major Red Flags - Reconsider Graduate School If...</h2>
+            <div class="red-flags-grid">
+                <div class="red-flag-item">
+                    <div class="red-flag-text">You're uncomfortable with the uncertain and competitive academic job market</div>
+                </div>
+                <div class="red-flag-item">
+                    <div class="red-flag-text">You prefer immediate financial rewards and career advancement</div>
+                </div>
+                <div class="red-flag-item">
+                    <div class="red-flag-text">You dislike conducting independent research or working in isolation</div>
+                </div>
+                <div class="red-flag-item">
+                    <div class="red-flag-text">You're not comfortable with statistical methods or quantitative analysis</div>
+                </div>
+                <div class="red-flag-item">
+                    <div class="red-flag-text">You're not prepared for years of modest income as a graduate student</div>
+                </div>
+                <div class="red-flag-item">
+                    <div class="red-flag-text">You want guaranteed job placement and clear career progression</div>
+                </div>
+                <div class="red-flag-item">
+                    <div class="red-flag-text">You prefer practical, hands-on work over theoretical analysis</div>
+                </div>
+                <div class="red-flag-item">
+                    <div class="red-flag-text">You dislike extensive reading, writing, or presenting research findings</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
