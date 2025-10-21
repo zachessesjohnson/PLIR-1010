@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Prepare for Finals Like a Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .decision-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .decision-node {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #dee2e6;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .decision-node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .option-yes {
+            background: rgba(40, 167, 69, 0.1);
+            color: #155724;
+            border-color: rgba(40, 167, 69, 0.3);
+        }
+
+        .option-yes:hover {
+            background: rgba(40, 167, 69, 0.2);
+            transform: scale(1.02);
+        }
+
+        .option-no {
+            background: rgba(220, 53, 69, 0.1);
+            color: #721c24;
+            border-color: rgba(220, 53, 69, 0.3);
+        }
+
+        .option-no:hover {
+            background: rgba(220, 53, 69, 0.2);
+            transform: scale(1.02);
+        }
+
+        .result {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 2rem;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .strategies-section {
+            background: linear-gradient(135deg, #a8e6cf 0%, #56ccf2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .strategies-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .strategy-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .strategy-title {
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .strategy-text {
+            color: #636e72;
+            line-height: 1.5;
+        }
+
+        .schedule-section {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .schedule-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 700;
+        }
+
+        td {
+            border-bottom: 1px solid #eef3ff;
+            color: #2d3436;
+        }
+
+        .techniques-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .techniques-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .tip {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .tip:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip strong {
+            color: #2d3436;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .mini {
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        .exam-day-section {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .exam-day-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .checklist-section {
+            background: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .checklist-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid #2ecc71;
+            margin-top: 3px;
+            background: white;
+        }
+
+        footer {
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .options {
+                flex-direction: column;
+            }
+            
+            .strategies-grid,
+            .tips {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">How to Prepare for Finals Like a Pro</h1>
+            <p class="subtitle">A strategic, step-by-step guide to help you focus, retain, and perform across multiple classes</p>
+        </div>
+
+        <div class="decision-tree">
+            <!-- First Decision Node -->
+            <div class="decision-node">
+                <div class="question">Do you have a "Finals Master Plan" listing every exam, date, format, and weight?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        Great: sync it to your calendar
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        Create a single master list now
+                    </div>
+                </div>
+                <div class="result">KEY → Centralizing reduces anxiety and helps prioritize effectively</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Second Decision Node -->
+            <div class="decision-node">
+                <div class="question">Have you identified the high-impact topics for each exam?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        Mark them as "must know"
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        Use past exams, learning objectives, and syllabi
+                    </div>
+                </div>
+                <div class="result">80/20 RULE → Focus on material most likely to be tested</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Third Decision Node -->
+            <div class="decision-node">
+                <div class="question">Can you commit to a daily study schedule with dedicated blocks until exams finish?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        Block it in your calendar
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        Draft a realistic plan: 2–4 hour blocks are ideal
+                    </div>
+                </div>
+                <div class="result">CONSISTENCY → Beats marathon cramming every time</div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Fourth Decision Node -->
+            <div class="decision-node">
+                <div class="question">Are you practicing active recall (self-testing) rather than passive rereading?</div>
+                <div class="options">
+                    <div class="option option-yes">
+                        <strong>YES</strong><br>
+                        Keep using flashcards and practice exams
+                    </div>
+                    <div class="option option-no">
+                        <strong>NO</strong><br>
+                        Start making quick quizzes and teach-back notes
+                    </div>
+                </div>
+                <div class="result">SCIENCE → Retrieval practice is the single best boost to long-term retention</div>
+            </div>
+        </div>
+
+        <!-- Schedule Section -->
+        <div class="schedule-section">
+            <h2 class="schedule-title">Your 2-Week Finals Success Timeline</h2>
+            <p style="text-align: center; margin-bottom: 20px; opacity: 0.9;">Use this template as a starting point—adjust by exam dates and personal energy rhythms</p>
+            <table>
+                <thead>
+                    <tr><th>Days Before Exam</th><th>Primary Goal</th><th>What to Do</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>14–10</td><td>Build coverage</td><td>Read summaries, create condensed notes, mark weak spots</td></tr>
+                    <tr><td>9–5</td><td>Deep practice</td><td>Do problem sets, timed practice, flashcard heavy rotation</td></tr>
+                    <tr><td>4–2</td><td>Polish</td><td>Redo past exams, memorize key formulas, clarify confusions with TAs</td></tr>
+                    <tr><td>1–0</td><td>Rest & quick recall</td><td>Light review, sleep well, logistics check (ID, materials)</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 15px; text-align: center; opacity: 0.9;">Tip: when juggling multiple finals, stagger heavy days so you don't overload a single day</div>
+        </div>
+
+        <!-- Study Techniques Section -->
+        <div class="techniques-section">
+            <h2 class="techniques-title">Active Study Techniques (Use Daily)</h2>
+            <div class="tips">
+                <div class="tip">
+                    <strong>Active Recall</strong>
+                    <div class="mini">Close notes and write what you remember — then check for accuracy</div>
+                </div>
+                <div class="tip">
+                    <strong>Spaced Repetition</strong>
+                    <div class="mini">Review flashcards with increasing intervals; prioritize forgotten cards</div>
+                </div>
+                <div class="tip">
+                    <strong>Practice Under Exam Conditions</strong>
+                    <div class="mini">Simulate time pressure and remove aids unless allowed on the real exam</div>
+                </div>
+                <div class="tip">
+                    <strong>Teach Someone Else</strong>
+                    <div class="mini">Explaining concepts aloud reveals knowledge gaps instantly</div>
+                </div>
+                <div class="tip">
+                    <strong>Problem Batching</strong>
+                    <div class="mini">Group similar problem types and drill them repeatedly for pattern recognition</div>
+                </div>
+                <div class="tip">
+                    <strong>Formula Sheet Creation</strong>
+                    <div class="mini">Even if you can't bring it, making one condenses and organizes knowledge</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practice Exams Section -->
+        <div class="strategies-section">
+            <h2 class="strategies-title">Practice Exams & Feedback Loop Strategy</h2>
+            <div class="strategies-grid">
+                <div class="strategy-item">
+                    <div class="strategy-title">1. Collect Resources</div>
+                    <div class="strategy-text">Gather past exams, old quizzes, and practice problems from professors, TAs, study groups, or online resources.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">2. Simulate Real Conditions</div>
+                    <div class="strategy-text">Do at least one full practice exam per class under actual timed conditions without notes or aids.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">3. Analyze Mistakes</div>
+                    <div class="strategy-text">Grade honestly, track every mistake, and convert them into targeted 30-60 minute study sessions.</div>
+                </div>
+                <div class="strategy-item">
+                    <div class="strategy-title">4. Seek Feedback</div>
+                    <div class="strategy-text">Get input from peers or instructors on recurring errors. Record the top 3 mistakes for each class and create specific improvement plans.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Day Section -->
+        <div class="exam-day-section">
+            <h2 class="exam-day-title">Exam Day Success Checklist</h2>
+            <div style="background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 12px; color: #2d3436;">
+                <ul style="margin: 0 0 0 20px; line-height: 1.8;">
+                    <li><strong>Timing & Location:</strong> Confirm time & location, arrive 15–20 minutes early</li>
+                    <li><strong>Essential Items:</strong> Student ID, allowed calculators, multiple pens, water, tissues, post-exam snacks</li>
+                    <li><strong>Study Materials:</strong> Bring notes if allowed; otherwise a clean summary sheet for last-minute recall</li>
+                    <li><strong>Morning Routine:</strong> Do a 20-minute light review (no new material), eat a balanced breakfast</li>
+                    <li><strong>Anxiety Management:</strong> Use 4-4-8 breathing technique for 2–3 minutes before starting the exam</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Portable Checklist Section -->
+        <div class="checklist-section">
+            <h2 class="checklist-title">Your Portable Success Checklist</h2>
+            <div class="checklist">
+                <div class="check-item">
+                    <div class="checkbox"></div>
+                    <div><strong>Master Finals Plan</strong><div class="mini">All exam dates, formats, and grade weights organized</div></div>
+                </div>
+                <div class="check-item">
+                    <div class="checkbox"></div>
+                    <div><strong>High-Impact Topics</strong><div class="mini">Priority list of must-know material per course</div></div>
+                </div>
+                <div class="check-item">
+                    <div class="checkbox"></div>
+                    <div><strong>Daily Study Blocks</strong><div class="mini">Fixed study times blocked in calendar</div></div>
+                </div>
+                <div class="check-item">
+                    <div class="checkbox"></div>
+                    <div><strong>Practice Exams Complete</strong><div class="mini">At least one timed practice exam per course</div></div>
+                </div>
+                <div class="check-item">
+                    <div class="checkbox"></div>
+                    <div><strong>Sleep Schedule</strong><div class="mini">7–8 hours nightly, especially before exams</div></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>A practical guide for effective finals preparation</footer>
+    </div>
+</body>
+</html>
