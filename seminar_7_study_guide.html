@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlightenment Now: Complete Political Economy Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .course-info {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .nav-tabs button {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #1a1a2e;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs button:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-tabs button.active {
+            background: #1a1a2e;
+            color: white;
+            border-color: #1a1a2e;
+        }
+
+        .content-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #1a1a2e;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 1.6em;
+            margin: 30px 0 15px;
+        }
+
+        h4 {
+            color: #1a1a2e;
+            font-size: 1.3em;
+            margin: 20px 0 12px;
+        }
+
+        .theory-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .theory-card h3, .theory-card h4 {
+            color: white;
+        }
+
+        .case-study {
+            background: #ecf0f1;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+        }
+
+        .case-study h4 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .evidence-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .evidence-box h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .data-box {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .data-box h3, .data-box h4 {
+            color: white;
+        }
+
+        .framework-box {
+            background: #e8f5e9;
+            border: 3px solid #4caf50;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .framework-box h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        .critical-question {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .critical-question h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .quote-box {
+            background: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 8px;
+            color: #0d47a1;
+            font-size: 1.05em;
+        }
+
+        .debate-section {
+            background: #fff9e6;
+            border: 3px dashed #ff9800;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .debate-section h4 {
+            color: #e65100;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #a8e063;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs button {
+                width: 100%;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Enlightenment Now</h1>
+            <p class="subtitle">International Political Economy Analysis</p>
+            <p class="course-info">Economic Development, Global Institutions, and the Political Economy of Progress</p>
+            <p style="margin-top: 10px; color: #666;">by Steven Pinker • Published 2018</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button onclick="showSection('overview')" class="active">IPE Overview</button>
+            <button onclick="showSection('capitalism')">Capitalism & Markets</button>
+            <button onclick="showSection('development')">Economic Development</button>
+            <button onclick="showSection('inequality')">Inequality Debates</button>
+            <button onclick="showSection('institutions')">Global Institutions</button>
+            <button onclick="showSection('trade')">Trade & Globalization</button>
+            <button onclick="showSection('environment')">Environmental Economics</button>
+            <button onclick="showSection('policy')">Policy Implications</button>
+            <button onclick="showSection('democracy')">Democracy & Peace</button>
+            <button onclick="showSection('rights')">Human Rights</button>
+            <button onclick="showSection('existential')">Existential Challenges</button>
+        </div>
+
+        <!-- IPE Overview Section -->
+        <div id="overview" class="content-section active">
+            <h2>International Political Economy Overview</h2>
+            
+            <div class="framework-box">
+                <h4>Why This Book Matters for IPE Studies</h4>
+                <p><strong>Enlightenment Now</strong> provides empirical evidence for understanding:</p>
+                <ul>
+                    <li><strong>Economic growth:</strong> How market economies generate unprecedented prosperity</li>
+                    <li><strong>Development economics:</strong> The mechanisms lifting billions from extreme poverty</li>
+                    <li><strong>Global governance:</strong> Role of international institutions in human progress</li>
+                    <li><strong>Trade liberalization:</strong> Effects of globalization on wealth and inequality</li>
+                    <li><strong>Technological change:</strong> Innovation as driver of economic transformation</li>
+                    <li><strong>Public goods provision:</strong> How states balance growth with redistribution</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Key Statistical Evidence for Progress</h4>
+                <p>Pinker marshals compelling quantitative evidence to support his thesis of human progress:</p>
+                <ul>
+                    <li><strong>Poverty eradication:</strong> The extreme poverty rate has fallen from 90% in 1820 to just 10% in 2015, representing one of humanity's greatest achievements.</li>
+                    <li><strong>Economic growth:</strong> Gross World Product has increased 100-fold since 1820, creating unprecedented prosperity and opportunities for human flourishing.</li>
+                    <li><strong>Health improvements:</strong> Global life expectancy reached 71.4 years by 2015, nearly doubling from pre-industrial levels.</li>
+                    <li><strong>Social protection:</strong> OECD countries now spend an average of 22% of GDP on social programs, demonstrating how wealthy societies redistribute resources to ensure broad-based welfare.</li>
+                </ul>
+                <p>These statistics illustrate the power of Enlightenment values—reason, science, and humanism—to improve the human condition through market economies, technological innovation, and effective institutions.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Central IPE Questions Addressed</h3>
+                <ol>
+                    <li><strong>Growth vs. Distribution:</strong> Can capitalism generate both wealth and equity?</li>
+                    <li><strong>Markets vs. States:</strong> What is optimal balance between market forces and government intervention?</li>
+                    <li><strong>Globalization:</strong> Does international trade benefit all or create winners and losers?</li>
+                    <li><strong>Development:</strong> What explains divergence between rich and poor countries?</li>
+                    <li><strong>Sustainability:</strong> Can economic growth be reconciled with environmental protection?</li>
+                    <li><strong>Technology:</strong> How does innovation transform economic systems?</li>
+                </ol>
+            </div>
+
+            <div class="quote-box">
+                "The starting point for understanding economic progress is to recognize that wealth is created. It is created primarily by knowledge and cooperation: networks of people arrange matter into improbable but useful configurations and combine the fruits of their ingenuity and labor."
+            </div>
+        </div>
+
+        <!-- Capitalism & Markets Section -->
+        <div id="capitalism" class="content-section">
+            <h2>Capitalism & Market Economics</h2>
+
+            <div class="theory-card">
+                <h3>The Enlightenment Case for Markets</h3>
+                <h4>Adam Smith's Insights (1776)</h4>
+                <ul>
+                    <li><strong>Division of labor:</strong> Specialization increases productivity (pin factory example: 1→5,000 pins/day)</li>
+                    <li><strong>Mutually beneficial exchange:</strong> Trade as positive-sum cooperation, not zero-sum plunder</li>
+                    <li><strong>Self-interest → social benefit:</strong> "It is not from the benevolence of the butcher...that we expect our dinner"</li>
+                    <li><strong>Price signals:</strong> Markets coordinate dispersed knowledge without central planning</li>
+                </ul>
+
+                <h4>Modern Economic Evidence</h4>
+                <ul>
+                    <li><strong>GDP growth:</strong> Market economies outperform planned economies by orders of magnitude</li>
+                    <li><strong>Innovation:</strong> Profit incentives drive technological advancement</li>
+                    <li><strong>Consumer surplus:</strong> Competition lowers prices, increases quality</li>
+                    <li><strong>Resource allocation:</strong> Markets adjust to scarcity without bureaucratic delays</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: Korea's Natural Experiment</h4>
+                <p><strong>Context:</strong> Single nation divided (1948) into capitalist South and communist North</p>
+                <p><strong>Variables held constant:</strong> Geography, culture, history, language, ethnicity</p>
+                <p><strong>Different variable:</strong> Economic system</p>
+                <p><strong>Results (2018):</strong></p>
+                <ul>
+                    <li>South Korea GDP per capita: $39,434 vs. North Korea: $1,800 (estimated)</li>
+                    <li>South Korea life expectancy: 82.7 years vs. North Korea: 70.6 years</li>
+                    <li>Satellite imagery: South ablaze with light; North almost completely dark</li>
+                </ul>
+                <p><strong>IPE Implication:</strong> Economic institutions matter more than initial endowments for long-term prosperity</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Market Institutions: Beyond Laissez-Faire</h4>
+                <p>Pinker emphasizes markets require institutional framework:</p>
+                <ul>
+                    <li><strong>Rule of law:</strong> Property rights, contract enforcement, judicial system</li>
+                    <li><strong>Corporate governance:</strong> Fiduciary duties, accounting standards, transparency</li>
+                    <li><strong>Financial regulation:</strong> Banking oversight, securities law, consumer protection</li>
+                    <li><strong>Competition policy:</strong> Antitrust enforcement, prevention of monopolistic abuse</li>
+                    <li><strong>Social insurance:</strong> Safety nets, unemployment benefits, pension systems</li>
+                </ul>
+                <p><strong>Key insight:</strong> "Free markets" are not natural states but require extensive government infrastructure</p>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Historical Evidence: The Great Escape</h4>
+                <p><strong>Pre-1800:</strong> Near-universal poverty, life expectancy ~30 years, minimal GDP growth</p>
+                <p><strong>Post-1800 divergence:</strong></p>
+                <ul>
+                    <li>Countries adopting market institutions + rule of law escape poverty</li>
+                    <li>Scientific Revolution → Industrial Revolution → sustained growth</li>
+                    <li>Income per capita rises 10-50x in industrialized nations</li>
+                </ul>
+                <p><strong>20th century:</strong> Communist experiments produce stagnation, famine (USSR, China, Cambodia)</p>
+                <p><strong>Late 20th century:</strong> Market reforms (China 1978+, India 1991+) lift billions from poverty</p>
+            </div>
+
+            <div class="critical-question">
+                <h4>Critical Debate: Market Fundamentalism?</h4>
+                <p><strong>Critique:</strong> Does Pinker romanticize capitalism, ignoring exploitation and inequality?</p>
+                <p><strong>Pinker's response:</strong></p>
+                <ul>
+                    <li>Not advocating "pure" markets—recognizes need for regulation, redistribution</li>
+                    <li>Comparison is not to utopia but to actual alternatives (central planning, feudalism)</li>
+                    <li>Acknowledges market failures: externalities, public goods, information asymmetries</li>
+                    <li>Argues for "social democracy" model combining markets with robust welfare state</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Economic Development Section -->
+        <div id="development" class="content-section">
+            <h2>Economic Development</h2>
+
+            <div class="evidence-box">
+                <h4>The Great Convergence: Development Success</h4>
+                <p>Between 1990 and 2015, the world witnessed unprecedented improvements in human development:</p>
+                <ul>
+                    <li><strong>Poverty reduction:</strong> The extreme poverty rate plummeted from 37% to just 10%—a 73% decline that lifted 1.2 billion people out of destitution.</li>
+                    <li><strong>Child survival:</strong> Under-5 mortality rates fell dramatically, from 93 deaths per 1,000 births to 43 per 1,000—representing millions of young lives saved.</li>
+                    <li><strong>Longevity gains:</strong> Life expectancy in developing countries increased by 8 years, from 62 to 70 years, reflecting better healthcare, nutrition, and living conditions.</li>
+                    <li><strong>Educational progress:</strong> Youth literacy rates (ages 15-24) rose from 82% to 91%, expanding opportunities for economic participation and social mobility.</li>
+                </ul>
+                <p>This "Great Convergence" demonstrates how economic development, technological progress, and improved governance can rapidly transform human welfare on a global scale.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Explaining Development Success</h3>
+                <h4>Five Key Factors (According to Pinker)</h4>
+                
+                <p><strong>1. Decline of Communism/Socialism (1980s-1990s)</strong></p>
+                <ul>
+                    <li>China: Deng Xiaoping's market reforms (1978+)</li>
+                    <li>USSR collapse: Eastern Europe transitions to markets</li>
+                    <li>India: License Raj dismantled (1991+)</li>
+                    <li>Vietnam: Doi Moi reforms (1986+)</li>
+                </ul>
+
+                <p><strong>2. Better Leadership</strong></p>
+                <ul>
+                    <li>Replacement of ideological dictators with pragmatic reformers</li>
+                    <li>End of Cold War proxy support for despots</li>
+                    <li>Rise of technocratic governance (Singapore, South Korea model)</li>
+                </ul>
+
+                <p><strong>3. End of Cold War Conflicts</strong></p>
+                <ul>
+                    <li>Civil wars decline from 14 (1990) to 4 (2007)</li>
+                    <li>Wars cost ~$50 billion each (Collier estimate)</li>
+                    <li>Post-conflict development dividends</li>
+                </ul>
+
+                <p><strong>4. Globalization & Trade</strong></p>
+                <ul>
+                    <li>Container shipping revolution reduces trade costs</li>
+                    <li>Tariff liberalization (GATT/WTO)</li>
+                    <li>Global value chains integrate developing economies</li>
+                    <li>Foreign direct investment brings technology transfer</li>
+                </ul>
+
+                <p><strong>5. Science & Technology</strong></p>
+                <ul>
+                    <li>Mobile phones: 4 billion subscriptions enable financial inclusion</li>
+                    <li>Green Revolution: agricultural productivity soars</li>
+                    <li>Medical advances: vaccines, antibiotics, oral rehydration therapy</li>
+                    <li>Knowledge transfer: internet democratizes access to information</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: China's Economic Miracle</h4>
+                <p><strong>Context:</strong> World's largest poverty reduction in history</p>
+                <p><strong>Timeline:</strong></p>
+                <ul>
+                    <li><strong>1978:</strong> Deng Xiaoping initiates market reforms</li>
+                    <li><strong>1980s:</strong> Agricultural decollectivization, Special Economic Zones</li>
+                    <li><strong>1990s:</strong> State-owned enterprise reform, urban markets</li>
+                    <li><strong>2001:</strong> WTO accession accelerates trade integration</li>
+                </ul>
+                <p><strong>Results:</strong></p>
+                <ul>
+                    <li>850 million people lifted from extreme poverty (1981-2015)</li>
+                    <li>GDP per capita: $195 (1980) → $8,123 (2015) in constant dollars</li>
+                    <li>Life expectancy: 66 years (1980) → 76 years (2015)</li>
+                    <li>Share of global manufacturing: 2% (1980) → 25% (2015)</li>
+                </ul>
+                <p><strong>IPE Debate:</strong> Does "Beijing Consensus" (authoritarian capitalism) challenge Washington Consensus (liberal democracy + markets)?</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Development Economics: Theoretical Perspectives</h4>
+                
+                <p><strong>Modernization Theory (Rostow):</strong> Linear stages from traditional to modern economy</p>
+                <ul>
+                    <li>Evidence: East Asian Tigers followed similar trajectory</li>
+                    <li>Critique: Ignores historical context, path dependencies</li>
+                </ul>
+
+                <p><strong>Dependency Theory (Frank, Wallerstein):</strong> Core exploits periphery through unequal exchange</p>
+                <ul>
+                    <li>Evidence: Colonial extraction, terms of trade deterioration</li>
+                    <li>Critique: Can't explain East Asian success, China/India rise</li>
+                </ul>
+
+                <p><strong>Institutional Economics (North, Acemoglu):</strong> Inclusive institutions drive growth</p>
+                <ul>
+                    <li>Evidence: Property rights, rule of law correlate with prosperity</li>
+                    <li>Critique: Endogeneity problem (do good institutions cause growth or vice versa?)</li>
+                </ul>
+
+                <p><strong>Pinker's Synthesis:</strong> Multiple factors interact—markets + institutions + technology + peace + knowledge</p>
+            </div>
+        </div>
+
+        <!-- Inequality Section -->
+        <div id="inequality" class="content-section">
+            <h2>The Inequality Debates</h2>
+
+            <div class="critical-question">
+                <h4>Central Controversy: Rising Inequality as Crisis?</h4>
+                <p><strong>Conventional wisdom (2010s):</strong> Inequality rising catastrophically; only rich benefit from growth; middle class hollowed out</p>
+                <p><strong>Pinker's contrarian claim:</strong> Inequality rising in some dimensions, falling in others; absolute living standards improving for all</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Conceptual Distinctions</h3>
+                
+                <h4>1. Inequality ≠ Poverty</h4>
+                <ul>
+                    <li><strong>Igor and Boris parable:</strong> If Boris's goat dies, inequality decreases but neither is better off</li>
+                    <li><strong>Frankfurt's argument:</strong> What matters morally is "enough," not relative position</li>
+                    <li><strong>Implication:</strong> Focus on absolute living standards, not Gini coefficients</li>
+                </ul>
+
+                <h4>2. Types of Inequality</h4>
+                <ul>
+                    <li><strong>International inequality:</strong> Between countries (declining)</li>
+                    <li><strong>Global inequality:</strong> Among all world citizens (declining)</li>
+                    <li><strong>Within-country inequality:</strong> Within nations like US, UK (rising since 1980)</li>
+                    <li><strong>Income inequality:</strong> Market income distribution (rising)</li>
+                    <li><strong>Consumption inequality:</strong> What people actually consume (flat/declining)</li>
+                </ul>
+
+                <h4>3. Anonymous vs. Longitudinal Data</h4>
+                <ul>
+                    <li><strong>Anonymous:</strong> Statistical quintiles at different time points</li>
+                    <li><strong>Longitudinal:</strong> Tracking actual individuals over time</li>
+                    <li><strong>Key finding:</strong> High income mobility means "bottom 20%" consists of different people</li>
+                </ul>
+            </div>
+
+            <div class="data-box">
+                <h3>The Elephant Curve: Globalization's Winners and Losers</h3>
+                <p><strong>Milanović's growth incidence curve (1988-2008):</strong></p>
+                <ul>
+                    <li><strong>Winners (body of elephant):</strong> Asian middle class (40-80th percentile globally) +40-60% income gain</li>
+                    <li><strong>Winners (trunk tip):</strong> Global top 1% +60% income gain</li>
+                    <li><strong>Relative losers (trunk dip):</strong> Lower-middle class in rich countries (75-85th percentile globally) +10% gain</li>
+                </ul>
+                <p><strong>IPE Interpretation:</strong> Globalization creates winners and losers, but 70% of humanity wins; losers still gain (just less)</p>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Evidence Against Inequality Pessimism</h4>
+                
+                <p><strong>International inequality declining:</strong></p>
+                <ul>
+                    <li>Gini between countries: peaked 1970 (.56), fell to .44 (2013)</li>
+                    <li>Population-weighted: fell from .63 (1988) to .53 (2011)</li>
+                </ul>
+
+                <p><strong>Absolute poverty collapsing:</strong></p>
+                <ul>
+                    <li>Extreme poverty: 90% (1820) → 10% (2015)</li>
+                    <li>US poverty (consumption-based): 30% (1960) → 3% (2013)</li>
+                </ul>
+
+                <p><strong>Living standards rising across distribution:</strong></p>
+                <ul>
+                    <li>US bottom quintile disposable income: +49% (1979-2010)</li>
+                    <li>Poor Americans have air conditioning (80%), cars (60%), dishwashers (40%)</li>
+                    <li>Dematerialization: smartphones provide services once costing thousands</li>
+                </ul>
+
+                <p><strong>Social spending increasing:</strong></p>
+                <ul>
+                    <li>OECD social transfers: 1.5% GDP (1880-1930) → 22% GDP (2016)</li>
+                    <li>US including private mandates: 2nd highest social spending (after France)</li>
+                </ul>
+            </div>
+
+            <div class="debate-section">
+                <h4>Theoretical Debate: What Explains Rising Within-Country Inequality?</h4>
+                
+                <p><strong>Technology hypothesis (SBTC - Skill-Biased Technological Change):</strong></p>
+                <ul>
+                    <li>Automation replaces routine jobs</li>
+                    <li>Premium for high-skill workers increases</li>
+                    <li>Winner-take-all dynamics in digital economy</li>
+                </ul>
+
+                <p><strong>Globalization hypothesis:</strong></p>
+                <ul>
+                    <li>Offshoring lowers demand for domestic manufacturing labor</li>
+                    <li>Trade competition suppresses wages</li>
+                    <li>Capital mobility weakens labor bargaining power</li>
+                </ul>
+
+                <p><strong>Institutional hypothesis:</strong></p>
+                <ul>
+                    <li>Decline of unions reduces wage compression</li>
+                    <li>Financialization increases capital share</li>
+                    <li>Tax policy shifts (Reagan/Thatcher reforms)</li>
+                    <li>Changes in norms regarding executive compensation</li>
+                </ul>
+
+                <p><strong>Pinker's view:</strong> Multiple factors; inequality rise doesn't negate absolute gains; solutions possible without reversing globalization/technology</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Policy Responses to Inequality</h4>
+                <ul>
+                    <li><strong>Progressive taxation:</strong> Higher rates on top earners, wealth taxes</li>
+                    <li><strong>Education investment:</strong> Skills training, STEM education, lifelong learning</li>
+                    <li><strong>Social insurance expansion:</strong> Universal basic income, negative income tax</li>
+                    <li><strong>Labor market policies:</strong> Minimum wage increases, collective bargaining rights</li>
+                    <li><strong>Competition policy:</strong> Antitrust enforcement, platform regulation</li>
+                    <li><strong>International coordination:</strong> Tax haven crackdowns, global minimum tax</li>
+                </ul>
+                <p><strong>Pinker's preference:</strong> Targeted interventions that preserve market incentives while ensuring broad-based prosperity</p>
+            </div>
+        </div>
+
+        <!-- Global Institutions Section -->
+        <div id="institutions" class="content-section">
+            <h2>Global Institutions & Governance</h2>
+
+            <div class="theory-card">
+                <h3>The Liberal International Order</h3>
+                <h4>Post-WWII Architecture</h4>
+                <ul>
+                    <li><strong>United Nations (1945):</strong> Collective security, international law</li>
+                    <li><strong>Bretton Woods System:</strong> IMF, World Bank, stable exchange rates</li>
+                    <li><strong>GATT/WTO (1947/1995):</strong> Trade liberalization, dispute resolution</li>
+                    <li><strong>NATO (1949):</strong> Military alliance, democratic peace</li>
+                    <li><strong>European integration:</strong> ECSC → EEC → EU, peace through commerce</li>
+                </ul>
+
+                <h4>Key Functions</h4>
+                <ul>
+                    <li><strong>Coordination:</strong> Solve collective action problems</li>
+                    <li><strong>Information:</strong> Transparency, monitoring, verification</li>
+                    <li><strong>Enforcement:</strong> Sanctions, reputation, conditionality</li>
+                    <li><strong>Legitimacy:</strong> Democratic input, rule of law</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Evidence of Institutional Effectiveness</h4>
+                <p>The liberal international order has demonstrated remarkable success in fostering cooperation and prosperity:</p>
+                <ul>
+                    <li><strong>Universal membership:</strong> The United Nations has grown from 51 founding members in 1945 to 193 today, reflecting near-universal acceptance of multilateral cooperation principles.</li>
+                    <li><strong>Trade integration:</strong> World Trade Organization membership expanded from 123 countries at its founding in 1995 to 164 members, facilitating $13 trillion in annual global trade.</li>
+                    <li><strong>Dispute resolution:</strong> The WTO's binding arbitration system achieves an 80% compliance rate, preventing trade wars and maintaining economic stability without world government.</li>
+                    <li><strong>Economic integration:</strong> Deep trade relationships create interdependencies that raise the costs of conflict and incentivize peaceful resolution of disputes.</li>
+                </ul>
+                <p>While these institutions face contemporary challenges, their track record demonstrates that international cooperation can work when properly designed and implemented.</p>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: WTO Dispute Settlement</h4>
+                <p><strong>Problem:</strong> How to enforce trade rules without world government?</p>
+                <p><strong>Solution:</strong> Binding arbitration with retaliation rights</p>
+                <p><strong>Process:</strong></p>
+                <ol>
+                    <li>Country files complaint with WTO panel</li>
+                    <li>Panel issues ruling based on WTO law</li>
+                    <li>Appeals possible to Appellate Body</li>
+                    <li>If defendant doesn't comply, complainant authorized to retaliate</li>
+                </ol>
+                <p><strong>Success:</strong> 600+ cases filed, 80% compliance rate, prevented trade wars</p>
+                <p><strong>Crisis:</strong> US blocked Appellate Body appointments (2017-2020), system paralyzed</p>
+            </div>
+
+            <div class="critical-question">
+                <h4>Contemporary Challenges to Global Governance</h4>
+                <ul>
+                    <li><strong>Rise of China:</strong> Challenges to Western-dominated institutions</li>
+                    <li><strong>Populist nationalism:</strong> Brexit, Trump's "America First," anti-globalization</li>
+                    <li><strong>Institutional gridlock:</strong> UN Security Council vetoes, WTO reform paralysis</li>
+                    <li><strong>New issues:</strong> Cyber governance, climate change, pandemic response</li>
+                    <li><strong>Legitimacy deficits:</strong> Democratic accountability, elite capture</li>
+                </ul>
+                <p><strong>Pinker's view:</strong> Institutions imperfect but preferable to anarchy; reform rather than abandon</p>
+            </div>
+        </div>
+
+        <!-- Trade & Globalization Section -->
+        <div id="trade" class="content-section">
+            <h2>Trade & Globalization</h2>
+
+            <div class="theory-card">
+                <h3>The Economic Logic of Trade</h3>
+                <h4>Comparative Advantage (Ricardo, 1817)</h4>
+                <ul>
+                    <li><strong>Core insight:</strong> Countries benefit from trade even if one is better at everything</li>
+                    <li><strong>Opportunity cost:</strong> Focus on what you're relatively best at</li>
+                    <li><strong>Mutual gains:</strong> Trade expands consumption possibilities for both parties</li>
+                    <li><strong>Empirical support:</strong> Countries with higher trade-to-GDP ratios are richer</li>
+                </ul>
+
+                <h4>Modern Trade Theory</h4>
+                <ul>
+                    <li><strong>Economies of scale:</strong> Larger markets enable specialization</li>
+                    <li><strong>Product differentiation:</strong> Intra-industry trade in varieties</li>
+                    <li><strong>Global value chains:</strong> Tasks dispersed across countries</li>
+                    <li><strong>Technology transfer:</strong> Diffusion of ideas and best practices</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Empirical Evidence for Trade Benefits</h4>
+                <p><strong>Historical evidence:</strong></p>
+                <ul>
+                    <li>First wave of globalization (1870-1914): rapid growth, living standards rise</li>
+                    <li>Interwar deglobalization (1914-1945): depression, autarky, conflict</li>
+                    <li>Post-war re-globalization (1945+): unprecedented prosperity</li>
+                </ul>
+
+                <p><strong>Cross-country studies:</strong></p>
+                <ul>
+                    <li>Trade openness correlates with GDP per capita (correlation ≈ 0.6)</li>
+                    <li>Countries that liberalized trade grew faster (Sachs & Warner, 1995)</li>
+                    <li>Export-led growth strategies successful in East Asia</li>
+                </ul>
+
+                <p><strong>Natural experiments:</strong></p>
+                <ul>
+                    <li>East/West Germany: market integration vs. autarky</li>
+                    <li>China pre/post-WTO: trade explosion coincides with growth acceleration</li>
+                    <li>NAFTA: Mexico's manufacturing exports soar</li>
+                </ul>
+            </div>
+
+            <div class="debate-section">
+                <h4>The Globalization Backlash</h4>
+                <p><strong>Critiques of globalization:</strong></p>
+                <ul>
+                    <li><strong>Job displacement:</strong> Manufacturing decline in rich countries</li>
+                    <li><strong>Wage stagnation:</strong> Competition from low-wage countries</li>
+                    <li><strong>Race to the bottom:</strong> Environmental and labor standards</li>
+                    <li><strong>Cultural homogenization:</strong> McDonaldization, loss of local traditions</li>
+                    <li><strong>Democratic deficit:</strong> Corporate power, regulatory capture</li>
+                </ul>
+
+                <p><strong>Pinker's response:</strong></p>
+                <ul>
+                    <li>Trade creates more jobs than it destroys (creative destruction)</li>
+                    <li>Consumers benefit from lower prices, greater variety</li>
+                    <li>Environmental and labor standards can be maintained through regulation</li>
+                    <li>Cultural exchange enriches rather than impoverishes societies</li>
+                    <li>Institutions can be reformed to increase democratic accountability</li>
+                </ul>
+            </div>
+
+            <div class="framework-box">
+                <h4>China Shock: Lessons for Trade Policy</h4>
+                <p><strong>Autor, Dorn, and Hanson findings:</strong></p>
+                <ul>
+                    <li>Chinese imports caused 1 million US manufacturing job losses (2000-2007)</li>
+                    <li>Local communities slow to adjust; persistent unemployment</li>
+                    <li>Political consequences: support for protectionist politicians</li>
+                </ul>
+
+                <p><strong>Policy implications:</strong></p>
+                <ul>
+                    <li><strong>Trade Adjustment Assistance:</strong> Retraining, relocation aid</li>
+                    <li><strong>Place-based policies:</strong> Regional development programs</li>
+                    <li><strong>Progressive taxation:</strong> Compensate trade's losers</li>
+                    <li><strong>Gradual integration:</strong> Slower liberalization schedules</li>
+                </ul>
+
+                <p><strong>Pinker's view:</strong> Address adjustment costs, don't abandon trade's benefits</p>
+            </div>
+        </div>
+
+        <!-- Environmental Economics Section -->
+        <div id="environment" class="content-section">
+            <h2>Environmental Economics</h2>
+
+            <div class="theory-card">
+                <h3>The Environmental Kuznets Curve</h3>
+                <h4>Hypothesis</h4>
+                <ul>
+                    <li><strong>Early development:</strong> Environmental quality deteriorates as income rises</li>
+                    <li><strong>Turning point:</strong> Around $8,000-$15,000 per capita</li>
+                    <li><strong>Later development:</strong> Environmental quality improves with higher income</li>
+                    <li><strong>Mechanisms:</strong> Cleaner technology, service economy, environmental regulation</li>
+                </ul>
+
+                <h4>Evidence</h4>
+                <ul>
+                    <li><strong>Air pollution:</strong> SO2, particulates decline with income in rich countries</li>
+                    <li><strong>Water quality:</strong> Rivers cleaner in developed nations</li>
+                    <li><strong>Forest cover:</strong> Reforestation in Europe, North America</li>
+                    <li><strong>Species protection:</strong> Endangered species acts, conservation efforts</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Environmental Progress Evidence</h4>
+                <p>Pinker presents compelling evidence that environmental quality has dramatically improved in developed nations:</p>
+                <ul>
+                    <li><strong>Air pollution reduction:</strong> US sulfur dioxide emissions fell by 88% from their 1973 peak, while carbon monoxide emissions dropped 59% since 1970. London's air quality has improved by over 90% since the deadly Great Smog of 1952.</li>
+                    <li><strong>Forest recovery:</strong> US forest cover has increased by 43% since its low point in 1920, now covering 33% of the land area.</li>
+                    <li><strong>Water quality:</strong> Rivers and lakes in developed countries are significantly cleaner than they were in the mid-20th century.</li>
+                    <li><strong>Conservation success:</strong> Endangered species protection programs have prevented numerous extinctions and enabled population recoveries.</li>
+                </ul>
+                <p>This demonstrates the Environmental Kuznets Curve in action: as societies become wealthier, they invest more in environmental protection and cleaner technologies.</p>
+            </div>
+
+            <div class="critical-question">
+                <h4>Climate Change: The Ultimate Test</h4>
+                <p><strong>Challenge:</strong> Global public good problem with massive coordination needs</p>
+                <p><strong>Pinker's assessment:</strong></p>
+                <ul>
+                    <li>Climate change is real and requires urgent action</li>
+                    <li>But catastrophic scenarios often exaggerated</li>
+                    <li>Technology and markets can contribute to solutions</li>
+                    <li>Carbon pricing essential; can be compatible with growth</li>
+                </ul>
+
+                <p><strong>Evidence of progress:</strong></p>
+                <ul>
+                    <li>Renewable energy costs plummeting (solar -85% since 2010)</li>
+                    <li>Energy intensity declining (GDP per unit energy improving)</li>
+                    <li>Paris Agreement: unprecedented global commitment</li>
+                    <li>Carbon pricing spreading (40+ national/subnational systems)</li>
+                </ul>
+            </div>
+
+            <div class="framework-box">
+                <h4>Economic Instruments for Environmental Policy</h4>
+                <ul>
+                    <li><strong>Carbon pricing:</strong> Tax or cap-and-trade systems</li>
+                    <li><strong>Subsidy reform:</strong> Remove fossil fuel subsidies ($5.3T globally)</li>
+                    <li><strong>Green innovation:</strong> R&D funding, patents, prizes</li>
+                    <li><strong>Regulation:</strong> Standards, mandates when markets fail</li>
+                    <li><strong>International cooperation:</strong> Technology transfer, climate finance</li>
+                </ul>
+                <p><strong>Key insight:</strong> Environmental protection and economic growth can be compatible with right policies</p>
+            </div>
+        </div>
+
+        <!-- Policy Implications Section -->
+        <div id="policy" class="content-section">
+            <h2>Policy Implications</h2>
+
+            <div class="framework-box">
+                <h4>Pinker's Policy Synthesis</h4>
+                <p><strong>Core principle:</strong> Pragmatic, evidence-based policies that harness market forces while addressing market failures</p>
+                
+                <p><strong>Economic policy:</strong></p>
+                <ul>
+                    <li>Maintain open trade while compensating adjustment costs</li>
+                    <li>Progressive taxation without destroying incentives</li>
+                    <li>Social insurance expansion (universal basic income experiments)</li>
+                    <li>Education and skills training for technological change</li>
+                    <li>Antitrust enforcement against monopolization</li>
+                </ul>
+
+                <p><strong>Institutional reform:</strong></p>
+                <ul>
+                    <li>Multilateral cooperation on global challenges</li>
+                    <li>Democratic accountability in international institutions</li>
+                    <li>Rule of law, property rights, corruption control</li>
+                    <li>Independent central banks, fiscal responsibility</li>
+                </ul>
+
+                <p><strong>Innovation policy:</strong></p>
+                <ul>
+                    <li>Public investment in basic research and development</li>
+                    <li>Intellectual property reform (balance innovation and access)</li>
+                    <li>Immigration policy attracting global talent</li>
+                    <li>Regulatory sandboxes for new technologies</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Successful Policy Models</h4>
+                <p><strong>Nordic social democracy:</strong></p>
+                <ul>
+                    <li>High taxes, generous welfare, but business-friendly policies</li>
+                    <li>Strong institutions, low corruption, high trust</li>
+                    <li>Results: high living standards, low inequality, economic dynamism</li>
+                </ul>
+
+                <p><strong>Singapore's developmental state:</strong></p>
+                <ul>
+                    <li>Strategic government investment, market-oriented policies</li>
+                    <li>Meritocratic bureaucracy, long-term planning</li>
+                    <li>Results: rapid development, high per capita income</li>
+                </ul>
+
+                <p><strong>German social market economy:</strong></p>
+                <ul>
+                    <li>Combines free markets with strong social safety net</li>
+                    <li>Coordinated capitalism, stakeholder governance</li>
+                    <li>Results: export competitiveness, industrial strength</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Democracy & Peace Section -->
+        <div id="democracy" class="content-section">
+            <h2>Democracy & Peace</h2>
+
+            <div class="theory-card">
+                <h3>The Democratic Peace Theory</h3>
+                <h4>Core Claims</h4>
+                <ul>
+                    <li><strong>Dyadic version:</strong> Democracies rarely fight wars against each other</li>
+                    <li><strong>Monadic version:</strong> Democracies are generally less war-prone</li>
+                    <li><strong>Institutional explanation:</strong> Checks and balances, public accountability</li>
+                    <li><strong>Normative explanation:</strong> Democratic values of compromise, negotiation</li>
+                </ul>
+
+                <h4>Evidence</h4>
+                <ul>
+                    <li>No clear case of established democracies fighting each other since 1945</li>
+                    <li>Democratic dyads have lower conflict propensity (Russett & Oneal)</li>
+                    <li>Transition periods may be more conflict-prone (Mansfield & Snyder)</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>The Long Peace: Statistical Evidence</h4>
+                <p>Pinker documents a remarkable decline in violent conflict since World War II:</p>
+                <ul>
+                    <li><strong>Great power peace:</strong> No wars between major powers for over 75 years since 1945—the longest such period in modern history.</li>
+                    <li><strong>Declining lethality:</strong> Battle death rates fell by 92% from the 1950s to the 2000s, even accounting for population growth.</li>
+                    <li><strong>Fewer civil wars:</strong> The number of ongoing civil wars dropped from 12 in 1990 to just 4 by 2016, contributing to global stability.</li>
+                    <li><strong>Democratic expansion:</strong> The number of democracies worldwide reached 116 by 2018, supporting theories about democratic peace and institutional conflict resolution.</li>
+                </ul>
+                <p>This "Long Peace" reflects the combined effects of nuclear deterrence, economic interdependence, international institutions, and the spread of democratic norms—all consistent with liberal international relations theory.</p>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: European Integration</h4>
+                <p><strong>Historical context:</strong> Europe as the continent of warfare (1000+ years of conflict)</p>
+                <p><strong>Key innovation:</strong> Economic integration creates peace dividends</p>
+                <p><strong>Timeline:</strong></p>
+                <ul>
+                    <li><strong>1951:</strong> European Coal and Steel Community (ECSC)</li>
+                    <li><strong>1957:</strong> European Economic Community (EEC)</li>
+                    <li><strong>1993:</strong> European Union with single market</li>
+                    <li><strong>1999:</strong> Euro currency adoption</li>
+                </ul>
+                <p><strong>Results:</strong></p>
+                <ul>
+                    <li>War between France and Germany now "unthinkable"</li>
+                    <li>Economic interdependence raises cost of conflict</li>
+                    <li>Supranational institutions provide dispute resolution</li>
+                    <li>Democratic norms spread throughout continent</li>
+                </ul>
+            </div>
+
+            <div class="critical-question">
+                <h4>Challenges to Democratic Peace</h4>
+                <p><strong>Critiques:</strong></p>
+                <ul>
+                    <li>Sample size too small; mostly post-1945 period</li>
+                    <li>Definition problems: what counts as "democracy"?</li>
+                    <li>Selection bias: democracies may choose easier targets</li>
+                    <li>Third variables: trade, international organizations, hegemony</li>
+                </ul>
+
+                <p><strong>Contemporary challenges:</strong></p>
+                <ul>
+                    <li>Democratic backsliding in Hungary, Poland, Venezuela</li>
+                    <li>Authoritarian capitalism (China, Singapore) success</li>
+                    <li>Populist nationalism threatens liberal democracy</li>
+                    <li>Information warfare, social media manipulation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Human Rights Section -->
+        <div id="rights" class="content-section">
+            <h2>Human Rights</h2>
+
+            <div class="theory-card">
+                <h3>The Rights Revolution</h3>
+                <h4>Historical Expansion</h4>
+                <ul>
+                    <li><strong>18th century:</strong> Natural rights, religious tolerance</li>
+                    <li><strong>19th century:</strong> Abolition of slavery, women's suffrage movements</li>
+                    <li><strong>20th century:</strong> Universal Declaration of Human Rights (1948)</li>
+                    <li><strong>21st century:</strong> LGBTQ+ rights, disability rights, digital rights</li>
+                </ul>
+
+                <h4>Mechanisms of Change</h4>
+                <ul>
+                    <li><strong>Moral circle expansion:</strong> Peter Singer's concept</li>
+                    <li><strong>Perspective-taking:</strong> Literature, media increase empathy</li>
+                    <li><strong>Networks and movements:</strong> Transnational advocacy</li>
+                    <li><strong>Legal institutionalization:</strong> Courts, international law</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Human Rights Progress Evidence</h4>
+                <p>The expansion of human rights over the past two centuries represents one of humanity's greatest moral achievements:</p>
+                <ul>
+                    <li><strong>Abolition of slavery:</strong> Once a universal practice across civilizations, slavery is now illegal in every country on Earth, though enforcement challenges remain.</li>
+                    <li><strong>Women's political participation:</strong> In 1900, no country granted women full political rights. By 2015, all 193 UN member states had extended voting rights to women, representing a complete transformation of political inclusion.</li>
+                    <li><strong>Religious freedom:</strong> Religious tolerance, rare throughout most of history, is now protected in most national constitutions, though implementation varies and setbacks occur in some regions.</li>
+                    <li><strong>LGBTQ+ rights:</strong> Same-sex marriage was illegal everywhere as recently as 2000, but by 2020 had become legal in 29 countries, demonstrating rapid social change.</li>
+                </ul>
+                <p>This progress reflects the expansion of the "moral circle"—our growing recognition that all humans deserve equal dignity and rights.</p>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Quantitative Evidence</h4>
+                <p><strong>Political Terror Scale (1976-2016):</strong></p>
+                <ul>
+                    <li>Countries with worst human rights violations: declined from 20 to 12</li>
+                    <li>Countries with best human rights records: increased from 23 to 37</li>
+                </ul>
+
+                <p><strong>Freedom House scores (1973-2018):</strong></p>
+                <ul>
+                    <li>"Free" countries: 44 → 86</li>
+                    <li>"Partly free" countries: 38 → 59</li>
+                    <li>"Not free" countries: 69 → 50</li>
+                </ul>
+
+                <p><strong>Women's rights indicators:</strong></p>
+                <ul>
+                    <li>Female labor force participation: 51% globally (2019)</li>
+                    <li>Parliamentary representation: 20% average (1995: 11%)</li>
+                    <li>Educational enrollment: gender parity achieved in most regions</li>
+                </ul>
+            </div>
+
+            <div class="framework-box">
+                <h4>International Human Rights Regime</h4>
+                <ul>
+                    <li><strong>Treaties:</strong> ICCPR, ICESCR, CEDAW, CRC, CRPD</li>
+                    <li><strong>Courts:</strong> European Court of Human Rights, Inter-American Court</li>
+                    <li><strong>Monitoring:</strong> UN Human Rights Council, treaty bodies</li>
+                    <li><strong>Enforcement:</strong> Naming and shaming, conditionality, sanctions</li>
+                    <li><strong>NGO networks:</strong> Amnesty International, Human Rights Watch</li>
+                </ul>
+                <p><strong>Effectiveness debate:</strong> Do international human rights treaties improve practices?</p>
+            </div>
+        </div>
+
+        <!-- Existential Challenges Section -->
+        <div id="existential" class="content-section">
+            <h2>Existential Challenges</h2>
+
+            <div class="critical-question">
+                <h4>Why Existential Risks Matter for IPE</h4>
+                <p><strong>Definition:</strong> Risks that could cause human extinction or permanent civilizational collapse</p>
+                <p><strong>IPE relevance:</strong> Economic systems must be sustainable over centuries, not just decades</p>
+                <p><strong>Categories:</strong></p>
+                <ul>
+                    <li><strong>Natural risks:</strong> Asteroid impacts, supervolcanic eruptions, pandemics</li>
+                    <li><strong>Anthropogenic risks:</strong> Nuclear war, climate change, AI alignment</li>
+                    <li><strong>Emerging risks:</strong> Biotechnology, nanotechnology, artificial general intelligence</li>
+                </ul>
+            </div>
+
+            <div class="theory-card">
+                <h3>Nuclear Weapons: The Ultimate Risk</h3>
+                <h4>Current Status</h4>
+                <ul>
+                    <li><strong>Global stockpile:</strong> ~13,400 nuclear warheads (down from 70,000 peak)</li>
+                    <li><strong>Nuclear states:</strong> 9 countries possess nuclear weapons</li>
+                    <li><strong>Near misses:</strong> Cuban Missile Crisis, Able Archer 83, Norwegian rocket incident</li>
+                </ul>
+
+                <h4>Economic Implications</h4>
+                <ul>
+                    <li><strong>Deterrence costs:</strong> US spends ~$50 billion annually on nuclear forces</li>
+                    <li><strong>Proliferation risks:</strong> More nuclear states increase accident probability</li>
+                    <li><strong>Regional conflicts:</strong> India-Pakistan tensions threaten South Asian economy</li>
+                    <li><strong>Nuclear terrorism:</strong> Non-state actors seeking weapons or materials</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Climate Change: Economic Analysis</h4>
+                <p>Economic research demonstrates that climate action is cost-effective compared to inaction:</p>
+                <ul>
+                    <li><strong>Cost of inaction:</strong> The Stern Review estimates that uncontrolled global warming could permanently reduce global GDP by 5-20%, with the poorest countries suffering disproportionately.</li>
+                    <li><strong>Mitigation costs:</strong> Preventing dangerous climate change would cost approximately 1% of global GDP annually—a manageable investment for most developed economies.</li>
+                    <li><strong>Economic returns:</strong> Climate investments offer 5-20:1 returns, making mitigation one of the highest-return policy interventions available.</li>
+                    <li><strong>Contemporary estimates:</strong> The EPA values the social cost of carbon at $51-185 per ton, reflecting both direct damages and systemic financial risks from climate change.</li>
+                </ul>
+                <p>This analysis supports Pinker's argument that environmental protection and economic growth can be compatible with proper pricing of externalities and technological innovation.</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Artificial Intelligence: Promise and Peril</h4>
+                <p><strong>Economic opportunities:</strong></p>
+                <ul>
+                    <li>Productivity gains: automation of cognitive tasks</li>
+                    <li>Scientific breakthroughs: drug discovery, materials science</li>
+                    <li>Global problem-solving: climate modeling, resource optimization</li>
+                </ul>
+
+                <p><strong>Economic risks:</strong></p>
+                <ul>
+                    <li>Mass unemployment: automation displaces human workers</li>
+                    <li>Concentration of power: AI advantages accrue to tech giants</li>
+                    <li>Surveillance capitalism: erosion of privacy, democratic norms</li>
+                    <li>Existential risk: artificial general intelligence alignment problem</li>
+                </ul>
+
+                <p><strong>Policy responses:</strong></p>
+                <ul>
+                    <li>Education and retraining programs</li>
+                    <li>Universal basic income experiments</li>
+                    <li>AI governance frameworks</li>
+                    <li>International cooperation on AI safety</li>
+                </ul>
+            </div>
+
+            <div class="quote-box">
+                "The Enlightenment principle that we can apply reason and science to enhance human flourishing may seem obvious, but it is not. It is a radical statement about the human condition: that we are capable of understanding the world and ourselves, and of bringing about positive change."
+            </div>
+        </div>
+
+        <footer>
+            <p>This analysis demonstrates how <em>Enlightenment Now</em> provides empirical grounding for key debates in International Political Economy, from the benefits of markets and trade to the challenges of inequality and global governance.</p>
+            <p><strong>Study Tips:</strong> Focus on Pinker's use of data to challenge conventional wisdom, his synthesis of multiple theoretical perspectives, and his policy recommendations that balance market efficiency with social equity.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-tabs button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Add active class to clicked button
+            if (event && event.target) {
+                event.target.classList.add('active');
+            } else {
+                // Fallback: find the correct button
+                const targetButton = document.querySelector(`button[onclick="showSection('${sectionId}')"]`);
+                if (targetButton) {
+                    targetButton.classList.add('active');
+                }
+            }
+        }
+
+        // Initialize with first section active
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reset all sections first
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Reset all buttons
+            const buttons = document.querySelectorAll('.nav-tabs button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Activate overview section and button
+            document.getElementById('overview').classList.add('active');
+            document.querySelector('button[onclick="showSection(\'overview\')"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>
