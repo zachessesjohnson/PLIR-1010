@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>How to Prepare for Finals Like a Pro</title>
     <style>
         * {
@@ -39,7 +39,6 @@
             font-weight: 700;
             background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
@@ -194,6 +193,7 @@
             text-align: center;
         }
 
+        /* Study plan table */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -318,6 +318,45 @@
             background: white;
         }
 
+        .cta {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn.primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            color: #667eea;
+        }
+
+        .btn.ghost:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-1px);
+        }
+
         footer {
             font-size: 1rem;
             color: #666;
@@ -341,8 +380,28 @@
                 grid-template-columns: 1fr;
             }
             
+            .cta {
+                flex-direction: column;
+            }
+            
             .container {
                 padding: 20px;
+            }
+        }
+
+        /* Print-friendly */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .cta, .tips {
+                page-break-inside: avoid;
             }
         }
     </style>
@@ -441,7 +500,7 @@
                     <tr><td>1–0</td><td>Rest & quick recall</td><td>Light review, sleep well, logistics check (ID, materials)</td></tr>
                 </tbody>
             </table>
-            <div style="margin-top: 15px; text-align: center; opacity: 0.9;">Tip: when juggling multiple finals, stagger heavy days so you don't overload a single day</div>
+            <div style="margin-top: 15px; text-align: center; opacity: 0.9;">💡 Tip: when juggling multiple finals, stagger heavy days so you don't overload a single day</div>
         </div>
 
         <!-- Study Techniques Section -->
@@ -505,7 +564,7 @@
                 <ul style="margin: 0 0 0 20px; line-height: 1.8;">
                     <li><strong>Timing & Location:</strong> Confirm time & location, arrive 15–20 minutes early</li>
                     <li><strong>Essential Items:</strong> Student ID, allowed calculators, multiple pens, water, tissues, post-exam snacks</li>
-                    <li><strong>Study Materials:</strong> Bring notes if allowed; otherwise a clean summary sheet for last-minute recall</li>
+                    <li><strong>Study Materials:</strong> Bring printed/handwritten notes if allowed; otherwise a clean summary sheet for last-minute recall</li>
                     <li><strong>Morning Routine:</strong> Do a 20-minute light review (no new material), eat a balanced breakfast</li>
                     <li><strong>Anxiety Management:</strong> Use 4-4-8 breathing technique for 2–3 minutes before starting the exam</li>
                 </ul>
@@ -537,9 +596,8 @@
                     <div><strong>Sleep Schedule</strong><div class="mini">7–8 hours nightly, especially before exams</div></div>
                 </div>
             </div>
+            <div style="margin-top: 15px; text-align: center; color: white; opacity: 0.9;">💡 Print this checklist and pin it to your wall or save a photo on your phone</div>
         </div>
-
-        <footer>A practical guide for effective finals preparation</footer>
     </div>
 </body>
 </html>
