@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrique's Journey: Complete International Relations Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .course-info {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .nav-tabs button {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #1a1a2e;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs button:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-tabs button.active {
+            background: #1a1a2e;
+            color: white;
+            border-color: #1a1a2e;
+        }
+
+        .content-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #1a1a2e;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 1.6em;
+            margin: 30px 0 15px;
+        }
+
+        h4 {
+            color: #1a1a2e;
+            font-size: 1.3em;
+            margin: 20px 0 12px;
+        }
+
+        .theory-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .theory-card h3, .theory-card h4 {
+            color: white;
+        }
+
+        .case-study {
+            background: #ecf0f1;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+        }
+
+        .case-study h4 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .evidence-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .evidence-box h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .data-box {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .data-box h3, .data-box h4 {
+            color: white;
+        }
+
+        .framework-box {
+            background: #e8f5e9;
+            border: 3px solid #4caf50;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .framework-box h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        .critical-question {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .critical-question h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .quote-box {
+            background: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 8px;
+            color: #0d47a1;
+            font-size: 1.05em;
+        }
+
+        .debate-section {
+            background: #fff9e6;
+            border: 3px dashed #ff9800;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .debate-section h4 {
+            color: #e65100;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #a8e063;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs button {
+                width: 100%;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Enrique's Journey</h1>
+            <p class="subtitle">International Relations Analysis</p>
+            <p class="course-info">Migration, Human Security, Global Governance, and Transnational Issues</p>
+            <p style="margin-top: 10px; color: #666;">by Sonia Nazario • Published 2006 (Adult) / 2013 (Young Adult)</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-section="overview">IR Overview</button>
+            <button class="tab-btn" data-section="migration">Migration Theory</button>
+            <button class="tab-btn" data-section="security">Human Security</button>
+            <button class="tab-btn" data-section="sovereignty">State Sovereignty</button>
+            <button class="tab-btn" data-section="actors">Non-State Actors</button>
+            <button class="tab-btn" data-section="regional">Regional Dynamics</button>
+            <button class="tab-btn" data-section="governance">Global Governance</button>
+            <button class="tab-btn" data-section="development">Development & IPE</button>
+            <button class="tab-btn" data-section="norms">Norms & Identity</button>
+            <button class="tab-btn" data-section="policy">Policy Debates</button>
+        </div>
+
+        <!-- IR Overview Section -->
+        <div id="overview" class="content-section active">
+            <h2>International Relations Overview</h2>
+            
+            <div class="framework-box">
+                <h4>Why This Book Matters for IR Studies</h4>
+                <p><strong>Enrique's Journey</strong> provides ground-level evidence for understanding:</p>
+                <ul>
+                    <li><strong>Migration dynamics:</strong> Push/pull factors driving unauthorized cross-border movement</li>
+                    <li><strong>Human security:</strong> Non-traditional security threats affecting vulnerable populations</li>
+                    <li><strong>State capacity:</strong> Governance failures in transit and origin countries</li>
+                    <li><strong>Transnational networks:</strong> Criminal organizations, humanitarian groups, diaspora communities</li>
+                    <li><strong>Global inequality:</strong> North-South wealth disparities as structural driver of migration</li>
+                    <li><strong>Norms and identity:</strong> Changing concepts of citizenship, family, and belonging</li>
+                </ul>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">214M</div>
+                    <div class="stat-label">Global Migrants Worldwide (2013)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100,000</div>
+                    <div class="stat-label">Estimated Unaccompanied Children Entering US Annually</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12,000</div>
+                    <div class="stat-label">Miles Enrique Traveled (All Attempts)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Attempts Before Reaching His Mother</div>
+                </div>
+            </div>
+
+            <div class="theory-card">
+                <h3>Central IR Questions Addressed</h3>
+                <ol>
+                    <li><strong>State Sovereignty vs. Human Rights:</strong> How do states balance border control with humanitarian obligations?</li>
+                    <li><strong>Security:</strong> What constitutes security when threats are economic, social, and environmental rather than military?</li>
+                    <li><strong>Cooperation:</strong> Why does international cooperation on migration remain so difficult?</li>
+                    <li><strong>Power Asymmetries:</strong> How do structural inequalities between North and South shape migration?</li>
+                    <li><strong>Non-State Actors:</strong> What roles do cartels, NGOs, and transnational networks play?</li>
+                    <li><strong>Norms:</strong> How are ideas about family, citizenship, and human dignity evolving?</li>
+                </ol>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Key Empirical Evidence</h4>
+                <p>Nazario's investigative journalism reveals critical data about Central American migration:</p>
+                <ul>
+                    <li><strong>Scale of child migration:</strong> An estimated 48,000+ children entered the US alone and illegally in 2000; this surged to 100,000 annually by 2011.</li>
+                    <li><strong>Journey dangers:</strong> Every other day in Chiapas, Mexico, a migrant loses a limb to freight trains; 300+ migrants die annually crossing the US-Mexico border.</li>
+                    <li><strong>Sexual violence:</strong> Nearly 1 in 6 migrant girls detained in Texas report sexual assault during their journey, according to a University of Houston study.</li>
+                    <li><strong>Economic drivers:</strong> Remittances from migrants contribute over $40 billion annually to Latin American economies, making migration an economic necessity for many families.</li>
+                </ul>
+            </div>
+
+            <div class="quote-box">
+                "This is the adventure story of the twenty-first century. Children who set out on this journey usually don't make it all the way there. They end up back in Central America, defeated."
+            </div>
+        </div>
+
+        <!-- Migration Theory Section -->
+        <div id="migration" class="content-section">
+            <h2>Migration Theory & Frameworks</h2>
+
+            <div class="theory-card">
+                <h3>Push-Pull Model in Action</h3>
+                <h4>Push Factors (Honduras/Central America)</h4>
+                <ul>
+                    <li><strong>Economic deprivation:</strong> 90% of Hondurans earn $1/day or less; factory workers make $40-$120/month</li>
+                    <li><strong>Limited opportunities:</strong> 11% of children never attend school; jobs scarce for those without connections</li>
+                    <li><strong>Family separation:</strong> Parents already in US create family reunification imperative</li>
+                    <li><strong>Violence:</strong> Honduras has world's highest murder rate; gang recruitment threatens youth</li>
+                    <li><strong>Environmental factors:</strong> Limited arable land, natural disasters, climate stress</li>
+                </ul>
+
+                <h4>Pull Factors (United States)</h4>
+                <ul>
+                    <li><strong>Economic opportunity:</strong> Wages 10-50x higher than in Central America</li>
+                    <li><strong>Family networks:</strong> 82% of LA nannies, 25% of housecleaners are mothers with children in home country</li>
+                    <li><strong>Demand for labor:</strong> Agriculture, construction, domestic work, food service</li>
+                    <li><strong>Social capital:</strong> Established immigrant communities provide support</li>
+                    <li><strong>Aspirational:</strong> Images of US prosperity seen on TV create powerful draw</li>
+                </ul>
+            </div>
+
+            <div class="framework-box">
+                <h4>Theoretical Perspectives on Migration</h4>
+                
+                <p><strong>Neoclassical Economics (Micro):</strong></p>
+                <ul>
+                    <li>Individuals are rational actors maximizing expected income</li>
+                    <li>Evidence: Lourdes calculates she can earn 10-20x more in US</li>
+                    <li>Critique: Ignores non-economic factors (family bonds, trauma)</li>
+                </ul>
+
+                <p><strong>New Economics of Migration (Household):</strong></p>
+                <ul>
+                    <li>Families make collective decisions to diversify risk</li>
+                    <li>Evidence: Lourdes migrates so children can stay in school, avoid poverty</li>
+                    <li>Critique: Underestimates psychological costs of separation</li>
+                </ul>
+
+                <p><strong>Dual Labor Market Theory (Structural):</strong></p>
+                <ul>
+                    <li>Developed economies have structural demand for immigrant labor</li>
+                    <li>Evidence: US employers want "accommodating, low-cost workers" for 3-D jobs</li>
+                    <li>Critique: Why then the enforcement theater?</li>
+                </ul>
+
+                <p><strong>World Systems Theory (Marxist):</strong></p>
+                <ul>
+                    <li>Migration flows from periphery to core driven by capitalist exploitation</li>
+                    <li>Evidence: Historical US intervention in Central America creates conditions driving migration</li>
+                    <li>Critique: Migrants exercise agency; not simply exploited victims</li>
+                </ul>
+
+                <p><strong>Social Network Theory:</strong></p>
+                <ul>
+                    <li>Migration perpetuates through network effects; costs/risks decline</li>
+                    <li>Evidence: Enrique follows path others have taken; smuggler networks facilitate</li>
+                    <li>Supports: Migration as self-sustaining phenomenon</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: The Feminization of Migration</h4>
+                <p><strong>Context:</strong> Since 1990s, increasing numbers of single mothers migrate from Central America</p>
+                <p><strong>Drivers:</strong></p>
+                <ul>
+                    <li>Divorce/separation leaves women without income from fathers</li>
+                    <li>Gendered labor markets create demand for domestic workers in US</li>
+                    <li>Male migration opened pathway for women to follow</li>
+                </ul>
+                <p><strong>Consequences:</strong></p>
+                <ul>
+                    <li>USC study: 82% of live-in LA nannies have children in home country</li>
+                    <li>Children left behind experience trauma, abandonment, anger</li>
+                    <li>"Transnational motherhood" challenges traditional family structures</li>
+                    <li>Second generation follows: Children like Enrique seeking mothers</li>
+                </ul>
+                <p><strong>IR Significance:</strong> Gendered dimensions of migration reshape social structures in both sending and receiving countries</p>
+            </div>
+
+            <div class="data-box">
+                <h3>The Migration Journey: Quantitative Reality</h3>
+                <p><strong>Enrique's statistics:</strong></p>
+                <ul>
+                    <li>7 failed attempts before success on 8th try</li>
+                    <li>122 days from final departure to reunion</li>
+                    <li>Rode atop 30+ freight trains</li>
+                    <li>Lost 28 pounds during journey</li>
+                    <li>Cost family $1,700 in smuggling fees</li>
+                </ul>
+
+                <p><strong>Broader patterns:</strong></p>
+                <ul>
+                    <li>Average of 8 attempts for successful border crossing (2000)</li>
+                    <li>50% of Central Americans entering illegally use smugglers</li>
+                    <li>Smuggling fees: $1,200-$10,000 depending on route, method</li>
+                    <li>Mexico deports 200,000+ Central Americans annually (peak years)</li>
+                </ul>
+            </div>
+
+            <div class="critical-question">
+                <h4>Debate: Is Migration "Voluntary"?</h4>
+                <p><strong>Traditional view:</strong> Economic migrants choose to move; refugees are forced</p>
+                <p><strong>Book's evidence:</strong></p>
+                <ul>
+                    <li>Lourdes: "I left for them" (economic necessity, not choice)</li>
+                    <li>Enrique: Pulled by family bonds, pushed by drugs/poverty</li>
+                    <li>María Isabel: Chooses to leave daughter, replicating cycle</li>
+                </ul>
+                <p><strong>IR Implication:</strong> Binary forced/voluntary distinction breaks down; most migration involves "constrained choice" due to structural factors</p>
+            </div>
+        </div>
+
+        <!-- Human Security Section -->
+        <div id="security" class="content-section">
+            <h2>Human Security</h2>
+
+            <div class="theory-card">
+                <h3>From State Security to Human Security</h3>
+                <h4>Traditional Security Paradigm</h4>
+                <ul>
+                    <li><strong>Referent object:</strong> The state</li>
+                    <li><strong>Threats:</strong> Military aggression, territorial violation</li>
+                    <li><strong>Solutions:</strong> Defense spending, alliances, deterrence</li>
+                    <li><strong>Actors:</strong> States, militaries</li>
+                </ul>
+
+                <h4>Human Security Paradigm (UNDP 1994)</h4>
+                <ul>
+                    <li><strong>Referent object:</strong> Individual people</li>
+                    <li><strong>Threats:</strong> "Freedom from fear" + "freedom from want"</li>
+                    <li><strong>Dimensions:</strong> Economic, food, health, environmental, personal, community, political security</li>
+                    <li><strong>Solutions:</strong> Development, governance, human rights</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Human Insecurity in Enrique's Journey</h4>
+                
+                <p><strong>Economic insecurity (Honduras):</strong></p>
+                <ul>
+                    <li>Lourdes cannot afford to feed children; they go to bed hungry</li>
+                    <li>Enrique at age 10 must work selling spices to survive</li>
+                    <li>30% of Honduran children ages 5 and under are stunted from malnutrition</li>
+                </ul>
+
+                <p><strong>Food insecurity:</strong></p>
+                <ul>
+                    <li>"Sleep facedown so your stomach won't growl so much"—Lourdes to children</li>
+                    <li>School principal reports students too malnourished to stand for anthem</li>
+                    <li>Children pulled from school at age 8 to work or babysit</li>
+                </ul>
+
+                <p><strong>Health insecurity:</strong></p>
+                <ul>
+                    <li>Limited access to doctors, medicine</li>
+                    <li>Migrants drink contaminated water, contract diseases</li>
+                    <li>Injuries from trains: limb loss, head trauma, untreated infections</li>
+                </ul>
+
+                <p><strong>Personal security:</strong></p>
+                <ul>
+                    <li>Gang violence: Mara Salvatrucha, 18th Street control neighborhoods</li>
+                    <li>Police violence: Beatings, robbery, rape of migrants</li>
+                    <li>Zeta cartel: Kidnapping, torture, murder of migrants in Mexico</li>
+                </ul>
+
+                <p><strong>Community/family security:</strong></p>
+                <ul>
+                    <li>Family separation creates profound psychological trauma</li>
+                    <li>Children left behind lack parental guidance, supervision</li>
+                    <li>Social fabric torn by out-migration</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: The Train Tops—"La Bestia"</h4>
+                <p><strong>Context:</strong> Central Americans must cross Mexico atop freight trains</p>
+                <p><strong>Security threats documented:</strong></p>
+                <ul>
+                    <li><strong>Physical danger:</strong> Every other day a migrant loses limb in Chiapas; derailments, falls, electrocution</li>
+                    <li><strong>Criminal violence:</strong> Gangsters rob, beat, throw migrants off moving trains; Enrique beaten nearly to death</li>
+                    <li><strong>Sexual violence:</strong> Systematic rape of women and girls; some men assaulted too</li>
+                    <li><strong>State violence:</strong> Police rob migrants, beat them, demand bribes; immigration agents torture detainees</li>
+                    <li><strong>Environmental:</strong> Extreme heat/cold, starvation, dehydration, disease</li>
+                </ul>
+                <p><strong>Survival rate:</strong> Estimated only 50% of those who attempt journey actually reach destination</p>
+                <p><strong>IR Significance:</strong> Demonstrates how human insecurity creates humanitarian crisis requiring international response</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Seven Dimensions of Human Security in Migration Context</h4>
+                <table>
+                    <tr>
+                        <th>Security Type</th>
+                        <th>Threat in Book</th>
+                        <th>Impact</th>
+                    </tr>
+                    <tr>
+                        <td>Economic</td>
+                        <td>Unemployment, poverty wages</td>
+                        <td>Primary driver of migration</td>
+                    </tr>
+                    <tr>
+                        <td>Food</td>
+                        <td>Inability to feed children</td>
+                        <td>Malnutrition, development delays</td>
+                    </tr>
+                    <tr>
+                        <td>Health</td>
+                        <td>Limited medical care, injuries</td>
+                        <td>Preventable deaths, disability</td>
+                    </tr>
+                    <tr>
+                        <td>Environmental</td>
+                        <td>Extreme weather, unsafe conditions</td>
+                        <td>Death, injury during journey</td>
+                    </tr>
+                    <tr>
+                        <td>Personal</td>
+                        <td>Gang violence, assault, rape</td>
+                        <td>Physical/psychological trauma</td>
+                    </tr>
+                    <tr>
+                        <td>Community</td>
+                        <td>Family separation, social breakdown</td>
+                        <td>Loss of support networks</td>
+                    </tr>
+                    <tr>
+                        <td>Political</td>
+                        <td>Lack of rights, police abuse</td>
+                        <td>Inability to seek protection</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="critical-question">
+                <h4>Critical Debate: Security for Whom?</h4>
+                <p><strong>State perspective:</strong> Unauthorized migration threatens:</p>
+                <ul>
+                    <li>Territorial sovereignty and rule of law</li>
+                    <li>Economic interests of native workers</li>
+                    <li>Public services capacity (schools, hospitals)</li>
+                    <li>National identity and social cohesion</li>
+                </ul>
+
+                <p><strong>Migrant perspective:</strong> Security requires:</p>
+                <ul>
+                    <li>Ability to provide for family (economic security)</li>
+                    <li>Family unity (community security)</li>
+                    <li>Protection from violence (personal security)</li>
+                    <li>Access to basic needs (food, health security)</li>
+                </ul>
+
+                <p><strong>IR Question:</strong> When state security and human security conflict, which should take priority? Can they be reconciled?</p>
+            </div>
+        </div>
+
+        <!-- State Sovereignty Section -->
+        <div id="sovereignty" class="content-section">
+            <h2>State Sovereignty & Border Control</h2>
+
+            <div class="theory-card">
+                <h3>The Sovereignty Paradox</h3>
+                <h4>Classical Westphalian Sovereignty</h4>
+                <ul>
+                    <li><strong>Territorial integrity:</strong> State controls its borders</li>
+                    <li><strong>Authority:</strong> State determines who can enter/exit</li>
+                    <li><strong>Non-interference:</strong> Other states respect immigration decisions</li>
+                    <li><strong>Citizenship:</strong> State defines membership, rights</li>
+                </ul>
+
+                <h4>Contemporary Challenges</h4>
+                <ul>
+                    <li><strong>Enforcement limits:</strong> Despite massive spending, borders remain porous</li>
+                    <li><strong>Economic interdependence:</strong> Economies depend on immigrant labor</li>
+                    <li><strong>Human rights norms:</strong> International obligations limit state discretion</li>
+                    <li><strong>Transnational networks:</strong> Migration sustained by forces beyond state control</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Border Enforcement Reality: The US-Mexico Case</h4>
+                <p><strong>Enforcement expansion:</strong></p>
+                <ul>
+                    <li>Border Patrol agents: 5x increase since 1993 (4,000 → 21,000+)</li>
+                    <li>Border spending: $11.9 billion annually (2010)</li>
+                    <li>Physical barriers: 651 miles of wall/fencing constructed</li>
+                    <li>Technology: Sensors, drones, cameras, biometric systems</li>
+                </ul>
+
+                <p><strong>Results (according to PPIC study):</strong></p>
+                <ul>
+                    <li>No evidence strategy worked to deter unauthorized entry</li>
+                    <li>Illegal immigrant population grew faster after buildup began</li>
+                    <li>Deaths increased: 300+ annually from more dangerous crossing routes</li>
+                    <li>Smuggler use rose: 70% → 90% of migrants employ coyotes</li>
+                    <li>Settlement pattern changed: Migrants stay rather than circulate</li>
+                </ul>
+
+                <p><strong>IR Implication:</strong> Unilateral border enforcement has limited effectiveness; creates unintended consequences</p>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: Mexico's Dual Role</h4>
+                <p><strong>Context:</strong> Mexico is both transit country for Central Americans and sending country to US</p>
+                
+                <p><strong>Mexico's sovereignty challenges:</strong></p>
+                <ul>
+                    <li><strong>Southern border:</strong> Porous 600-mile border with Guatemala; limited enforcement capacity</li>
+                    <li><strong>Interior:</strong> Weak state presence in rural areas; corruption endemic</li>
+                    <li><strong>Cartel control:</strong> Zetas, Gulf Cartel control territory, extort migrants</li>
+                    <li><strong>Law enforcement:</strong> Police rob migrants rather than protect them</li>
+                </ul>
+
+                <p><strong>US pressure on Mexico:</strong></p>
+                <ul>
+                    <li>US demands Mexico enforce immigration law against Central Americans</li>
+                    <li>Mexico deports 200,000+ Central Americans annually to appease US</li>
+                    <li>Yet Mexico criticizes US treatment of Mexican migrants</li>
+                    <li>Hypocrisy: Mexico demands rights for its citizens abroad but denies them to Central Americans in Mexico</li>
+                </ul>
+
+                <p><strong>Sovereignty implications:</strong></p>
+                <ul>
+                    <li>Externalization of US border to Mexico's southern border</li>
+                    <li>US effectively dictating Mexico's immigration policy</li>
+                    <li>Demonstrates how powerful states can undermine weaker states' sovereignty</li>
+                </ul>
+            </div>
+
+            <div class="debate-section">
+                <h4>The Schizophrenic Policy Debate</h4>
+                <p><strong>Thesis:</strong> US pursues contradictory immigration policy</p>
+                
+                <p><strong>Front door (enforcement):</strong></p>
+                <ul>
+                    <li>Massive border security apparatus</li>
+                    <li>Workplace raids, deportations (400,000/year at peak)</li>
+                    <li>State-level anti-immigrant legislation</li>
+                    <li>Political rhetoric about "securing borders"</li>
+                </ul>
+
+                <p><strong>Back door (tolerance):</strong></p>
+                <ul>
+                    <li>Minimal workplace enforcement until recently</li>
+                    <li>No mandatory E-Verify system</li>
+                    <li>Industries dependent on unauthorized workers (agriculture, construction, services)</li>
+                    <li>Economic benefits: cheap labor, consumer prices, economic growth</li>
+                </ul>
+
+                <p><strong>Why the contradiction?</strong></p>
+                <ul>
+                    <li>Business interests want labor; voters want enforcement</li>
+                    <li>Politicians talk tough but don't want economic disruption</li>
+                    <li>Result: "enforcement theater" that satisfies neither objective</li>
+                </ul>
+            </div>
+
+            <div class="framework-box">
+                <h4>Sovereignty vs. Human Rights: Legal Framework</h4>
+                <p><strong>State sovereignty claims:</strong></p>
+                <ul>
+                    <li>Right to exclude non-citizens</li>
+                    <li>Right to deport those illegally present</li>
+                    <li>Right to prioritize citizens' interests</li>
+                </ul>
+
+                <p><strong>Human rights obligations:</strong></p>
+                <ul>
+                    <li>Non-refoulement (can't return to danger)</li>
+                    <li>Family unity rights (ICCPR, CRC)</li>
+                    <li>Children's best interests (Convention on Rights of Child)</li>
+                    <li>Due process protections</li>
+                </ul>
+
+                <p><strong>Tensions revealed in book:</strong></p>
+                <ul>
+                    <li>US detains minors in prison-like conditions</li>
+                    <li>Mexico deports children without protection screening</li>
+                    <li>Family separation policies violate human rights norms</li>
+                    <li>Yet states claim sovereign right to enforce immigration law</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Non-State Actors Section -->
+        <div id="actors" class="content-section">
+            <h2>Non-State Actors</h2>
+
+            <div class="theory-card">
+                <h3>The Complex Actor Landscape</h3>
+                <p>Enrique's journey reveals migration is shaped by diverse actors beyond states:</p>
+                <h4>Criminal Networks</h4>
+                <ul>
+                    <li><strong>Smugglers (coyotes):</strong> Profit-driven facilitators charging $1,200-$10,000</li>
+                    <li><strong>Gangs (MS-13, 18th Street):</strong> Rob, assault, kill migrants on train routes</li>
+                    <li><strong>Drug cartels (Zetas):</strong> Kidnapping operations generating millions</li>
+                    <li><strong>Corrupt officials:</strong> Police, immigration agents extracting bribes</li>
+                </ul>
+
+                <h4>Humanitarian Actors</h4>
+                <ul>
+                    <li><strong>Religious organizations:</strong> Churches providing food, shelter, spiritual support</li>
+                    <li><strong>NGOs:</strong> Human rights groups documenting abuses, advocacy</li>
+                    <li><strong>Grassroots networks:</strong> "Food throwers," local residents offering aid</li>
+                    <li><strong>Medical workers:</strong> Treating injured migrants for free/low cost</li>
+                </ul>
+
+                <h4>Economic Actors</h4>
+                <ul>
+                    <li><strong>Employers:</strong> US businesses hiring unauthorized workers</li>
+                    <li><strong>Remittance companies:</strong> Western Union, MoneyGram facilitating transfers</li>
+                    <li><strong>Transportation:</strong> Railroad companies, bus lines, truck drivers</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: Padre Leo and the Church Network</h4>
+                <p><strong>Actor:</strong> Father Leonardo López Guajardo, Parroquia de San José, Nuevo Laredo</p>
+                
+                <p><strong>Activities:</strong></p>
+                <ul>
+                    <li>Provides daily meals to migrants (hundreds served)</li>
+                    <li>Distributes food cards valid for 15 days</li>
+                    <li>Offers shelter for women migrants in his own apartment</li>
+                    <li>Arranges medical care, haircuts, donated clothing</li>
+                    <li>Helps migrants receive money wired from family</li>
+                    <li>Documents abuses, advocates for migrant rights</li>
+                </ul>
+
+                <p><strong>Funding:</strong> Begs donations, sells food in streets, accepts donations from parishioners (many oppose helping "foreigners")</p>
+
+                <p><strong>Risks:</strong> Immigration official threatened to jail him for "smuggling"; criticized by local community</p>
+
+                <p><strong>Impact:</strong></p>
+                <ul>
+                    <li>Thousands of migrants receive critical aid</li>
+                    <li>Provides moral/spiritual support to desperate people</li>
+                    <li>Network of churches throughout Mexico creates "humanitarian corridor"</li>
+                    <li>Challenges state narrative that migrants are criminals deserving punishment</li>
+                </ul>
+
+                <p><strong>IR Significance:</strong> Demonstrates how transnational religious networks create parallel governance structures when states fail to protect human rights</p>
+            </div>
+
+            <div class="data-box">
+                <h3>The Criminal Economy of Migration</h3>
+                <h4>Smuggling Industry</h4>
+                <ul>
+                    <li><strong>Revenue:</strong> Estimated $5-7 billion annually for US-Mexico corridor</li>
+                    <li><strong>Fees:</strong> $1,200 (basic service) to $10,000 (luxury, by plane)</li>
+                    <li><strong>Success rate:</strong> Varies widely; some smugglers reliable, others abandon/rob clients</li>
+                    <li><strong>Structure:</strong> Networks spanning multiple countries; specialization by function</li>
+                </ul>
+
+                <h4>Kidnapping Industry (Zetas)</h4>
+                <ul>
+                    <li><strong>Victims:</strong> Estimated 18,000 Central Americans kidnapped annually in Mexico</li>
+                    <li><strong>Methods:</strong> Pull migrants off trains/buses, hold for ransom</li>
+                    <li><strong>Ransom:</strong> $2,000-$10,000 per person; families in US pressured to pay</li>
+                    <li><strong>Consequences:</strong> Those without money killed; mass graves discovered</li>
+                </ul>
+
+                <h4>Corruption Tax</h4>
+                <ul>
+                    <li>Police bribes: $20-$100 per migrant to avoid arrest</li>
+                    <li>Smuggler-official collusion: Systematic payoffs enable operations</li>
+                    <li>El Tiríndaro pays 10% of earnings to police for "protection"</li>
+                </ul>
+            </div>
+
+            <div class="framework-box">
+                <h4>The Food Throwers: Grassroots Solidarity</h4>
+                <p><strong>Context:</strong> In towns through Oaxaca and Veracruz, residents gather to throw food to migrants on passing trains</p>
+
+                <p><strong>Participants:</strong></p>
+                <ul>
+                    <li>Families living near tracks, often quite poor themselves</li>
+                    <li>Bakers, seamstresses, farmers giving what they produce</li>
+                    <li>Children participating with parents</li>
+                    <li>100-year-old woman forces arthritic hands to make tortilla bags</li>
+                </ul>
+
+                <p><strong>Motivations:</strong></p>
+                <ul>
+                    <li>"If I have one tortilla, I give half away. I know God will bring me more."</li>
+                    <li>Empathy: "My sons walked through desert to reach US. When I help someone here, I feel like I'm feeding my children."</li>
+                    <li>Justice: "It's wrong for our government to send people back. We don't want to be stopped going to US, so how can we stop Central Americans?"</li>
+                    <li>Humanity: "Can you imagine how far they've come?"</li>
+                </ul>
+
+                <p><strong>IR Significance:</strong></p>
+                <ul>
+                    <li>Demonstrates cosmopolitan solidarity across national boundaries</li>
+                    <li>Challenges state monopoly on determining who deserves assistance</li>
+                    <li>Creates transnational community of care</li>
+                    <li>Shows how ordinary people resist state violence through everyday acts</li>
+                </ul>
+            </div>
+
+            <div class="critical-question">
+                <h4>Debate: Smugglers—Criminals or Humanitarians?</h4>
+                <p><strong>State/law enforcement view:</strong></p>
+                <ul>
+                    <li>Smugglers are criminals profiting from illegal activity</li>
+                    <li>They endanger lives, abandon clients, sometimes work with kidnappers</li>
+                    <li>Smuggling finances organized crime</li>
+                    <li>Must be prosecuted to deter illegal immigration</li>
+                </ul>
+
+                <p><strong>Alternative view:</strong></p>
+                <ul>
+                    <li>Smugglers provide essential service migrants need</li>
+                    <li>Border enforcement creates demand for smuggling services</li>
+                    <li>Many smugglers (like El Tiríndaro) are reliable, care about clients</li>
+                    <li>Without smugglers, more migrants would die attempting journey alone</li>
+                </ul>
+
+                <p><strong>Book's evidence:</strong> El Tiríndaro helps Enrique multiple times, keeps promises, doesn't charge excessive fees. Yet he's an addict involved in crime. Moral complexity resists easy categorization.</p>
+            </div>
+        </div>
+
+        <!-- Regional Dynamics Section -->
+        <div id="regional" class="content-section">
+            <h2>Regional Dynamics: The Migration Corridor</h2>
+
+            <div class="theory-card">
+                <h3>The Central America-Mexico-US System</h3>
+                <h4>Three Interconnected Regions</h4>
+                <p><strong>Origin (Honduras/Central America):</strong></p>
+                <ul>
+                    <li>Extreme poverty, limited opportunities</li>
+                    <li>Weak state capacity, corruption endemic</li>
+                    <li>Gang violence, highest murder rates globally</li>
+                    <li>Post-conflict societies (civil wars of 1980s)</li>
+                    <li>US intervention legacy (support for dictators, coups)</li>
+                </ul>
+
+                <p><strong>Transit (Mexico):</strong></p>
+                <ul>
+                    <li>Caught between empathy for migrants and US pressure to enforce</li>
+                    <li>Limited capacity to control borders, interior</li>
+                    <li>Cartel violence spillover affects migrants</li>
+                    <li>Corrupt law enforcement preys on migrants</li>
+                    <li>2011 law grants Central Americans transit rights (implementation weak)</li>
+                </ul>
+
+                <p><strong>Destination (United States):</strong></p>
+                <ul>
+                    <li>Economic magnet: wages 10-50x higher</li>
+                    <li>Structural demand for low-wage labor</li>
+                    <li>Established immigrant communities provide networks</li>
+                    <li>Contradictory policies: enforcement theater vs. economic reality</li>
+                    <li>Growing anti-immigrant sentiment, state-level legislation</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Honduras: The Roots of Migration</h4>
+                <p><strong>Economic indicators (2000s):</strong></p>
+                <ul>
+                    <li>GDP per capita: ~$2,000 (vs. US $40,000)</li>
+                    <li>90% of population lives on <$1/day</li>
+                    <li>Factory wages: $40-$120/month</li>
+                    <li>Unemployment/underemployment: Over 50%</li>
+                    <li>School attendance: 11% of children never attend; most don't finish 6th grade</li>
+                </ul>
+
+                <p><strong>Social conditions:</strong></p>
+                <ul>
+                    <li>30% of children under 5 stunted from malnutrition</li>
+                    <li>Schools lack basic supplies; principals report kids too weak to stand</li>
+                    <li>Limited access to healthcare, clean water</li>
+                    <li>Gang recruitment: MS-13, 18th Street target vulnerable youth</li>
+                </ul>
+
+                <p><strong>Historical context:</strong></p>
+                <ul>
+                    <li>US-backed military governments (1980s)</li>
+                    <li>Contra war staging ground</li>
+                    <li>Economic adjustment programs (1990s) increased poverty</li>
+                    <li>Hurricane Mitch (1998) devastated infrastructure</li>
+                </ul>
+
+                <p><strong>Remittance dependency:</strong></p>
+                <ul>
+                    <li>Remittances: Over 20% of GDP</li>
+                    <li>Crucial for family survival, education</li>
+                    <li>Creates brain drain, dependency</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: Chiapas—"La Bestia" (The Beast)</h4>
+                <p><strong>Geographic context:</strong> Mexico's southernmost state, borders Guatemala</p>
+                
+                <p><strong>Why it's called "The Beast":</strong></p>
+                <ul>
+                    <li>Most dangerous stretch of migration journey</li>
+                    <li>Every other day a migrant loses limb to freight trains</li>
+                    <li>Gangs control train tops, rob and assault riders</li>
+                    <li>Bandits lie in wait at La Arrocera checkpoint</li>
+                    <li>Police and immigration agents most corrupt</li>
+                </ul>
+
+                <p><strong>Infrastructure challenges:</strong></p>
+                <ul>
+                    <li>Tracks 20+ years old, poorly maintained</li>
+                    <li>Frequent derailments (3/month average, 17 in worst month)</li>
+                    <li>Trains slow, making migrants more vulnerable</li>
+                    <li>Remote areas with limited state presence</li>
+                </ul>
+
+                <p><strong>State response:</strong></p>
+                <ul>
+                    <li>La Arrocera checkpoint catches 50% of migrants</li>
+                    <li>Deportations: Bus migrants back to Guatemala border</li>
+                    <li>Grupo Beta: Small protective force, underfunded</li>
+                    <li>Overall: Enforcement sporadic, corrupt</li>
+                </ul>
+
+                <p><strong>Humanitarian response:</strong></p>
+                <ul>
+                    <li>Shelters like Olga's treat injured migrants</li>
+                    <li>Churches provide food, shelter</li>
+                    <li>Human rights groups document abuses</li>
+                    <li>Insufficient to meet scale of need</li>
+                </ul>
+
+                <p><strong>IR Significance:</strong> Demonstrates how weak state capacity in transit regions creates humanitarian crisis; state's nominal sovereignty doesn't translate to effective control or protection</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Regional Cooperation Challenges</h4>
+                <p><strong>Why cooperation is difficult:</strong></p>
+                <ul>
+                    <li><strong>Power asymmetries:</strong> US dominates; can impose preferences on Mexico, Central America</li>
+                    <li><strong>Conflicting interests:</strong> US wants enforcement; Central America wants development aid and remittances</li>
+                    <li><strong>Sovereignty sensitivities:</strong> Mexico resents US dictating policy; Central American countries resent Mexico's treatment of their citizens</li>
+                    <li><strong>Domestic politics:</strong> Anti-immigrant sentiment limits US cooperation; Mexican citizens oppose helping Central Americans</li>
+                    <li><strong>Institutional weaknesses:</strong> Limited capacity to implement agreements</li>
+                </ul>
+
+                <p><strong>Existing regional frameworks:</strong></p>
+                <ul>
+                    <li>Mérida Initiative (2008): US security aid to Mexico</li>
+                    <li>Alliance for Prosperity (2014): Development program for Central America</li>
+                    <li>Regional Conference on Migration (1996+): Annual dialogue</li>
+                    <li>Results: Limited; failed to address root causes or protect migrants</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Global Governance Section -->
+        <div id="governance" class="content-section">
+            <h2>Global Governance & Migration</h2>
+
+            <div class="theory-card">
+                <h3>The Global Migration Regime</h3>
+                <h4>Key International Frameworks</h4>
+                <ul>
+                    <li><strong>1951 Refugee Convention:</strong> Protection for refugees fleeing persecution (doesn't cover economic migrants)</li>
+                    <li><strong>ICCPR (1966):</strong> Civil and political rights, including freedom of movement</li>
+                    <li><strong>ICESCR (1966):</strong> Economic, social, cultural rights</li>
+                    <li><strong>Convention on Rights of Child (1989):</strong> Special protections for minors</li>
+                    <li><strong>Migrant Workers Convention (1990):</strong> Comprehensive but poorly ratified (no major destination country signed)</li>
+                </ul>
+
+                <h4>Institutional Actors</h4>
+                <ul>
+                    <li><strong>UNHCR:</strong> Refugee protection (mandate doesn't extend to economic migrants)</li>
+                    <li><strong>IOM:</strong> Migration management (focuses on facilitation, not rights)</li>
+                    <li><strong>ILO:</strong> Labor migration standards</li>
+                    <li><strong>Human Rights Council:</strong> Special Rapporteur on Migrants</li>
+                    <li><strong>Regional bodies:</strong> OAS, EU frameworks</li>
+                </ul>
+            </div>
+
+            <div class="evidence-box">
+                <h4>Governance Gaps Revealed in Book</h4>
+                <p><strong>No protection for unaccompanied migrant children:</strong></p>
+                <ul>
+                    <li>100,000 children annually make journey</li>
+                    <li>US detains minors in prison-like facilities</li>
+                    <li>Mexico deports without protection screening</li>
+                    <li>No consistent international standards</li>
+                </ul>
+
+                <p><strong>Impunity for abuses:</strong></p>
+                <ul>
+                    <li>Police, gangs, cartels attack migrants with no consequences</li>
+                    <li>Migrants can't report crimes (fear deportation)</li>
+                    <li>Corruption means even when reported, no prosecution</li>
+                    <li>International human rights mechanisms too weak to enforce</li>
+                </ul>
+
+                <p><strong>Family separation:</strong></p>
+                <ul>
+                    <li>CRC emphasizes family unity, child's best interest</li>
+                    <li>Yet millions of children separated from parents by migration</li>
+                    <li>No international framework to address transnational family rights</li>
+                </ul>
+            </div>
+
+            <div class="debate-section">
+                <h4>Debate: Why No Robust Global Migration Regime?</h4>
+                
+                <p><strong>Realist explanation:</strong></p>
+                <ul>
+                    <li>Migration is "high politics" touching sovereignty, security</li>
+                    <li>States unwilling to cede control over borders</li>
+                    <li>Power asymmetries: destination countries have leverage, block cooperation</li>
+                    <li>No hegemonic power interested in creating regime</li>
+                </ul>
+
+                <p><strong>Liberal explanation:</strong></p>
+                <ul>
+                    <li>Domestic politics: Anti-immigrant sentiment constrains cooperation</li>
+                    <li>Interest group competition: Labor unions vs. business</li>
+                    <li>Democratic publics oppose perceived loss of sovereignty</li>
+                    <li>Institutional design problems: Existing organizations lack authority</li>
+                </ul>
+
+                <p><strong>Constructivist explanation:</strong></p>
+                <ul>
+                    <li>Normative consensus lacking: Is migration a right or privilege?</li>
+                    <li>Identity politics: Who counts as "us" vs. "them"?</li>
+                    <li>Competing frames: Security threat vs. humanitarian crisis vs. economic opportunity</li>
+                    <li>Need for norm entrepreneurs to shift discourse</li>
+                </ul>
+            </div>
+
+            <div class="framework-box">
+                <h4>The Global Compact on Migration (2018)</h4>
+                <p><strong>Context:</strong> First comprehensive UN framework on international migration</p>
+                
+                <p><strong>Key provisions:</strong></p>
+                <ul>
+                    <li>Safe, orderly, regular migration pathways</li>
+                    <li>Address root causes of migration</li>
+                    <li>Protection of migrant rights</li>
+                    <li>Border management respecting human rights</li>
+                    <li>Ending child detention</li>
+                </ul>
+
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>Non-binding (states can ignore)</li>
+                    <li>US, Hungary, Poland, others withdrew</li>
+                    <li>No enforcement mechanism</li>
+                    <li>Weak implementation provisions</li>
+                </ul>
+
+                <p><strong>Significance:</strong> Represents normative progress (migration as human rights issue) but demonstrates limits of global governance in face of state sovereignty concerns</p>
+            </div>
+
+            <div class="critical-question">
+                <h4>Would a "Marshall Plan" for Central America Work?</h4>
+                <p><strong>Proposal:</strong> Massive development aid to address root causes of migration</p>
+                
+                <p><strong>Arguments for:</strong></p>
+                <ul>
+                    <li>Addresses push factors: poverty, violence, lack of opportunity</li>
+                    <li>Cheaper than border enforcement, detention, deportation</li>
+                    <li>Historical precedent: Original Marshall Plan succeeded</li>
+                    <li>Moral imperative: US intervention contributed to Central America's problems</li>
+                </ul>
+
+                <p><strong>Arguments against:</strong></p>
+                <ul>
+                    <li>Governance problems: Corruption would divert aid</li>
+                    <li>Time lag: Development takes decades; migration is immediate</li>
+                    <li>Migration hump: Development initially increases migration (more resources to travel)</li>
+                    <li>Political infeasibility: US public opposed to foreign aid</li>
+                </ul>
+
+                <p><strong>Book's implication:</strong> Without addressing root causes, enforcement alone cannot stop migration driven by such extreme disparities in opportunity</p>
+            </div>
+        </div>
+
+        <!-- Development & IPE Section -->
+        <div id="development" class="content-section">
+            <h2>Development & International Political Economy</h2>
+
+            <div class="theory-card">
+                <h3>Migration and Development: The Two-Way Relationship</h3>
+                <h4>How Development Affects Migration</h4>
+                <ul>
+                    <li><strong>At low income levels:</strong> Poverty constrains migration (can't afford to move)</li>
+                    <li><strong>At middle income levels:</strong> Migration peaks (have resources but strong incentives to leave)</li>
+                    <li><strong>At high income levels:</strong> Migration declines (opportunities at home sufficient)</li>
+                    <li><strong>Result:</strong> "Migration hump"—development initially increases emigration</li>
+                </ul>
+
+                <h4>How Migration Affects Development</h4>
+                <ul>
+                    <li><strong>Positive effects:</strong> Remittances, brain circulation, technology transfer, diaspora investment</li>
+                    <li><strong>Negative effects:</strong> Brain drain, family breakdown, dependency, loss of most productive workers</li>
+                    <li><strong>Net effect:</strong> Debated; varies by country, context</li>
+                </ul>
+            </div>
+
+            <div class="data-box">
+                <h3>The Economics of Remittances</h3>
+                <h4>Global Scale</h4>
+                <ul>
+                    <li><strong>Total remittances:</strong> $40+ billion annually to Latin America (2000s)</li>
+                    <li><strong>Exceeds:</strong> Official development assistance to region</li>
+                    <li><strong>Stability:</strong> More stable than FDI; increases during crises</li>
+                </ul>
+
+                <h4>Honduras Specifically</h4>
+                <ul>
+                    <li><strong>Share of GDP:</strong> Over 20% from remittances</li>
+                    <li><strong>Recipients:</strong> One in four Honduran families receives remittances</li>
+                    <li><strong>Uses:</strong> Food (50%), housing (15%), education (10%), healthcare (10%)</li>
+                    <li><strong>Average amount:</strong> $200-300 per month per family</li>
+                </ul>
+
+                <h4>Micro-Level Impact (Enrique's Family)</h4>
+                <ul>
+                    <li>Lourdes sends $50-100/month to each child</li>
+                    <li>Enables Belky to attend private high school, college</li>
+                    <li>Allows family to eat, have basic necessities</li>
+                    <li>But: Cannot replace mother's presence; creates dependency</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: Lourdes's Economic Calculus</h4>
+                <p><strong>Honduras income potential:</strong></p>
+                <ul>
+                    <li>Factory work: $40-120/month</li>
+                    <li>Domestic work: $50-90/month</li>
+                    <li>Street vending (Lourdes's work): ~$40/month</li>
+                    <li>Monthly expenses for family of 3: ~$100 minimum (food only)</li>
+                    <li><strong>Conclusion:</strong> Cannot earn enough to feed children adequately or send to school</li>
+                </ul>
+
+                <p><strong>US income reality:</strong></p>
+                <ul>
+                    <li>Nanny work: $600-1,200/month (live-in)</li>
+                    <li>House cleaning: $800-1,500/month</li>
+                    <li>Factory work: $1,200-1,800/month</li>
+                    <li>Can send $100-200/month and still survive</li>
+                    <li><strong>Result:</strong> Income 10-20x higher enables family survival</li>
+                </ul>
+
+                <p><strong>But hidden costs:</strong></p>
+                <ul>
+                    <li>Smuggler fee: $3,000-5,000 (years to repay)</li>
+                    <li>Years apart from children</li>
+                    <li>Psychological trauma for all</li>
+                    <li>Risk of death/injury on journey</li>
+                    <li>Exploitative working conditions in US</li>
+                    <li>Living in fear of deportation</li>
+                </ul>
+
+                <p><strong>IPE Insight:</strong> Wage differentials so extreme that even accounting for costs and risks, migration remains rational choice for desperate families</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Dependency Theory Applied</h4>
+                <p><strong>Core-Periphery Structure:</strong></p>
+                <ul>
+                    <li><strong>Core (US):</strong> Capital-rich, high-wage, advanced technology</li>
+                    <li><strong>Periphery (Central America):</strong> Labor-rich, low-wage, limited capital</li>
+                    <li><strong>Migration as exploitation:</strong> Core extracts labor from periphery without paying for its reproduction (education, health, social security in periphery)</li>
+                </ul>
+
+                <p><strong>Historical Legacy:</strong></p>
+                <ul>
+                    <li>US intervention in Central America (1980s): Military aid to repressive regimes</li>
+                    <li>Structural adjustment (1990s): Forced privatization increased poverty</li>
+                    <li>Trade policy: CAFTA benefits US corporations, not Central American workers</li>
+                    <li>Drug war: US demand for drugs fuels cartel violence</li>
+                </ul>
+
+                <p><strong>Contemporary Structure:</strong></p>
+                <ul>
+                    <li>Migration serves US interests: Cheap labor, wage suppression</li>
+                    <li>Remittances maintain consumption in Central America without structural change</li>
+                    <li>Brain drain further weakens periphery</li>
+                    <li>Circular dependency perpetuated</li>
+                </ul>
+
+                <p><strong>Counter-argument:</strong> Without migration and remittances, poverty would be worse; migrants exercise agency; not simply victims</p>
+            </div>
+
+            <div class="evidence-box">
+                <h4>The Gendered Political Economy of Migration</h4>
+                <p><strong>Care work crisis in the North:</strong></p>
+                <ul>
+                    <li>Women in developed countries enter workforce</li>
+                    <li>Creates demand for domestic workers, nannies, elder care</li>
+                    <li>Local workers unwilling to do this work at prevailing wages</li>
+                    <li>Immigrant women fill gap</li>
+                </ul>
+
+                <p><strong>Global care chains:</strong></p>
+                <ul>
+                    <li>Honduran mother (Lourdes) cares for American child</li>
+                    <li>Honduran grandmother cares for Honduran child (Enrique)</li>
+                    <li>Care responsibilities shift downward in global hierarchy</li>
+                    <li>Richest women outsource care to poorer women, who outsource to even poorer women</li>
+                </ul>
+
+                <p><strong>Valuation of women's work:</strong></p>
+                <ul>
+                    <li>Care work devalued in both origin and destination countries</li>
+                    <li>Immigrant women paid less than citizens for same work</li>
+                    <li>No recognition of social reproduction costs</li>
+                    <li>Women bear emotional costs of separation</li>
+                </ul>
+
+                <p><strong>IR/IPE Significance:</strong> Migration reveals how global capitalism relies on and reproduces gendered inequalities across borders</p>
+            </div>
+        </div>
+
+        <!-- Norms & Identity Section -->
+        <div id="norms" class="content-section">
+            <h2>Norms & Identity</h2>
+
+            <div class="theory-card">
+                <h3>Constructivist Analysis: Ideas Matter</h3>
+                <h4>Competing Frames of Migration</h4>
+                <p><strong>Security Frame:</strong></p>
+                <ul>
+                    <li>Migrants as threat to jobs, culture, safety</li>
+                    <li>Border as frontier to be defended</li>
+                    <li>Enforcement as necessary protection</li>
+                    <li>Dominant in destination country politics</li>
+                </ul>
+
+                <p><strong>Humanitarian Frame:</strong></p>
+                <ul>
+                    <li>Migrants as vulnerable people seeking better life</li>
+                    <li>Journey as humanitarian crisis requiring aid</li>
+                    <li>Protection as moral obligation</li>
+                    <li>Dominant among NGOs, religious groups</li>
+                </ul>
+
+                <p><strong>Economic Frame:</strong></p>
+                <ul>
+                    <li>Migrants as workers responding to labor demand</li>
+                    <li>Movement as economically rational, mutually beneficial</li>
+                    <li>Policy should facilitate orderly flows</li>
+                    <li>Dominant among economists, some business groups</li>
+                </ul>
+
+                <p><strong>Rights Frame:</strong></p>
+                <ul>
+                    <li>Migrants as rights-bearers regardless of legal status</li>
+                    <li>Family unity, child welfare as fundamental rights</li>
+                    <li>States bound by human rights obligations</li>
+                    <li>Dominant in international law discourse</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: Constructing "Illegality"</h4>
+                <p><strong>Social construction:</strong> "Illegal" is not natural category but socially produced</p>
+                
+                <p><strong>Historical variability:</strong></p>
+                <ul>
+                    <li>19th century: Open borders; no concept of "illegal immigration"</li>
+                    <li>1924: First numerical restrictions on immigration</li>
+                    <li>1965: Hart-Celler Act creates basis for modern "illegal" category</li>
+                    <li>1986: IRCA criminalizes employers hiring unauthorized workers</li>
+                </ul>
+
+                <p><strong>Legal vs. illegal vs. undocumented:</strong></p>
+                <ul>
+                    <li>"Illegal alien": Dominant official language; implies criminality</li>
+                    <li>"Undocumented immigrant": Preferred by advocates; emphasizes lack of papers, not criminality</li>
+                    <li>"Unauthorized": Neutral descriptor of legal status</li>
+                    <li>Language choice shapes perception, policy</li>
+                </ul>
+
+                <p><strong>Consequences of framing:</strong></p>
+                <ul>
+                    <li>"Illegal" dehumanizes, facilitates rights violations</li>
+                    <li>Migrants internalize stigma, hide, don't report abuse</li>
+                    <li>Creates two-tier system: citizens vs. non-citizens</li>
+                    <li>Yet Enrique and family are humans first, "illegal" second</li>
+                </ul>
+
+                <p><strong>IR Significance:</strong> Demonstrates how legal categories create social hierarchies; constructivist insight that ideas and norms shape material outcomes</p>
+            </div>
+
+            <div class="framework-box">
+                <h4>Transnational Identity and Belonging</h4>
+                <p><strong>Traditional citizenship:</strong> Exclusive territorial belonging</p>
+                
+                <p><strong>Transnational reality in book:</strong></p>
+                <ul>
+                    <li><strong>Dual lives:</strong> Lourdes lives in US but identity remains Honduran; sends money, calls home, plans to return</li>
+                    <li><strong>Multiple locations of home:</strong> Is Enrique's home Honduras (birth), US (where mother is), both, neither?</li>
+                    <li><strong>Transnational families:</strong> Family members dispersed across countries; relationships maintained via phone, remittances, occasional visits</li>
+                    <li><strong>Ambiguous loyalties:</strong> Enrique feels Honduran but future in US; children born in US but raised with Honduran identity</li>
+                </ul>
+
+                <p><strong>Diaspora communities:</strong></p>
+                <ul>
+                    <li>Honduran enclave in North Carolina provides support, familiarity</li>
+                    <li>Spanish-language media, churches, businesses create "little Honduras"</li>
+                    <li>Remittances and communication maintain ties to origin</li>
+                    <li>Political organizing around issues in both countries</li>
+                </ul>
+
+                <p><strong>Challenges to Westphalian system:</strong></p>
+                <ul>
+                    <li>People no longer fit neatly into territorial boxes</li>
+                    <li>Loyalties, identities, rights claims span borders</li>
+                    <li>Questions who has voice in governance (taxation without representation?)</li>
+                </ul>
+            </div>
+
+            <div class="debate-section">
+                <h4>Moral Circle Expansion: Who Deserves Our Concern?</h4>
+                <p><strong>Concentric circles model:</strong></p>
+                <ul>
+                    <li>Self → Family → Community → Nation → Humanity</li>
+                    <li>Most people have stronger obligations to those closer in circle</li>
+                    <li>Question: Where should circle stop?</li>
+                </ul>
+
+                <p><strong>Nationalist position:</strong></p>
+                <ul>
+                    <li>Primary obligations to co-nationals (shared history, institutions)</li>
+                    <li>States legitimately prioritize citizens' interests</li>
+                    <li>Helping foreigners is charitable, not obligatory</li>
+                    <li>Can't solve world's problems; must protect own community first</li>
+                </ul>
+
+                <p><strong>Cosmopolitan position:</strong></p>
+                <ul>
+                    <li>All humans have equal moral worth regardless of birthplace</li>
+                    <li>Arbitrary borders shouldn't determine life chances</li>
+                    <li>Structural injustice creates obligations to help</li>
+                    <li>Common humanity should expand circle to include all</li>
+                </ul>
+
+                <p><strong>Book's evidence:</strong></p>
+                <ul>
+                    <li>Food throwers in Mexico demonstrate spontaneous cosmopolitan impulse</li>
+                    <li>Yet most people in US, Mexico hostile to migrants</li>
+                    <li>Enrique suffers because circles haven't expanded far enough</li>
+                    <li>Question: Can norms change? History suggests yes, but slowly</li>
+                </ul>
+            </div>
+
+            <div class="quote-box">
+                "People are losing what they value most: family and the love of their children. In many ways, these separations are devastating Latino families."
+            </div>
+        </div>
+
+        <!-- Policy Debates Section -->
+        <div id="policy" class="content-section">
+            <h2>Policy Debates & Implications</h2>
+
+            <div class="framework-box">
+                <h4>Policy Options: A Spectrum</h4>
+                <p><strong>Enforcement-Heavy Approach:</strong></p>
+                <ul>
+                    <li>Border wall, technology, more agents</li>
+                    <li>Mandatory E-Verify, workplace raids</li>
+                    <li>Expedited deportation, detention</li>
+                    <li>State-level restrictions on services, employment</li>
+                    <li><strong>Goal:</strong> Deter unauthorized migration through enforcement</li>
+                    <li><strong>Problems:</strong> Expensive, limited effectiveness, humanitarian concerns, labor market disruptions</li>
+                </ul>
+
+                <p><strong>Enforcement + Legalization:</strong></p>
+                <ul>
+                    <li>Path to legal status for existing unauthorized residents</li>
+                    <li>Expanded legal immigration channels</li>
+                    <li>Temporary worker programs</li>
+                    <li>Continued border enforcement</li>
+                    <li><strong>Goal:</strong> Bring unauthorized into legal system while controlling future flows</li>
+                    <li><strong>Problems:</strong> Political opposition, "amnesty" concerns, enforcement credibility</li>
+                </ul>
+
+                <p><strong>Development-Focused Approach:</strong></p>
+                <ul>
+                    <li>Address root causes in origin countries</li>
+                    <li>Trade agreements that benefit all parties</li>
+                    <li>Development aid conditioned on governance reforms</li>
+                    <li>Investment in job creation, education</li>
+                    <li><strong>Goal:</strong> Reduce migration pressure by improving conditions at home</li>
+                    <li><strong>Problems:</strong> Long time horizon, governance challenges, migration hump</li>
+                </ul>
+
+                <p><strong>Regional Cooperation:</strong></p>
+                <ul>
+                    <li>Coordinated enforcement, protection standards</li>
+                    <li>Burden-sharing for refugee/migrant protection</li>
+                    <li>Joint development programs</li>
+                    <li>Orderly migration channels</li>
+                    <li><strong>Goal:</strong> Manage migration through multilateral cooperation</li>
+                    <li><strong>Problems:</strong> Sovereignty concerns, enforcement difficulties, free-rider problem</li>
+                </ul>
+            </div>
+
+            <div class="critical-question">
+                <h4>Central Policy Dilemma</h4>
+                <p><strong>The trilemma:</strong> Can only achieve two of three:</p>
+                <ol>
+                    <li>Free movement of people</li>
+                    <li>Sovereign nation-states</li>
+                    <li>Comprehensive welfare states</li>
+                </ol>
+
+                <p><strong>Current choice:</strong> Sovereignty + welfare state → restricted movement</p>
+                
+                <p><strong>Alternative scenarios:</strong></p>
+                <ul>
+                    <li>Open borders + sovereignty → minimal welfare state (libertarian vision)</li>
+                    <li>Open borders + welfare state → supranational governance (EU model, limited success)</li>
+                </ul>
+
+                <p><strong>Question:</strong> Which trade-offs are acceptable? Can we escape trilemma through policy innovation?</p>
+            </div>
+
+            <div class="evidence-box">
+                <h4>What Works? Evidence from Research</h4>
+                <p><strong>Enforcement:</strong></p>
+                <ul>
+                    <li>Border buildup has NOT significantly reduced unauthorized entries</li>
+                    <li>Created unintended consequences: More dangerous crossings, increased deaths, reliance on smugglers, changed settlement patterns</li>
+                    <li>Cost-benefit unclear: Spend billions, limited effectiveness</li>
+                </ul>
+
+                <p><strong>Legalization programs:</strong></p>
+                <ul>
+                    <li>1986 IRCA legalized 2.7 million; followed by continued unauthorized immigration</li>
+                    <li>But: Those legalized experienced wage gains, better working conditions, more stable lives</li>
+                    <li>Question: Does legalization incentivize more unauthorized immigration?</li>
+                </ul>
+
+                <p><strong>Development aid:</strong></p>
+                <ul>
+                    <li>Mixed evidence on effectiveness in reducing migration</li>
+                    <li>Short-term: May increase migration (migration hump)</li>
+                    <li>Long-term: Successful development does reduce emigration pressure</li>
+                    <li>Challenge: Governance, corruption, time lag</li>
+                </ul>
+
+                <p><strong>Regional integration:</strong></p>
+                <ul>
+                    <li>EU free movement works within relatively similar income levels</li>
+                    <li>Breaks down when income gaps too large (east-west migration concerns)</li>
+                    <li>Americas: Income gaps too large for EU-style integration</li>
+                </ul>
+            </div>
+
+            <div class="debate-section">
+                <h4>Comprehensive Immigration Reform: Key Components</h4>
+                <p><strong>Path to legal status:</strong></p>
+                <ul>
+                    <li>Allow unauthorized residents to "get right with the law"</li>
+                    <li>Requirements: Pay fines, back taxes, pass background check, learn English</li>
+                    <li>Debate: Should require return to home country? How long a wait?</li>
+                </ul>
+
+                <p><strong>Future flow management:</strong></p>
+                <ul>
+                    <li>Expand legal immigration quotas to match labor demand</li>
+                    <li>Temporary worker programs with labor protections</li>
+                    <li>Point systems vs. family reunification priorities</li>
+                </ul>
+
+                <p><strong>Enforcement:</strong></p>
+                <ul>
+                    <li>Mandatory E-Verify system</li>
+                    <li>Continued border security</li>
+                    <li>Interior enforcement targeting criminals</li>
+                </ul>
+
+                <p><strong>Root causes:</strong></p>
+                <ul>
+                    <li>Development assistance to Central America</li>
+                    <li>Trade policies that create jobs in origin countries</li>
+                    <li>Address violence, corruption</li>
+                </ul>
+
+                <p><strong>Political feasibility:</strong> Repeatedly proposed (2006, 2007, 2013), repeatedly failed. Polarization makes compromise difficult.</p>
+            </div>
+
+            <div class="theory-card">
+                <h3>Book's Implicit Policy Recommendations</h3>
+                <h4>For Origin Countries (Honduras, Central America):</h4>
+                <ul>
+                    <li>Economic development creating living-wage jobs</li>
+                    <li>Education investment so children can finish school</li>
+                    <li>Anti-corruption measures, rule of law</li>
+                    <li>Gang violence reduction</li>
+                    <li>Family support programs to prevent migration</li>
+                </ul>
+
+                <h4>For Transit Countries (Mexico):</h4>
+                <ul>
+                    <li>Protection for migrants rather than deportation</li>
+                    <li>End police corruption and abuse</li>
+                    <li>Humanitarian transit visas</li>
+                    <li>Prosecute criminals preying on migrants</li>
+                    <li>Consistent application of 2011 law granting transit rights</li>
+                </ul>
+
+                <h4>For Destination Countries (United States):</h4>
+                <ul>
+                    <li>Create legal pathways for family reunification</li>
+                    <li>Expand temporary worker programs with protections</li>
+                    <li>End detention of children</li>
+                    <li>Address employer demand for unauthorized workers</li>
+                    <li>Comprehensive immigration reform with legalization</li>
+                    <li>Investment in origin country development</li>
+                </ul>
+
+                <h4>For Potential Migrants:</h4>
+                <ul>
+                    <li>Full information about journey dangers</li>
+                    <li>Awareness of family separation impacts</li>
+                    <li>Understanding that reunification typically takes years, not months</li>
+                    <li>Message: "These separations almost always end badly"</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <h4>Case Study: DACA as Policy Experiment</h4>
+                <p><strong>Context:</strong> Deferred Action for Childhood Arrivals (2012), created after book published but relevant to children like Enrique</p>
+                
+                <p><strong>Provisions:</strong></p>
+                <ul>
+                    <li>Protection from deportation for those brought as children</li>
+                    <li>Work authorization</li>
+                    <li>Renewable every 2 years</li>
+                    <li>Not a path to citizenship, but temporary protection</li>
+                </ul>
+
+                <p><strong>Results:</strong></p>
+                <ul>
+                    <li>~800,000 young people protected</li>
+                    <li>Wage gains averaging 42% for participants</li>
+                    <li>Educational attainment increased</li>
+                    <li>Entrepreneurship rates higher</li>
+                    <li>No evidence of increased unauthorized immigration ("magnet effect")</li>
+                </ul>
+
+                <p><strong>Challenges:</strong></p>
+                <ul>
+                    <li>Temporary, precarious status</li>
+                    <li>Doesn't help parents (family separation continues)</li>
+                    <li>Contested legality; subject to rescission</li>
+                    <li>Created two tiers: DACA recipients vs. later arrivals</li>
+                </ul>
+
+                <p><strong>IR/Policy Significance:</strong> Demonstrates that legalization produces positive outcomes; also shows limits of executive action without comprehensive legislation</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>This analysis demonstrates how <em>Enrique's Journey</em> provides ground-level evidence for key debates in International Relations, from sovereignty and security to human rights and global governance.</p>
+            <p><strong>Study Tips:</strong> Focus on how individual stories reveal structural issues; connect micro-level experiences to macro-level theories; consider policy trade-offs and unintended consequences.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Get all tab buttons and sections
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        // Add click event listeners to all buttons
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the section to show
+                const sectionId = this.getAttribute('data-section');
+                
+                // Remove active class from all buttons and sections
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                contentSections.forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                this.classList.add('active');
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
